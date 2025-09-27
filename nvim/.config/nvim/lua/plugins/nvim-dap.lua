@@ -101,6 +101,13 @@ return {
         desc = 'Toggle debugger repl',
       },
       {
+        '<leader>I',
+        function()
+          require('dap').repl.clear()
+        end,
+        desc = 'Clear debugger repl',
+      },
+      {
         '<leader>1',
         function()
           require('dap').step_over()
