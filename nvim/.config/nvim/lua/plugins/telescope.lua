@@ -104,7 +104,24 @@ return {
     { '<leader>Q', '<cmd>Telescope quickfixhistory<CR>', desc = 'Find quickfix history' },
 
     { '<leader>/', '<cmd>Telescope search_history<CR>', desc = 'Find search history' },
+    { '<leader>?', '<cmd>Telescope search_history<CR>', desc = 'Find search history' },
+    {
+      '<leader>' .. require('utils.bindings').search,
+      '<cmd>Telescope search_history<CR>',
+      desc = 'Find search history',
+    },
+    {
+      '<leader>' .. require('utils.bindings').search_backwards,
+      '<cmd>Telescope search_history<CR>',
+      desc = 'Find search history',
+    },
+
     { '<leader>:', '<cmd>Telescope command_history<CR>', desc = 'Find command history' },
+    {
+      '<leader>' .. require('utils.bindings').command,
+      '<cmd>Telescope command_history<CR>',
+      desc = 'Find command history',
+    },
 
     { '<leader>fo', '<cmd>Telescope oldfiles<CR>', desc = 'Find oldfiles' },
     { '<leader>fb', '<cmd>Telescope buffers<CR>', desc = 'Find buffers' },
@@ -126,7 +143,7 @@ return {
     { 'g]', '<cmd>Telescope lsp_outgoing_calls<CR>', desc = 'Go to outgoing calls' },
 
     { '<leader>f.', '<cmd>Telescope resume<CR>', desc = 'Telescope resume' },
-    { '<leader>?', '<cmd>Telescope help_tags<CR>', desc = 'Find help' },
+    { '<leader>fh', '<cmd>Telescope help_tags<CR>', desc = 'Find help' },
   },
   config = function()
     local actions = require('telescope.actions')

@@ -34,14 +34,14 @@ return {
       desc = 'Go to harpoon mark 4',
     },
     {
-      '<C-q>',
+      require('utils.bindings').open_harpoon,
       function()
         require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())
       end,
       desc = 'Harpoon',
     },
     {
-      '<leader>fh',
+      '<leader>' .. require('utils.bindings').open_harpoon,
       function()
         require('custom.harpoon.telescope_picker')()
       end,
