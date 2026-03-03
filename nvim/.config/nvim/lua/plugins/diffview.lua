@@ -17,7 +17,8 @@ return {
       vim.cmd('tabclose #')
     end
 
-    local scroll = 0.30
+    local scroll = 0.35
+    local scroll_s = 0.12
 
     local map = {
       close = '<Esc>',
@@ -26,7 +27,9 @@ return {
       goto_file = 'gF',
       goto_file_c = 'gf',
       scroll_down = '<C-d>',
+      scroll_down_s = '<M-d>',
       scroll_up = '<C-u>',
+      scroll_up_s = '<M-u>',
       restore = 'R',
 
       choose_ours = '<leader>[',
@@ -136,7 +139,9 @@ return {
           { 'n', map.restore, actions.restore_entry, { desc = 'Restore entry to the state on the left side' } },
 
           { 'n', map.scroll_down, actions.scroll_view(scroll), { desc = 'Scroll the view down' } },
+          { 'n', map.scroll_down_s, actions.scroll_view(scroll_s), { desc = 'Scroll the view down slightly' } },
           { 'n', map.scroll_up, actions.scroll_view(-scroll), { desc = 'Scroll the view up' } },
+          { 'n', map.scroll_up_s, actions.scroll_view(-scroll_s), { desc = 'Scroll the view up slightly' } },
 
           { 'n', 'j', actions.next_entry, { desc = 'Bring the cursor to the next file entry' } },
           { 'n', 'k', actions.prev_entry, { desc = 'Bring the cursor to the previous file entry' } },
@@ -195,7 +200,9 @@ return {
           { 'n', 'gy', actions.copy_hash, { desc = 'Copy the commit hash of the entry under the cursor' } },
 
           { 'n', map.scroll_down, actions.scroll_view(scroll), { desc = 'Scroll the view down' } },
+          { 'n', map.scroll_down_s, actions.scroll_view(scroll_s), { desc = 'Scroll the view down slightly' } },
           { 'n', map.scroll_up, actions.scroll_view(-scroll), { desc = 'Scroll the view up' } },
+          { 'n', map.scroll_up_s, actions.scroll_view(-scroll_s), { desc = 'Scroll the view up slightly' } },
 
           { 'n', 'j', actions.next_entry, { desc = 'Bring the cursor to the next file entry' } },
           { 'n', 'k', actions.prev_entry, { desc = 'Bring the cursor to the previous file entry' } },
