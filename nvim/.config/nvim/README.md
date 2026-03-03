@@ -12,13 +12,3 @@
 ## 📦 Installation
 
 Pickup a version on the [nvim releases page](https://github.com/neovim/neovim/releases) (tested on v0.11.1)
-
-## 🤖 AI
-
-The ai provider can be setted with a env variable that tipically follows the format:
-
-```bash
-{PROVIDER}_API_KEY="{api_key}"
-```
-
-Use `ga` on ai chat to choose an adapter
