@@ -1,5 +1,6 @@
 return {
   'nvim-treesitter/nvim-treesitter',
+  branch = 'master', -- NOTE: Older and more stable branch
   build = ':TSUpdate',
   event = { 'BufReadPre', 'BufNewFile' },
   config = function()
@@ -28,7 +29,6 @@ return {
         'toml',
         'query',
         'json',
-        'jsonc',
         'gitcommit',
         'gitignore',
         'git_config',
