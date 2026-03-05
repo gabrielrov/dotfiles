@@ -116,3 +116,5 @@ export FZF_DEFAULT_OPTS="
   --bind 'ctrl-k:ignore'
   --bind 'ctrl-l:ignore'
 "
+
+export PATH=/home/gabs/.opencode/bin:$PATH
