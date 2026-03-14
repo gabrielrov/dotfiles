@@ -180,5 +180,12 @@ return {
         },
       },
     })
+
+    vim.api.nvim_create_autocmd('FileType', {
+      pattern = 'TelescopePrompt',
+      callback = function()
+        vim.keymap.set('i', '<M-u>', '<C-u>', { buffer = true })
+      end,
+    })
   end,
 }
