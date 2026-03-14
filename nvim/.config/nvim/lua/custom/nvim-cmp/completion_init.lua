@@ -4,7 +4,7 @@ cmp.setup.filetype('oil', { enabled = false })
 cmp.setup.filetype('TelescopePrompt', { enabled = false })
 cmp.setup.filetype('harpoon', { sources = cmp.config.sources({ { name = 'path' } }) })
 
-cmp.setup.filetype({ 'text', 'markdown' }, { sources = { { name = 'luasnip' } } })
+cmp.setup.filetype({ 'text', 'markdown', 'gitcommit' }, { sources = { { name = 'luasnip' } } })
 
 cmp.setup.filetype({ 'javascriptreact', 'typescriptreact' }, require('custom.nvim-cmp.completions.jsx-tsx'))
 cmp.setup.filetype('html', require('custom.nvim-cmp.completions.html'))
