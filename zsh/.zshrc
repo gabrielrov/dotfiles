@@ -9,6 +9,7 @@ fi
 PROMPT_EOL_MARK="" # Suffix mark for when typing before loading
 
 export PATH="$HOME/.local/bin:$PATH"
+export EDITOR="nvim"
 
 autoload -U colors && colors # Exposes color vars to zsh
 command -v dircolors &> /dev/null && eval "$(dircolors -b)" # Sets LS_COLOR values (used on completion)
