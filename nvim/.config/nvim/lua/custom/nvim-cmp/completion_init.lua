@@ -1,8 +1,8 @@
 local cmp = require('cmp')
 
 cmp.setup.filetype('oil', { enabled = false })
+cmp.setup.filetype('TelescopePrompt', { enabled = false })
 cmp.setup.filetype('harpoon', { sources = cmp.config.sources({ { name = 'path' } }) })
-cmp.setup.filetype('codecompanion', { sources = {} })
 
 cmp.setup.filetype({ 'text', 'markdown' }, { sources = { { name = 'luasnip' } } })
 
