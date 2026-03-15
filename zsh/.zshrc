@@ -30,6 +30,11 @@ setopt sharehistory # Share history between sessions
 setopt hist_ignore_space # Don't save when prefixed with space (useful for sensisitive commands)
 setopt hist_ignore_dups hist_save_no_dups hist_find_no_dups # Don't save duplicate commands
 
+# -- Bindings --
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '\ee' edit-command-line # alt+e or esc+e
+
 # -- Completion --
 bindkey -M menuselect '^[[Z' reverse-menu-complete # S-Tab binding for consistency
 bindkey -M menuselect '\r' .accept-line # Send command without confirming selection
