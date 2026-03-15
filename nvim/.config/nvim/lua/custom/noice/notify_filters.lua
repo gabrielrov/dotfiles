@@ -135,4 +135,12 @@ return {
     },
     opts = { skip = true },
   },
+  -----
+  { -- When closing sidekick window too early
+    event = 'notify',
+    filter = {
+      find = "Invalid 'window'.*in function 'nvim_win_get_cursor'.*sidekick.nvim",
+    },
+    opts = { skip = true },
+  },
 }

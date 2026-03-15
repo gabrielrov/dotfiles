@@ -1,5 +1,13 @@
 {
   "keybinds": {
-    "input_submit": "ctrl+s,return"
+    "leader": "ctrl+x",
+    "command_list": "ctrl+p",
+    "session_interrupt": "escape,ctrl+c",
+    "input_clear": "ctrl+c,ctrl+l",
+    "session_list": "<leader>l,ctrl+space",
+    "session_timeline": "<leader>g,escape,ctrl+k",
+    "session_new": "<leader>n,ctrl+n",
+    "messages_first": "ctrl+alt+g,end,alt+g",
+    "messages_last": "home,ctrl+g"
   }
 }

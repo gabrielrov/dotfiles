@@ -1,0 +1,122 @@
+local default_ai_tool = 'opencode'
+
+return {
+  'folke/sidekick.nvim',
+  keys = {
+    {
+      '<leader>c',
+      function()
+        require('sidekick.cli').toggle({ name = default_ai_tool })
+      end,
+      desc = 'Toggle AI chat',
+    },
+    {
+      '<leader>c',
+      function()
+        require('sidekick.cli').send({ name = default_ai_tool, msg = '{selection}' })
+      end,
+      mode = 'x',
+      desc = 'Send selection to AI chat',
+    },
+    {
+      '<leader>C',
+      function()
+        require('sidekick.cli').send({ msg = '{file}', name = default_ai_tool })
+      end,
+      desc = 'Send current file as context to AI chat',
+    },
+    {
+      '<leader>C',
+      function()
+        require('sidekick.cli').send({ msg = '{position}', name = default_ai_tool })
+      end,
+      mode = 'x',
+      desc = 'Send selection as context to AI chat',
+    },
+  },
+  config = function()
+    require('sidekick').setup({
+      nes = { -- Tab autocomplete feature
+        enabled = false,
+      },
+      cli = {
+        -- Creates a tmux session if enabled
+        mux = {
+          enabled = false,
+          backend = 'tmux',
+          create = 'terminal',
+        },
+        win = {
+          layout = 'float',
+          float = {
+            width = 0.97,
+            height = 0.94,
+          },
+          split = {
+            width = 0.45,
+          },
+          keys = {
+            stopinsert = { '<C-q>', 'stopinsert', mode = 't', desc = 'Enter normal mode' },
+
+            prompt = false,
+            buffers = false,
+            files = false,
+            hide_n = false,
+            hide_ctrl_q = false,
+            hide_ctrl_dot = false,
+            hide_ctrl_z = false,
+            nav_left = false,
+            nav_down = false,
+            nav_up = false,
+            nav_right = false,
+          },
+        },
+      },
+    })
+
+    vim.api.nvim_create_autocmd('FileType', {
+      pattern = 'sidekick_terminal',
+      callback = function()
+        vim.keymap.set('t', '<esc>', '<cmd>Sidekick cli toggle<CR>', { buffer = true, desc = 'Toggle cli' })
+
+        vim.keymap.set('t', '<C-u>', function()
+          local chan = vim.b.terminal_job_id
+          vim.fn.chansend(chan, '\27\21') -- ctrl+alt+u
+        end, { buffer = true, desc = 'Scroll up' })
+
+        vim.keymap.set('t', '<C-d>', function()
+          local chan = vim.b.terminal_job_id
+          vim.fn.chansend(chan, '\27\4') -- ctrl+alt+d
+        end, { buffer = true, desc = 'Scroll down' })
+
+        vim.keymap.set('t', '<M-u>', '<C-u>', { buffer = true, desc = 'Delete line backwards' })
+        vim.keymap.set('t', '<C-k>', '<esc>', { buffer = true, desc = 'Go back' })
+
+        vim.keymap.set('t', '<M-d>', '<C-d>', { buffer = true, desc = 'Kill process / delete session' })
+        vim.keymap.set('t', '<M-r>', '<C-r>', { buffer = true, desc = 'Rename session' })
+
+        vim.keymap.set('t', '<C-j>', '<CR>', { buffer = true, desc = 'Submit prompt / Confirm' })
+        vim.keymap.set('t', '<CR>', '<C-j>', { buffer = true, desc = 'New line' })
+
+        -------
+
+        vim.keymap.set('t', '<C-h>', '<C-h>', { buffer = true }) -- Regular behavior disabled by default for some reason
+
+        vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>i <BS>', { buffer = true }) -- i <BS> helps with wrong positioning of cursor after jump glitch
+        vim.keymap.set('n', '<C-q>', '<cmd>nohlsearch<CR>i <BS>', { buffer = true })
+        vim.keymap.set('n', 'i', '<cmd>nohlsearch<CR>i <BS>', { buffer = true })
+        vim.keymap.set('n', 'I', '<cmd>nohlsearch<CR>I <BS>', { buffer = true })
+        vim.keymap.set('n', 'a', '<cmd>nohlsearch<CR>a <BS>', { buffer = true })
+        vim.keymap.set('n', 'A', '<cmd>nohlsearch<CR>A <BS>', { buffer = true })
+        vim.keymap.set('x', '<C-j>', '<cmd>nohlsearch<CR>yi <BS>', { buffer = true })
+        vim.keymap.set('x', '<CR>', '<cmd>nohlsearch<CR>yi <BS>', { buffer = true })
+        vim.keymap.set('x', '<C-y>', '<cmd>nohlsearch<CR>"+yi <BS>', { buffer = true })
+
+        vim.keymap.set({ 'n', 'i', 'x', 's', 'o', 't' }, '<A-h>', '<cmd>Sidekick cli toggle<CR>', { buffer = true })
+        vim.keymap.set({ 'n', 'i', 'x', 's', 'o', 't' }, '<A-j>', '<cmd>Sidekick cli toggle<CR>', { buffer = true })
+        vim.keymap.set({ 'n', 'i', 'x', 's', 'o', 't' }, '<A-k>', '<cmd>Sidekick cli toggle<CR>', { buffer = true })
+        vim.keymap.set({ 'n', 'i', 'x', 's', 'o', 't' }, '<A-l>', '<cmd>Sidekick cli toggle<CR>', { buffer = true })
+      end,
+    })
+  end,
+}
