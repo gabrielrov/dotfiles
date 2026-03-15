@@ -7,6 +7,7 @@
   Tip: use `zoxide add` to quickly populate it with files.
 
 - tmux package manager (tpm)
+- git
 
 ```sh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
