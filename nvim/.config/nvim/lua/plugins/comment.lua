@@ -6,6 +6,7 @@ return {
     },
     keys = {
       { 'gc', desc = 'Comment toggle linewise' },
+      { 'gC', 'gc$', desc = 'Comment to end of line', remap = true },
       { 'gc', desc = 'Comment toggle linewise (visual)', mode = 'x' },
       { 'gcc', desc = 'Comment toggle current line' },
       { 'gco', desc = 'Comment insert below' },
@@ -13,6 +14,7 @@ return {
       { 'gcA', desc = 'Comment insert end of line' },
       { 'gcgc', desc = 'Comment undo' },
       { 'gb', desc = 'Comment toggle blockwise' },
+      { 'gB', 'gb$', desc = 'Comment toggle blockwise to end of line', remap = true },
       { 'gb', desc = 'Comment toggle blockwise (visual)', mode = 'x' },
       { 'gbb', desc = 'Comment toggle current line blockwise' },
       { 'gbc', desc = 'Comment toggle current block' },
