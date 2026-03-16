@@ -53,6 +53,8 @@ return {
           ['l'] = 'open',
           ['h'] = 'close_node',
           ['<C-k>'] = 'close_node',
+          ['<C-l>'] = { 'toggle_preview', config = { use_float = true } },
+
           ['<C-s>'] = 'open_split',
           ['<C-v>'] = 'open_vsplit',
           ['K'] = { 'scroll_preview', config = { direction = 10 } },
