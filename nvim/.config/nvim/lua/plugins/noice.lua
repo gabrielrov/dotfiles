@@ -16,9 +16,7 @@ return {
       lsp = {
         progress = { enabled = false }, -- Disable lsp notifications
         hover = { silent = true }, -- Disable hover notification when not avaliable
-        signature = {
-          auto_open = { enabled = false },
-        },
+        signature = { enabled = false },
       },
       cmdline = {
         view = 'cmdline', -- cmdline, cmdline_popup
