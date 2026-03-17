@@ -1,3 +1,6 @@
+gui:
+  authorColors:
+    "gabrielrov": "blue"
 keybinding:
   universal:
     quit: <Esc>
