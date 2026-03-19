@@ -56,8 +56,7 @@ return {
             width = 0.45,
           },
           keys = {
-            stopinsert = { '<C-q>', 'stopinsert', mode = 't', desc = 'Enter normal mode' },
-
+            stopinsert = false,
             prompt = false,
             buffers = false,
             files = false,
@@ -103,7 +102,6 @@ return {
         vim.keymap.set('t', '<C-h>', '<C-h>', { buffer = true }) -- Regular behavior disabled by default for some reason
 
         vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>i <BS>', { buffer = true }) -- i <BS> helps with wrong positioning of cursor after jump glitch
-        vim.keymap.set('n', '<C-q>', '<cmd>nohlsearch<CR>i <BS>', { buffer = true })
         vim.keymap.set('n', 'i', '<cmd>nohlsearch<CR>i <BS>', { buffer = true })
         vim.keymap.set('n', 'I', '<cmd>nohlsearch<CR>I <BS>', { buffer = true })
         vim.keymap.set('n', 'a', '<cmd>nohlsearch<CR>a <BS>', { buffer = true })

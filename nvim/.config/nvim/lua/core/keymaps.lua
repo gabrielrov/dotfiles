@@ -29,6 +29,8 @@ vim.keymap.set('n', '<C-Space>', '<C-^>', { desc = 'Switch to the previous buffe
 -- <C-j> works with plugins that remap <CR> (ie. autopairs)
 vim.keymap.set('i', '<C-j>', '<CR>', { remap = true })
 
+vim.keymap.set('t', '<C-q>', '<cmd>stopinsert<CR>', { remap = true, desc = 'Exit terminal mode' })
+
 -- Lsp
 vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, { desc = 'Rename symbol across project' })
 vim.keymap.set('n', '<leader>z', vim.lsp.buf.code_action, { desc = 'Code actions' })
