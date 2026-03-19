@@ -76,6 +76,19 @@ return {
     vim.api.nvim_create_autocmd('FileType', {
       pattern = 'sidekick_terminal',
       callback = function()
+        vim.keymap.set('t', '<C-h>', '<C-h>', { buffer = true }) -- Regular behavior disabled by default for some reason
+
+        vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>i <BS>', { buffer = true }) -- i <BS> helps with wrong positioning of cursor after jump glitch
+        vim.keymap.set('n', 'i', '<cmd>nohlsearch<CR>i <BS>', { buffer = true })
+        vim.keymap.set('n', 'I', '<cmd>nohlsearch<CR>I <BS>', { buffer = true })
+        vim.keymap.set('n', 'a', '<cmd>nohlsearch<CR>a <BS>', { buffer = true })
+        vim.keymap.set('n', 'A', '<cmd>nohlsearch<CR>A <BS>', { buffer = true })
+        vim.keymap.set('x', '<C-j>', '<cmd>nohlsearch<CR>yi <BS>', { buffer = true })
+        vim.keymap.set('x', '<CR>', '<cmd>nohlsearch<CR>yi <BS>', { buffer = true })
+        vim.keymap.set('x', '<C-y>', '<cmd>nohlsearch<CR>"+yi <BS>', { buffer = true })
+
+        -------
+
         vim.keymap.set('t', '<esc>', '<cmd>Sidekick cli toggle<CR>', { buffer = true, desc = 'Toggle cli' })
 
         vim.keymap.set('t', '<C-u>', function()
@@ -96,24 +109,6 @@ return {
 
         vim.keymap.set('t', '<C-j>', '<CR>', { buffer = true, desc = 'Submit prompt / Confirm' })
         vim.keymap.set('t', '<CR>', '<C-j>', { buffer = true, desc = 'New line' })
-
-        -------
-
-        vim.keymap.set('t', '<C-h>', '<C-h>', { buffer = true }) -- Regular behavior disabled by default for some reason
-
-        vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>i <BS>', { buffer = true }) -- i <BS> helps with wrong positioning of cursor after jump glitch
-        vim.keymap.set('n', 'i', '<cmd>nohlsearch<CR>i <BS>', { buffer = true })
-        vim.keymap.set('n', 'I', '<cmd>nohlsearch<CR>I <BS>', { buffer = true })
-        vim.keymap.set('n', 'a', '<cmd>nohlsearch<CR>a <BS>', { buffer = true })
-        vim.keymap.set('n', 'A', '<cmd>nohlsearch<CR>A <BS>', { buffer = true })
-        vim.keymap.set('x', '<C-j>', '<cmd>nohlsearch<CR>yi <BS>', { buffer = true })
-        vim.keymap.set('x', '<CR>', '<cmd>nohlsearch<CR>yi <BS>', { buffer = true })
-        vim.keymap.set('x', '<C-y>', '<cmd>nohlsearch<CR>"+yi <BS>', { buffer = true })
-
-        vim.keymap.set({ 'n', 'i', 'x', 's', 'o', 't' }, '<A-h>', '<cmd>Sidekick cli toggle<CR>', { buffer = true })
-        vim.keymap.set({ 'n', 'i', 'x', 's', 'o', 't' }, '<A-j>', '<cmd>Sidekick cli toggle<CR>', { buffer = true })
-        vim.keymap.set({ 'n', 'i', 'x', 's', 'o', 't' }, '<A-k>', '<cmd>Sidekick cli toggle<CR>', { buffer = true })
-        vim.keymap.set({ 'n', 'i', 'x', 's', 'o', 't' }, '<A-l>', '<cmd>Sidekick cli toggle<CR>', { buffer = true })
       end,
     })
   end,
