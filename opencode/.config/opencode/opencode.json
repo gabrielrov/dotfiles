@@ -1,4 +1,22 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "default_agent": "plan"
+  "default_agent": "chat",
+  "agent": {
+    "chat": {
+      "color": "info",
+      "description": "simple Q&A without any project context",
+      "tools": {
+        "read": false,
+        "edit": false,
+        "write": false,
+        "bash": false,
+        "glob": false,
+        "grep": false,
+        "lsp": false,
+        "list": false,
+        "webfetch": true
+      },
+      "prompt": "You are a general-purpose assistant. Answer questions directly and concisely using your training knowledge. Never read, search, list, or reference any files or directories from the project or filesystem. You have access to webfetch — use it proactively when the question involves recent events, live data, external documentation, or anything where your training knowledge might be outdated or insufficient."
+    }
+  }
 }
