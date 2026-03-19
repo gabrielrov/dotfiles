@@ -23,6 +23,8 @@ return {
         'eslint',
         'prismals',
 
+        'jsonls',
+
         -- Formatters
         'prettier',
         'stylua',
