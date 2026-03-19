@@ -11,4 +11,8 @@
 
 ## 📦 Installation
 
-Pickup a version on the [nvim releases page](https://github.com/neovim/neovim/releases) (tested on v0.11.1)
+Pickup a version on the [nvim releases page](https://github.com/neovim/neovim/releases)
+
+---
+
+###### Tested on v0.11.1

@@ -25,3 +25,7 @@ curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh 
 3. re-login on desktop
 
 env vars are defined in ~/.zsh_env
+
+---
+
+###### Tested on v5.9 (x86_64-ubuntu-linux-gnu)
