@@ -49,8 +49,8 @@ return {
         win = {
           layout = 'float',
           float = {
-            width = 0.97,
-            height = 0.94,
+            width = 1,
+            height = 0.99,
           },
           split = {
             width = 0.45,
