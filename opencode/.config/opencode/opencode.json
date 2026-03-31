@@ -6,7 +6,7 @@
       "color": "info",
       "description": "simple Q&A without any project context",
       "tools": {
-        "read": false,
+        "read": true,
         "edit": false,
         "write": false,
         "bash": false,
