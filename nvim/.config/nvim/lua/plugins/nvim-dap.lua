@@ -164,8 +164,6 @@ return {
       dap.repl.close({ mode = 'toggle' })
     end)
 
-    ft.bind_shell_movements({ 'dap-repl', 'dapui_watches' })
-
     dapui.setup({
       layouts = { -- 'console' contents usually appear on 'repl'
         {

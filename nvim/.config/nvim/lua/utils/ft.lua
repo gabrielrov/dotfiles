@@ -16,19 +16,6 @@ M.bind_close_win = function(ft, action)
 end
 
 --- @param ft string | table
-M.bind_shell_movements = function(ft)
-  vim.api.nvim_create_autocmd('FileType', {
-    pattern = ft,
-    callback = function()
-      vim.keymap.set('i', '<C-f>', '<Right>', { buffer = true })
-      vim.keymap.set('i', '<C-b>', '<Left>', { buffer = true })
-      vim.keymap.set('i', '<C-a>', '<Home>', { buffer = true })
-      vim.keymap.set('i', '<C-e>', '<End>', { buffer = true })
-    end,
-  })
-end
-
---- @param ft string | table
 --- @param opts? { bind_c_j?: boolean }
 M.clear_c_hjkl = function(ft, opts)
   opts = opts or {}

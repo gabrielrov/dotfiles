@@ -149,13 +149,13 @@ return {
   config = function()
     local actions = require('telescope.actions')
 
-    require('utils.ft').bind_shell_movements('TelescopePrompt')
-
     require('telescope').setup({
       defaults = {
         mappings = {
           i = {
             ['<C-x>'] = false,
+            ['<C-f>'] = false,
+            ['<M-f>'] = false,
 
             ['<C-s>'] = actions.select_horizontal,
 
@@ -180,13 +180,6 @@ return {
           },
         },
       },
-    })
-
-    vim.api.nvim_create_autocmd('FileType', {
-      pattern = 'TelescopePrompt',
-      callback = function()
-        vim.keymap.set('i', '<M-u>', '<C-u>', { buffer = true })
-      end,
     })
   end,
 }

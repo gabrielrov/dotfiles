@@ -55,11 +55,21 @@ end, { desc = 'Go to declaration' })
 vim.keymap.set('n', require('utils.bindings').timeline_undo, 'g-', { desc = 'Timeline undo' })
 vim.keymap.set('n', require('utils.bindings').timeline_redo, 'g+', { desc = 'Timeline redo' })
 
--- Shell-like command movements
-vim.keymap.set('c', '<C-f>', '<Right>')
-vim.keymap.set('c', '<C-b>', '<Left>')
-vim.keymap.set('c', '<C-a>', '<Home>')
-vim.keymap.set('c', '<C-e>', '<End>')
+-- Emacs-like command movements
+vim.keymap.set({ 'i', 'c' }, '<C-a>', '<Home>')
+vim.keymap.set({ 'i', 'c' }, '<C-e>', '<End>')
+vim.keymap.set({ 'i', 'c' }, '<M-a>', '<Home>')
+vim.keymap.set({ 'i', 'c' }, '<M-e>', '<End>')
+
+vim.keymap.set({ 'i', 'c' }, '<C-b>', '<Left>')
+vim.keymap.set({ 'i', 'c' }, '<C-f>', '<Right>')
+vim.keymap.set({ 'i', 'c' }, '<M-b>', '<S-Left>')
+vim.keymap.set({ 'i', 'c' }, '<M-f>', '<S-Right>')
+
+vim.keymap.set('i', '<M-.>', '<C-a>')
+vim.keymap.set('i', '<M-y>', '<C-e>')
+
+vim.keymap.set({ 'i', 'c' }, '<M-u>', '<C-u>') -- As an alternative when <C-u> is binded to something else
 
 -- Facilitate indent
 vim.keymap.set('x', '>', '>gv')

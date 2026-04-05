@@ -14,7 +14,6 @@ return {
     local icons = require('utils.icons')
 
     require('utils.ft').clear_c_hjkl('neo-tree', { bind_c_j = true })
-    require('utils.ft').bind_shell_movements('neo-tree-popup')
 
     require('neo-tree').setup({
       filesystem = {
