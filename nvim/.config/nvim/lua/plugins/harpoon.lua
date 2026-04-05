@@ -3,6 +3,7 @@ return {
   branch = 'harpoon2',
   dependencies = {
     'nvim-lua/plenary.nvim',
+    'nvim-telescope/telescope.nvim',
   },
   keys = {
     {
@@ -34,14 +35,14 @@ return {
       desc = 'Go to harpoon mark 4',
     },
     {
-      require('utils.bindings').open_harpoon,
+      '<C-q>',
       function()
         require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())
       end,
       desc = 'Harpoon',
     },
     {
-      '<leader>' .. require('utils.bindings').open_harpoon,
+      '<leader><C-q>',
       function()
         require('custom.harpoon.telescope_picker')()
       end,

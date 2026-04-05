@@ -106,23 +106,15 @@ return {
 
     { '<leader>/', '<cmd>Telescope search_history<CR>', desc = 'Find search history' },
     { '<leader>?', '<cmd>Telescope search_history<CR>', desc = 'Find search history' },
-    {
-      '<leader>' .. require('utils.bindings').search,
-      '<cmd>Telescope search_history<CR>',
-      desc = 'Find search history',
-    },
-    {
-      '<leader>' .. require('utils.bindings').search_backwards,
-      '<cmd>Telescope search_history<CR>',
-      desc = 'Find search history',
-    },
+    { '<leader><C-n>', '<cmd>Telescope search_history<CR>', desc = 'Find search history' },
+    { '<leader><M-n>', '<cmd>Telescope search_history<CR>', desc = 'Find search history' },
 
     { '<leader>:', '<cmd>Telescope command_history<CR>', desc = 'Find command history' },
-    {
-      '<leader>' .. require('utils.bindings').command,
-      '<cmd>Telescope command_history<CR>',
-      desc = 'Find command history',
-    },
+    { '<leader><C-p>', '<cmd>Telescope command_history<CR>', desc = 'Find command history' },
+
+    { '<leader>f/', '<cmd>Telescope current_buffer_fuzzy_find<CR>', desc = 'Find in buffer' },
+    { '<leader>f<C-n>', '<cmd>Telescope current_buffer_fuzzy_find<CR>', desc = 'Find in buffer' },
+    { '<leader>f<M-n>', '<cmd>Telescope current_buffer_fuzzy_find<CR>', desc = 'Find in buffer' },
 
     { '<leader>fo', '<cmd>Telescope oldfiles<CR>', desc = 'Find oldfiles' },
     { '<leader>fb', '<cmd>Telescope buffers<CR>', desc = 'Find buffers' },
@@ -131,7 +123,6 @@ return {
     { '<leader>fs', '<cmd>Telescope lsp_document_symbols<CR>', desc = 'Find symbols' },
     { '<leader>fS', '<cmd>Telescope lsp_dynamic_workspace_symbols<CR>', desc = 'Find symbols across project' },
 
-    { '<leader>f/', '<cmd>Telescope current_buffer_fuzzy_find<CR>', desc = 'Find in buffer' },
     { '<leader>fy', '<cmd>Telescope registers<CR>', desc = 'Find registers' },
     { '<leader>fm', '<cmd>Telescope marks<CR>', desc = 'Find marks' },
 
