@@ -47,7 +47,6 @@ return {
         multi_window = true,
         exclude = {
           'notify',
-          'cmp_menu',
           'noice',
           'flash_prompt',
           function(win)

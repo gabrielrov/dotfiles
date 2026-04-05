@@ -2,26 +2,26 @@ return {
   'neovim/nvim-lspconfig', -- Sets up lsp's
   dependencies = {
     'williamboman/mason.nvim', -- Provides mason-lspconfig to use handlers
-    'hrsh7th/cmp-nvim-lsp', -- Provides capabilities for completion with lsp's
+    'saghen/blink.cmp', -- Provides capabilities for completion with lsp's
     'nvimtools/none-ls.nvim', -- Setup none-ls server when loading
     { 'luckasRanarison/tailwind-tools.nvim', name = 'tailwind-tools' }, -- Additional functionality for tailwind lsp
   },
   event = { 'BufReadPre', 'BufNewFile' },
   config = function()
     local lspconfig = require('lspconfig')
-    local cmp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+    local capabilities = require('blink.cmp').get_lsp_capabilities()
 
     -- Sets up mason installed servers
     require('mason-lspconfig').setup_handlers({
       function(server_name) -- Default
         lspconfig[server_name].setup({
-          capabilities = cmp_capabilities,
+          capabilities = capabilities,
         })
       end,
 
       ['lua_ls'] = function()
         lspconfig['lua_ls'].setup({
-          capabilities = cmp_capabilities,
+          capabilities = capabilities,
           settings = {
             Lua = {
               diagnostics = {
@@ -38,7 +38,7 @@ return {
 
         lspconfig['html'].setup({
           filetypes = filetypes,
-          capabilities = cmp_capabilities,
+          capabilities = capabilities,
         })
       end,
 
@@ -48,7 +48,7 @@ return {
 
         lspconfig['emmet_ls'].setup({
           filetypes = filetypes,
-          capabilities = cmp_capabilities,
+          capabilities = capabilities,
           init_options = {
             jsx = {
               options = { -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
@@ -66,7 +66,7 @@ return {
 
       ['ts_ls'] = function()
         lspconfig['ts_ls'].setup({
-          capabilities = cmp_capabilities,
+          capabilities = capabilities,
           settings = {
             diagnostics = {
               ignoredCodes = {
@@ -80,7 +80,7 @@ return {
 
       ['cssls'] = function()
         lspconfig['cssls'].setup({
-          capabilities = cmp_capabilities,
+          capabilities = capabilities,
           settings = {
             css = {
               lint = {

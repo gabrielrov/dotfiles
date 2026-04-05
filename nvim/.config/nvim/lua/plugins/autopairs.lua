@@ -18,8 +18,10 @@ return {
         disable_in_replace_mode = true,
         disable_in_visualblock = true,
 
+        -- Indent
+        map_cr = true, -- C-j is being mapped to CR outside
+
         -- Delete pairs with those
-        map_cr = true,
         map_bs = true,
         map_c_h = true,
         map_c_w = true,

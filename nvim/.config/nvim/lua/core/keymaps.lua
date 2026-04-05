@@ -6,16 +6,17 @@ vim.g.maplocalleader = ' '
 vim.keymap.set({ 'n', 'x' }, '<Space>', '<Nop>')
 vim.keymap.set('c', '<C-d>', '<Nop>') -- Causes conflicts with completion
 vim.keymap.set({ 'n', 'x' }, '<C-w><C-w>', '<Nop>')
-vim.keymap.set('i', '<C-Space>', '<Nop>')
 vim.keymap.set('n', 'H', '<Nop>')
 vim.keymap.set('n', 'L', '<Nop>')
-vim.keymap.set('i', '<C-n>', '<Nop>')
-vim.keymap.set('i', '<C-p>', '<Nop>')
 vim.keymap.set({ 'n', 'x' }, '<leader><Esc>', '<Nop>')
 vim.keymap.set('n', 'gt', '<Nop>')
 vim.keymap.set('n', 'gT', '<Nop>')
 vim.keymap.set('n', 'gO', '<Nop>')
 vim.keymap.set('n', 'ga', '<Nop>')
+vim.keymap.set({ 'x', 's' }, '<C-n>', '<Nop>')
+vim.keymap.set({ 'x', 's' }, '<C-p>', '<Nop>')
+vim.keymap.set({ 'x', 's' }, '<C-f>', '<Nop>')
+vim.keymap.set({ 'x', 's' }, '<C-b>', '<Nop>')
 
 vim.keymap.del('n', 'grr')
 vim.keymap.del('n', 'gra')
@@ -26,8 +27,7 @@ vim.keymap.del('n', 'gri')
 vim.keymap.set('n', '<Esc>', require('utils.clear_hl_and_popup'), { desc = 'Clear highlights and popups' })
 vim.keymap.set('n', '<C-Space>', '<C-^>', { desc = 'Switch to the previous buffer' })
 
--- <C-j> works with plugins that remap <CR> (ie. autopairs)
-vim.keymap.set('i', '<C-j>', '<CR>', { remap = true })
+vim.keymap.set('s', '<C-Space>', '<C-g>c', { desc = 'Delete selection' })
 
 vim.keymap.set('t', '<C-q>', '<cmd>stopinsert<CR>', { remap = true, desc = 'Exit terminal mode' })
 
