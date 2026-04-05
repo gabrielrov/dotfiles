@@ -1,11 +1,9 @@
--- NOTE: file-operations doesn't work if updating neotree
-
 return {
   'nvim-neo-tree/neo-tree.nvim',
   branch = 'v3.x',
   dependencies = {
     'nvim-lua/plenary.nvim',
-    'antosha417/nvim-lsp-file-operations', -- Lsp rename
+    'antosha417/nvim-lsp-file-operations', -- Lsp rename, doesn't work if updating neotree
     'nvim-tree/nvim-web-devicons',
     'MunifTanjim/nui.nvim',
   },

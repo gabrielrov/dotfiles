@@ -91,7 +91,7 @@ return {
     },
     opts = { skip = true },
   },
-  -- NOTE: neotree deprection warnings
+  -- neotree deprection warnings
   {
     event = 'notify',
     filter = {
