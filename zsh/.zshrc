@@ -118,3 +118,5 @@ export FZF_DEFAULT_OPTS="
 "
 
 export PATH=/home/gabs/.opencode/bin:$PATH
+
+[ -z "$TMUX" ] && t
