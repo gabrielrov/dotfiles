@@ -1,8 +1,9 @@
 return {
   'nvim-telescope/telescope.nvim',
-  tag = '0.1.8',
+  version = '*',
   dependencies = {
     'nvim-lua/plenary.nvim',
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   },
   keys = {
     { '<C-f>', '<cmd>Telescope find_files<CR>', desc = 'Find files' },
@@ -128,7 +129,7 @@ return {
     { '<leader>fc', '<cmd>Telescope colorscheme<CR>', desc = 'Find colorschemes' },
 
     { '<leader>fs', '<cmd>Telescope lsp_document_symbols<CR>', desc = 'Find symbols' },
-    { '<leader>fS', '<cmd>Telescope lsp_dynamic_workspace_symbols<CR>', desc = 'Find symbols across project' }, -- WARN: Currently deprecated API
+    { '<leader>fS', '<cmd>Telescope lsp_dynamic_workspace_symbols<CR>', desc = 'Find symbols across project' },
 
     { '<leader>f/', '<cmd>Telescope current_buffer_fuzzy_find<CR>', desc = 'Find in buffer' },
     { '<leader>fy', '<cmd>Telescope registers<CR>', desc = 'Find registers' },

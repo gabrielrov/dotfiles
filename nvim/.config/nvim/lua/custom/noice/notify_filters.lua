@@ -83,42 +83,6 @@ return {
     },
     opts = { skip = true },
   },
-  -- NOTE: telescope deprection warnings
-  {
-    filter = {
-      warning = true,
-      find = 'position_encoding param is required in vim%.lsp%.util%.make_position_params%. Defaulting to position encoding of the first client%.',
-    },
-    opts = { skip = true },
-  },
-  {
-    event = 'notify',
-    filter = {
-      find = 'vim%.lsp%.util%.jump_to_location is deprecated',
-    },
-    opts = { skip = true },
-  },
-  {
-    event = 'notify',
-    filter = {
-      find = 'symbols_to_items must be called with valid position encoding',
-    },
-    opts = { skip = true },
-  },
-  {
-    event = 'notify',
-    filter = {
-      find = 'Error handling LSP Incoming Calls: Unhandled method callHierarchy/incomingCalls',
-    },
-    opts = { skip = true },
-  },
-  {
-    event = 'notify',
-    filter = {
-      find = 'Error handling LSP Outgoing Calls: Unhandled method callHierarchy/outgoingCalls',
-    },
-    opts = { skip = true },
-  },
   -----
   {
     event = 'notify',
