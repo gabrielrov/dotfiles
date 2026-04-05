@@ -36,8 +36,8 @@ return {
     todo_comments.setup({
       signs = false,
       highlight = {
-        -- keyword = '',
-        -- after = '',
+        keyword = '',
+        after = '',
         multiline = false,
       },
     })
