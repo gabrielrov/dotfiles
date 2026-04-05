@@ -110,10 +110,10 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export FZF_DEFAULT_OPTS="
   --bind 'ctrl-j:accept'
   --bind 'ctrl-space:toggle'
-  --bind 'ctrl-k:abort'
   --bind 'tab:down'
   --bind 'shift-tab:up'
   --bind 'ctrl-d:ignore'
+  --bind 'ctrl-k:ignore'
   --bind 'ctrl-l:ignore'
 "
 
