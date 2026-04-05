@@ -83,6 +83,13 @@ return {
     },
     opts = { skip = true },
   },
+  -- telescope
+  {
+    filter = { -- gr on single instances
+      find = '%[telescope%.builtin%.lsp%_references%]%: No LSP References found',
+    },
+    opts = { skip = true },
+  },
   -----
   {
     event = 'notify',
