@@ -107,7 +107,7 @@ local textobj_keymaps = {
 return {
   {
     'nvim-treesitter/nvim-treesitter-textobjects',
-    branch = 'master', -- NOTE: Older and more stable branch
+    branch = 'master',
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
     },

@@ -1,6 +1,7 @@
 return {
+  -- NOTE: Currently only being supported on v0.12, if willing to update, should probably wait for 1.0 or something
   'nvim-treesitter/nvim-treesitter',
-  branch = 'master', -- NOTE: Older and more stable branch
+  branch = 'master',
   build = ':TSUpdate',
   event = { 'BufReadPre', 'BufNewFile' },
   config = function()
