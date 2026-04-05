@@ -137,6 +137,7 @@ return {
         },
         file_panel = {
           { 'n', map.restore, actions.restore_entry, { desc = 'Restore entry to the state on the left side' } },
+          { 'n', '<C-g>', actions.toggle_stage_entry, { desc = 'Toggle stage' } },
 
           { 'n', map.scroll_down, actions.scroll_view(scroll), { desc = 'Scroll the view down' } },
           { 'n', map.scroll_down_s, actions.scroll_view(scroll_s), { desc = 'Scroll the view down slightly' } },
