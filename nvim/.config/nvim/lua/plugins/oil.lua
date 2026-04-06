@@ -16,7 +16,7 @@ return {
   },
   cmd = 'Oil',
   init = function()
-    -- Loads oil if nvim was opened on a directory
+    -- loads oil if nvim was opened on a directory
     vim.api.nvim_create_autocmd('VimEnter', {
       callback = function(data)
         local stat = vim.uv.fs_stat(data.file)
@@ -31,7 +31,7 @@ return {
 
     local show_hidden = true
 
-    -- Notify when toggling hidden files
+    -- notify when toggling hidden files
     local hidden_enabled = show_hidden
     local notify_toggle_hidden = {
       callback = function()
@@ -50,29 +50,29 @@ return {
 
     oil.setup({
       default_file_explorer = true,
-      watch_for_changes = true, -- Watch the filesystem for changes and reload oil
+      watch_for_changes = true, -- watch the filesystem for changes and reload oil
 
       lsp_file_methods = {
         enabled = true,
-        autosave_changes = false, -- Autosave buffers that are updated with lsp
+        autosave_changes = false, -- autosave buffers that are updated with lsp
       },
       win_options = {
         wrap = true,
       },
 
       view_options = {
-        show_hidden = show_hidden, -- Show files and directories that start with "."
+        show_hidden = show_hidden, -- show files and directories that start with "."
 
-        is_hidden_file = function(name) -- What is considered a hidden file
+        is_hidden_file = function(name) -- what is considered a hidden file
           return vim.startswith(name, '.')
         end,
-        is_always_hidden = function(name) -- Never show
+        is_always_hidden = function(name) -- never show
           return name == '..'
         end,
       },
 
       preview_win = {
-        preview_method = 'scratch', -- Loads entire buffer without attaching lsp (necessary to scroll)
+        preview_method = 'scratch', -- loads entire buffer without attaching lsp (necessary to scroll)
       },
 
       use_default_keymaps = false,
@@ -102,7 +102,7 @@ return {
     })
 
     vim.api.nvim_create_autocmd('FileType', {
-      pattern = 'oil_preview', -- Confirmation popup
+      pattern = 'oil_preview', -- confirmation popup
       callback = function()
         vim.keymap.set('n', '<C-j>', 'y', { buffer = true, remap = true })
         vim.keymap.set('n', '<CR>', 'y', { buffer = true, remap = true })
@@ -121,7 +121,7 @@ return {
           require('utils.close_win')(actions.close.callback)
         end, { buffer = true })
 
-        -- Allow saving while in insert mode
+        -- allow saving while in insert mode
         vim.keymap.set({ 'n', 'i', 'x', 's' }, '<C-s>', '<Esc><cmd>w<CR>', { buffer = true })
       end,
     })

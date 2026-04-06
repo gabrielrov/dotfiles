@@ -1,19 +1,19 @@
 return {
-  'neovim/nvim-lspconfig', -- Sets up lsp's
+  'neovim/nvim-lspconfig', -- sets up lsp's
   dependencies = {
-    'williamboman/mason.nvim', -- Provides mason-lspconfig to use handlers
-    'saghen/blink.cmp', -- Provides capabilities for completion with lsp's
-    'nvimtools/none-ls.nvim', -- Setup none-ls server when loading
-    { 'luckasRanarison/tailwind-tools.nvim', name = 'tailwind-tools' }, -- Additional functionality for tailwind lsp
+    'williamboman/mason.nvim', -- provides mason-lspconfig to use handlers
+    'saghen/blink.cmp', -- provides capabilities for completion with lsp's
+    'nvimtools/none-ls.nvim', -- setup none-ls server when loading
+    { 'luckasRanarison/tailwind-tools.nvim', name = 'tailwind-tools' }, -- additional functionality for tailwind lsp
   },
   event = { 'BufReadPre', 'BufNewFile' },
   config = function()
     local lspconfig = require('lspconfig')
     local capabilities = require('blink.cmp').get_lsp_capabilities()
 
-    -- Sets up mason installed servers
+    -- sets up mason installed servers
     require('mason-lspconfig').setup_handlers({
-      function(server_name) -- Default
+      function(server_name) -- default
         lspconfig[server_name].setup({
           capabilities = capabilities,
         })
@@ -51,8 +51,8 @@ return {
           capabilities = capabilities,
           init_options = {
             jsx = {
-              options = { -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
-                ['output.selfClosingStyle'] = 'xhtml', -- Closes self closing tags with a space before the slash
+              options = { -- for possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+                ['output.selfClosingStyle'] = 'xhtml', -- closes self closing tags with a space before the slash
               },
             },
             html = {
@@ -70,8 +70,8 @@ return {
           settings = {
             diagnostics = {
               ignoredCodes = {
-                7016, -- 'Invalid' imports (causing incorrect linting)
-                80001, -- CommonJs imports,
+                7016, -- 'invalid' imports (causing incorrect linting)
+                80001, -- commonJs imports,
               },
             },
           },

@@ -1,46 +1,46 @@
 [[ -f "$HOME/.zsh_env" ]] && source "$HOME/.zsh_env"
 
-# ~~~~~~~~~~ Options ~~~~~~~~~~
+# ~~~~~~~~~~ options ~~~~~~~~~~
 PS1="%{%F{cyan}%}%~ %{%F{blue}%}❯%{%f%} "
-PROMPT_EOL_MARK="" # Suffix mark for when typing before loading
+PROMPT_EOL_MARK="" # suffix mark for when typing before loading
 
 export PATH="$HOME/.local/bin:$PATH"
 export EDITOR="nvim"
 
 bindkey -e # emacs keys
 
-autoload -U colors && colors # Exposes color vars to zsh
-command -v dircolors &> /dev/null && eval "$(dircolors -b)" # Sets LS_COLOR values (used on completion)
+autoload -U colors && colors # exposes color vars to zsh
+command -v dircolors &> /dev/null && eval "$(dircolors -b)" # sets LS_COLOR values (used on completion)
 
-zmodload zsh/complist # More completion features
+zmodload zsh/complist # more completion features
 
-WORDCHARS=${WORDCHARS/\/} # C-w will not delete entire path
+WORDCHARS=${WORDCHARS/\/} # c-w will not delete entire path
 
-# -- History --
+# -- history --
 HISTSIZE=100000
 SAVEHIST=$HISTSIZE
 HISTFILE=~/.zsh_history
 
-setopt appendhistory # Appends to history instead of overwriting
-setopt sharehistory # Share history between sessions
-setopt hist_ignore_space # Don't save when prefixed with space (useful for sensisitive commands)
-setopt hist_ignore_dups hist_save_no_dups hist_find_no_dups # Don't save duplicate commands
+setopt appendhistory # appends to history instead of overwriting
+setopt sharehistory # share history between sessions
+setopt hist_ignore_space # don't save when prefixed with space (useful for sensisitive commands)
+setopt hist_ignore_dups hist_save_no_dups hist_find_no_dups # don't save duplicate commands
 
-# -- Bindings --
+# -- bindings --
 autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey '\ee' edit-command-line # alt+e or esc+e
 
-# -- Completion --
+# -- completion --
 bindkey -M menuselect '^[[Z' reverse-menu-complete # S-Tab binding for consistency
-bindkey -M menuselect '\r' .accept-line # Send command without confirming selection
+bindkey -M menuselect '\r' .accept-line # send command without confirming selection
 
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*' # Case insensitive completions
-zstyle ':completion:*' menu select # Tab focuses cmp menu
-zstyle ':completion:*' special-dirs true # Includes '.' and '..' on completion
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} 'ma=0\;38\;2\;247\;64\;140' # Colorize cmp menu
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*' # case insensitive completions
+zstyle ':completion:*' menu select # tab focuses cmp menu
+zstyle ':completion:*' special-dirs true # includes '.' and '..' on completion
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} 'ma=0\;38\;2\;247\;64\;140' # colorize cmp menu
 
-# ~~~~~~~~~~ Aliases ~~~~~~~~~~
+# ~~~~~~~~~~ aliases ~~~~~~~~~~
 boilerplate() {
   local folder="${1:-main}"
   cp -r ~/boilerplate/"$folder"/{*,.*} . 2>/dev/null
@@ -64,14 +64,14 @@ alias nodei='node --inspect'
 alias nodew='node --watch'
 alias nodeiw='node --inspect --watch'
 
-# ~~~~~~~~~~ Plugin manager ~~~~~~~~~~
+# ~~~~~~~~~~ plugin manager ~~~~~~~~~~
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
 unalias zi
-# ~~~~~~~~~~ Plugins ~~~~~~~~~~
+# ~~~~~~~~~~ plugins ~~~~~~~~~~
 zinit light zsh-users/zsh-history-substring-search
 zinit light Aloxaf/fzf-tab
 
@@ -97,9 +97,9 @@ zstyle ':fzf-tab:*' switch-group 'f1' 'f2'
 
 smart-tab() { [[ -z ${BUFFER//[[:space:]]/} ]] || zle fzf-tab-complete }
 zle -N smart-tab
-bindkey '^I' smart-tab # Tab will not have effect on empty lines
+bindkey '^I' smart-tab # tab will not have effect on empty lines
 
-# ~~~~~~~~~~ Shell integrations ~~~~~~~~~~
+# ~~~~~~~~~~ shell integrations ~~~~~~~~~~
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(zoxide init zsh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

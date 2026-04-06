@@ -129,7 +129,7 @@ return {
           mode = { 'n', 'x', 'o' },
         },
 
-        -- Make builtin f, F, t, T also repeatable with ; and ,
+        -- make builtin f, F, t, T also repeatable with ; and ,
         {
           'f',
           function()
@@ -262,7 +262,7 @@ return {
         textobjects = {
           select = {
             enable = true,
-            lookahead = true, -- Jump to next ocurrence if not inside any
+            lookahead = true, -- jump to next ocurrence if not inside any
 
             keymaps = textobj_keymaps.select,
           },
@@ -273,7 +273,7 @@ return {
           },
           move = {
             enable = true,
-            set_jumps = true, -- Add to jump list
+            set_jumps = true, -- add to jump list
 
             goto_next_start = textobj_keymaps.goto_next_start,
             goto_next_end = textobj_keymaps.goto_next_end,
@@ -322,12 +322,12 @@ return {
       },
     },
     config = function()
-      vim.g.miniindentscope_disable = true -- Disable indent highlight
+      vim.g.miniindentscope_disable = true -- disable indent highlight
 
       require('mini.indentscope').setup({
         options = {
-          try_as_border = true, -- When in indent border selects it's children instead of parent
-          indent_at_cursor = false, -- Selects based on cursor column
+          try_as_border = true, -- when in indent border selects it's children instead of parent
+          indent_at_cursor = false, -- selects based on cursor column
         },
         mappings = {
           object_scope = '',
@@ -339,7 +339,7 @@ return {
     end,
   },
   {
-    'chrisgrieser/nvim-various-textobjs', -- Extra text-objects
+    'chrisgrieser/nvim-various-textobjs', -- extra text-objects
     keys = {
       {
         'is',
@@ -378,7 +378,7 @@ return {
       require('various-textobjs').setup({
         textobjs = {
           subword = {
-            -- When deleting start of camelCase, changes remaining uppercase to lowercase
+            -- when deleting start of camelCase, changes remaining uppercase to lowercase
             noCamelToPascalCase = false,
           },
         },

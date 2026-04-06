@@ -75,7 +75,7 @@ return {
         augend.integer.alias.decimal, -- decimal, decimal_int (includes negative numbers)
         augend.constant.alias.bool,
         augend.date.alias['%Y/%m/%d'],
-        augend.integer.alias.hex, -- Nonnegative hex number (0x01, 0x1a1f)
+        augend.integer.alias.hex, -- nonnegative hex number (0x01, 0x1a1f)
         augend.hexcolor.new({ -- (#60a5fa)
           case = 'prefer_lower', -- upper, lower, prefer_upper, prefer_lower
         }),
@@ -83,8 +83,8 @@ return {
         -- Exemple:
         -- augend.constant.new({
         --   elements = { '&&', '||' },
-        --   word = false, -- True if must be a separated 'word' *
-        --   cyclic = true, -- Cycle from the last to the first result
+        --   word = false, -- true if must be a separated 'word' *
+        --   cyclic = true, -- cycle from the last to the first result
         -- }),
       },
     })

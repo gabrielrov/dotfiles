@@ -10,10 +10,10 @@ return {
 
     null_ls.setup({
       sources = {
-        -- Formatters
+        -- formatters
         formatting.stylua,
         formatting.prettier.with({
-          -- Treats '.ejs' as if it was '.html'
+          -- treats '.ejs' as if it was '.html'
           extra_filetypes = { 'ejs' },
           extra_args = function(params)
             if params.bufname:match('%.ejs$') then

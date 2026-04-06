@@ -70,11 +70,11 @@ return {
     vim.api.nvim_create_autocmd('FileType', {
       pattern = 'harpoon',
       callback = function()
-        -- Go to normal mode when saving
+        -- go to normal mode when saving
         vim.keymap.set({ 'n', 'i', 'x', 's' }, '<C-s>', '<Esc><cmd>w<CR>', { buffer = true })
 
         vim.defer_fn(function()
-          -- Harpoon is overiting this binding on every interaction, thus the need to defer
+          -- harpoon is overiting this binding on every interaction, thus the need to defer
           vim.keymap.set('n', '<Esc>', function()
             require('utils.close_win')('close')
           end, { buffer = true })
@@ -83,7 +83,7 @@ return {
     })
 
     vim.api.nvim_create_autocmd('FileType', {
-      -- Remove mark binding (<C-m>) from those
+      -- remove mark binding (<C-m>) from those
       pattern = 'qf',
       callback = function()
         vim.keymap.set('n', '<CR>', '<CR>', { buffer = true })

@@ -8,7 +8,7 @@ return {
     { '<leader>t', '<cmd>Themery<cr>', desc = 'Themery' },
   },
   config = function()
-    vim.cmd('colorscheme duskfox') -- Default colorscheme
+    vim.cmd('colorscheme duskfox') -- default colorscheme
 
     require('utils.ft').clear_c_hjkl('themery', { bind_c_j = true })
     require('themery').setup({

@@ -1,7 +1,7 @@
 return {
-  'williamboman/mason.nvim', -- The package manager
+  'williamboman/mason.nvim', -- the package manager
   dependencies = {
-    'williamboman/mason-lspconfig.nvim', -- Allow lspconfig server names
+    'williamboman/mason-lspconfig.nvim', -- allow lspconfig server names
     'WhoIsSethDaniel/mason-tool-installer.nvim', -- API to ensure that mason installs packages
   },
   lazy = false,
@@ -13,7 +13,7 @@ return {
 
     require('mason-tool-installer').setup({
       ensure_installed = {
-        -- Language servers
+        -- language servers
         'html',
         'cssls',
         'ts_ls',
@@ -25,11 +25,11 @@ return {
 
         'jsonls',
 
-        -- Formatters
+        -- formatters
         'prettier',
         'stylua',
 
-        -- Debugger adapters
+        -- debugger adapters
         'js-debug-adapter',
       },
     })

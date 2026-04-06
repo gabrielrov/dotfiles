@@ -23,11 +23,11 @@ return {
 
     treesj.setup({
       use_default_keymaps = false,
-      check_syntax_error = true, -- Doesn't act on syntax errors in favor of fallback
+      check_syntax_error = true, -- doesn't act on syntax errors in favor of fallback
       notify = false,
       max_join_length = 9999999999999999999,
 
-      -- Fallback config
+      -- fallback config
       on_error = function()
         mini_splitjoin.toggle()
       end,

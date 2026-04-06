@@ -11,12 +11,12 @@ return {
     require('outline').setup({
       outline_window = {
         position = 'right',
-        auto_close = true, -- Closes window if item is selected with enter
+        auto_close = true, -- closes window if item is selected with enter
         focus_on_open = true,
       },
       outline_items = {
-        show_symbol_details = false, -- Extra symbol details as virtual text
-        show_symbol_lineno = false, -- Line numbers for each symbol
+        show_symbol_details = false, -- extra symbol details as virtual text
+        show_symbol_lineno = false, -- line numbers for each symbol
       },
       keymaps = {
         fold_all = 'H',

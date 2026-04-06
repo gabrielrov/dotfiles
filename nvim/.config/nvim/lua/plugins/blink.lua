@@ -2,9 +2,9 @@ local dap_fts = { 'dap-repl', 'dapui_watches', 'dapui_hover' }
 
 return {
   'saghen/blink.cmp',
-  version = '1.*', -- Use a release tag to download pre-built binaries
+  version = '1.*', -- use a release tag to download pre-built binaries
   dependencies = {
-    'L3MON4D3/LuaSnip', -- Engine responsable for snippets
+    'L3MON4D3/LuaSnip', -- engine responsable for snippets
     'mayromr/blink-cmp-dap',
   },
   event = { 'InsertEnter', 'CmdlineEnter' },
@@ -35,7 +35,7 @@ return {
           snippets = {
             score_offset = 10,
             should_show_items = function(ctx)
-              -- Hides snippets after trigger characters
+              -- hides snippets after trigger characters
               if ctx.trigger.initial_kind == 'trigger_character' then
                 return false
               end
@@ -71,7 +71,7 @@ return {
               kind_icon = {
                 text = function(ctx)
                   if vim.api.nvim_get_mode().mode == 'c' then
-                    return '' -- Removes icons in cmdline
+                    return '' -- removes icons in cmdline
                   end
                   return ctx.kind_icon .. ctx.icon_gap
                 end,
@@ -81,7 +81,7 @@ return {
           cmdline_position = function()
             if vim.g.ui_cmdline_pos ~= nil then -- custom (i.e noice)
               local pos = vim.g.ui_cmdline_pos
-              return { pos[1] - 1, pos[2] + 1 } -- Matches position with removed cmdline icons
+              return { pos[1] - 1, pos[2] + 1 } -- matches position with removed cmdline icons
             end
             local height = (vim.o.cmdheight == 0) and 1 or vim.o.cmdheight
             return { vim.o.lines - height, 0 }
@@ -106,7 +106,7 @@ return {
 
           show_on_insert = false,
           show_on_insert_on_trigger_character = false,
-          show_on_accept_on_trigger_character = false, -- Triggers when cursor comes after trigger character after completion
+          show_on_accept_on_trigger_character = false, -- triggers when cursor comes after trigger character after completion
 
           show_on_blocked_trigger_characters = { ' ', '\n', '\t', '}' }, -- autopairs triggers closing chars (i.e '}')
         },
@@ -175,12 +175,12 @@ return {
           Event = '',
           TypeParameter = '',
         },
-        use_nvim_cmp_as_default = true, -- Sets highlight groups to nvim-cmp's, good for support
+        use_nvim_cmp_as_default = true, -- sets highlight groups to nvim-cmp's, good for support
       },
     })
 
     vim.keymap.set('i', '<C-Space>', function()
-      -- NOTE: Currently blink.show doesn't return boolean properly when a provider is passed, using 'show' for now
+      -- NOTE: currently blink.show doesn't return boolean properly when a provider is passed, using 'show' for now
       -- local providers = vim.tbl_keys(require('blink.cmp.sources.lib').get_enabled_providers())
       -- local filtered_providers = vim.tbl_filter(function(provider)
       --   return provider ~= 'snippets'
@@ -191,7 +191,7 @@ return {
     end)
 
     vim.keymap.set('i', '<C-j>', function()
-      return blink.select_and_accept() or vim.api.nvim_input('<CR>') -- Works with autopairs indent
+      return blink.select_and_accept() or vim.api.nvim_input('<CR>') -- works with autopairs indent
     end)
 
     vim.keymap.set('i', '<C-n>', blink.select_next)

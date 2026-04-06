@@ -14,19 +14,19 @@ return {
     require('noice').setup({
       routes = require('custom.noice.notify_filters'),
       lsp = {
-        progress = { enabled = false }, -- Disable lsp notifications
-        hover = { silent = true }, -- Disable hover notification when not avaliable
+        progress = { enabled = false }, -- disable lsp notifications
+        hover = { silent = true }, -- disable hover notification when not avaliable
         signature = { enabled = false },
       },
       cmdline = {
         view = 'cmdline', -- cmdline, cmdline_popup
 
-        -- Basically ligatures for commands
+        -- basically ligatures for commands
         format = {
           -- cmdline = false,
           -- search_down = false,
 
-          -- Change search icon
+          -- change search icon
           search_down = { kind = 'search', pattern = '^/', icon = ' ', lang = 'regex' }, --  
 
           lua = false,

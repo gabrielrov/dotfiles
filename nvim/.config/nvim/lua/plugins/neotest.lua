@@ -16,7 +16,7 @@ return {
         require('neotest').summary.toggle()
         local win = vim.fn.bufwinid('Neotest Summary')
         if win > -1 then
-          vim.api.nvim_set_current_win(win) -- Autofocus window
+          vim.api.nvim_set_current_win(win) -- autofocus window
         end
       end,
       desc = 'Toggle neotest summary',
@@ -50,13 +50,13 @@ return {
         enabled = false,
       },
       output = {
-        open_on_run = false, -- Popup that opens after running tests
+        open_on_run = false, -- popup that opens after running tests
       },
       summary = {
         animated = true,
-        count = true, -- Display number of tests found
-        expand_errors = true, -- Expand all errors
-        follow = true, -- Expand on current file
+        count = true, -- display number of tests found
+        expand_errors = true, -- expand all errors
+        follow = true, -- expand on current file
         mappings = {
           attach = 'a',
           clear_marked = 'M',

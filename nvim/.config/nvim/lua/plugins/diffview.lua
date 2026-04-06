@@ -46,19 +46,19 @@ return {
 
     require('diffview').setup({
       show_help_hints = false,
-      enhanced_diff_hl = true, -- Smooth colors on deletion block
+      enhanced_diff_hl = true, -- smooth colors on deletion block
 
       view = {
         file_history = {
-          -- Config for changed files in file history views
+          -- config for changed files in file history views
           winbar_info = false,
         },
         default = {
-          -- Config for changed files, and staged files in diff views
+          -- config for changed files, and staged files in diff views
           winbar_info = false,
         },
         merge_tool = {
-          -- Config for conflicted files in diff views during a merge or rebase
+          -- config for conflicted files in diff views during a merge or rebase
           layout = 'diff3_mixed',
           winbar_info = true,
         },

@@ -1,6 +1,6 @@
 return {
   {
-    'numToStr/Comment.nvim', -- Enhances comment motions
+    'numToStr/Comment.nvim', -- enhances comment motions
     dependencies = {
       'JoosepAlviste/nvim-ts-context-commentstring',
     },
@@ -26,7 +26,7 @@ return {
     end,
   },
   {
-    'JoosepAlviste/nvim-ts-context-commentstring', -- Context aware comments (ex. jsx)
+    'JoosepAlviste/nvim-ts-context-commentstring', -- context aware comments (ex. jsx)
     lazy = true,
     config = function()
       require('ts_context_commentstring').setup({

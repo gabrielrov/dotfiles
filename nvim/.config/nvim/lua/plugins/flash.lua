@@ -56,20 +56,20 @@ return {
         },
       },
       highlight = {
-        backdrop = true, -- When searching, fade out text
-        matches = true, -- Highlights text as you type
+        backdrop = true, -- when searching, fade out text
+        matches = true, -- highlights text as you type
         groups = {
           backdrop = 'FlashBackdrop',
           label = 'FlashLabel',
           match = 'FlashMatch',
-          current = 'FlashMatch', -- Does not show different color to first match
+          current = 'FlashMatch', -- does not show different color to first match
         },
       },
       modes = {
         char = {
           enabled = false,
           highlight = {
-            backdrop = false, -- Fade out text with f/t
+            backdrop = false, -- fade out text with f/t
           },
         },
         treesitter_search = {
@@ -82,7 +82,7 @@ return {
       },
     })
 
-    -- Consistent highlights
+    -- consistent highlights
     -- local function set_highlights()
     --   vim.api.nvim_set_hl(0, 'FlashBackdrop', { fg = '#6c7087' })
     --   vim.api.nvim_set_hl(0, 'FlashLabel', { fg = '#a6e3a2' })

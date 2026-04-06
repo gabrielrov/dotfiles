@@ -2,7 +2,7 @@ return {
   'mfussenegger/nvim-dap',
   dependencies = {
     'rcarriga/nvim-dap-ui',
-    'nvim-neotest/nvim-nio', -- Async stuff
+    'nvim-neotest/nvim-nio', -- async stuff
   },
   keys = {
     {
@@ -201,7 +201,7 @@ return {
       },
       controls = {
         element = 'repl',
-        enabled = false, -- Disable repl icons
+        enabled = false, -- disable repl icons
       },
       mappings = {
         edit = 'e',
@@ -249,7 +249,7 @@ return {
     vim.api.nvim_create_autocmd('FileType', {
       pattern = { 'dap-repl', 'dapui_watches' },
       callback = function()
-        vim.keymap.set('i', '<C-w>', '<C-S-w>', { buffer = true }) -- Fix C-w triggering window bindings
+        vim.keymap.set('i', '<C-w>', '<C-S-w>', { buffer = true }) -- fix C-w triggering window bindings
       end,
     })
 

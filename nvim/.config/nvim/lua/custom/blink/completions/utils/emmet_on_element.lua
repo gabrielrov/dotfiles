@@ -1,4 +1,4 @@
--- Only shows emmet suggestions on root or inside of elements
+-- only shows emmet suggestions on root or inside of elements
 return function(item)
   if item.client_name ~= 'emmet_ls' then
     return true

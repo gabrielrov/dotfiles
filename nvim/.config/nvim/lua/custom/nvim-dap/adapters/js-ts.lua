@@ -16,7 +16,7 @@ for _, adapterType in ipairs({ 'node', 'chrome', 'msedge' }) do
     },
   }
 
-  -- Handle local configurations which specify type whithout 'pwa-' as prefix
+  -- handle local configurations which specify type whithout 'pwa-' as prefix
   dap.adapters[adapterType] = function(cb, config)
     local nativeAdapter = dap.adapters[pwaType]
 
@@ -43,13 +43,13 @@ dap.configurations['javascript'] = {
       return pick_dap_port('9229')
     end,
     cwd = '${workspaceFolder}',
-    restart = true, -- Restart when saving while active instead of disconnecting
+    restart = true, -- restart when saving while active instead of disconnecting
   },
   {
     name = 'Run with node',
     request = 'launch',
     type = 'pwa-node',
-    program = '${file}', -- Initializes on current file
+    program = '${file}', -- initializes on current file
     runtimeArgs = { '--inspect', '--watch' },
     cwd = '${workspaceFolder}',
   },

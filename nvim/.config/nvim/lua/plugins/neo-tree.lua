@@ -3,7 +3,7 @@ return {
   branch = 'v3.x',
   dependencies = {
     'nvim-lua/plenary.nvim',
-    'antosha417/nvim-lsp-file-operations', -- Lsp rename, doesn't work if updating neotree
+    'antosha417/nvim-lsp-file-operations', -- lsp rename, doesn't work if updating neotree
     'nvim-tree/nvim-web-devicons',
     'MunifTanjim/nui.nvim',
   },
@@ -18,13 +18,13 @@ return {
     require('neo-tree').setup({
       filesystem = {
         follow_current_file = { enabled = true },
-        hijack_netrw_behavior = 'disabled', -- Wheater to use neo-tree as default file explorer
+        hijack_netrw_behavior = 'disabled', -- wheater to use neo-tree as default file explorer
         filtered_items = {
-          visible = true, -- Enable hidden files initially
+          visible = true, -- enable hidden files initially
           hide_dotfiles = true,
           hide_gitignored = false,
           hide_by_name = {},
-          hide_by_pattern = {}, -- Glob syntax
+          hide_by_pattern = {}, -- glob syntax
           always_show = {},
         },
       },
@@ -66,7 +66,7 @@ return {
           highlight = 'NeoTreeModified',
         },
         indent = {
-          with_markers = true, -- Enable indentation
+          with_markers = true, -- enable indentation
           indent_marker = '│',
           last_indent_marker = '└',
           indent_size = 2,
@@ -78,12 +78,12 @@ return {
         enable_git_status = true,
         git_status = {
           symbols = {
-            -- Change type
+            -- change type
             added = icons.git.added,
             deleted = icons.git.deleted,
             modified = icons.git.modified,
             renamed = icons.git.renamed,
-            -- Status type
+            -- status type
             untracked = icons.git.untracked,
             ignored = '', -- 
             unstaged = '', -- 󰄱
@@ -117,6 +117,6 @@ return {
       end,
     })
 
-    -- Toggle window, highlight current file, move cursor
+    -- toggle window, highlight current file, move cursor
   end,
 }

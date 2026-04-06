@@ -11,7 +11,7 @@ return {
         return true
       end
 
-      -- Shows emmet completion only on empty part of block
+      -- shows emmet completion only on empty part of block
       local current = node
       while current:parent() do
         if current:type() == 'declaration' then
@@ -31,7 +31,7 @@ return {
       local a_emmet = a.client_name == 'emmet_ls'
       local b_emmet = b.client_name == 'emmet_ls'
 
-      -- Deprioritize emmet_ls compared to other sources
+      -- deprioritize emmet_ls compared to other sources
       if a_emmet == b_emmet then
         return
       end

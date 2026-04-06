@@ -1,12 +1,12 @@
--- Plugins that add small tweaks
+-- plugins that add small tweaks
 return {
   {
-    -- Whenever y is used, the cursor doesn't move to start
+    -- whenever y is used, the cursor doesn't move to start
     'svban/YankAssassin.nvim',
     lazy = false,
     config = function()
       require('YankAssassin').setup({
-        -- Enabled modes
+        -- enabled modes
         auto_normal = true,
         auto_visual = true,
       })
@@ -22,7 +22,7 @@ return {
     end,
   },
   {
-    -- Automatically detects indentation and tab type when opening a buffer
+    -- automatically detects indentation and tab type when opening a buffer
     'tpope/vim-sleuth',
     event = { 'BufReadPre', 'BufNewFile' },
   },

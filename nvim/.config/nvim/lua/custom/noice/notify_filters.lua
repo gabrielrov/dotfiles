@@ -1,5 +1,5 @@
 return {
-  -- Swap file spam
+  -- swap file spam
   {
     filter = {
       event = 'msg_show',
@@ -14,14 +14,14 @@ return {
     },
     opts = { skip = true },
   },
-  { -- Harpoon swap file error
+  { -- harpoon swap file error
     filter = {
       event = 'msg_show',
       find = 'E5108: Error executing lua: Vim:E325: ATTENTION',
     },
     opts = { skip = true },
   },
-  -- Written file
+  -- written file
   {
     filter = {
       event = 'msg_show',
@@ -29,7 +29,7 @@ return {
     },
     opts = { skip = true },
   },
-  -- Undos
+  -- undos
   {
     filter = {
       event = 'msg_show',
@@ -37,7 +37,7 @@ return {
     },
     opts = { skip = true },
   },
-  -- No previous buffer
+  -- no previous buffer
   {
     filter = {
       event = 'msg_show',
@@ -45,7 +45,7 @@ return {
     },
     opts = { skip = true },
   },
-  -- Change list
+  -- change list
   {
     filter = {
       event = 'msg_show',
@@ -67,7 +67,7 @@ return {
     },
     opts = { skip = true },
   },
-  -- Using "*" or "#" on visual mode
+  -- using "*" or "#" on visual mode
   {
     filter = {
       event = 'msg_show',
@@ -83,7 +83,7 @@ return {
     },
     opts = { skip = true },
   },
-  -- Warning when avancing steps outside of main buffer on dap
+  -- warning when avancing steps outside of main buffer on dap
   {
     filter = {
       warning = true,
@@ -91,7 +91,7 @@ return {
     },
     opts = { skip = true },
   },
-  -- Closing dap config selection
+  -- closing dap config selection
   {
     filter = {
       find = 'No configuration selected',
@@ -122,7 +122,7 @@ return {
     opts = { skip = true },
   },
   -----
-  { -- When closing sidekick window too early
+  { -- when closing sidekick window too early
     event = 'notify',
     filter = {
       find = "Invalid 'window'.*in function 'nvim_win_get_cursor'.*sidekick.nvim",

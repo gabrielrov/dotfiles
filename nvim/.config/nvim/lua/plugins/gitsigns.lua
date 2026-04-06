@@ -33,7 +33,7 @@ return {
     require('utils.ft').bind_close_win('gitsigns-blame', 'close')
 
     require('gitsigns').setup({
-      -- Untracked files don't need to be refreshed when committed to be attached
+      -- untracked files don't need to be refreshed when committed to be attached
       attach_to_untracked = true,
       signs = {
         untracked = { text = '' },

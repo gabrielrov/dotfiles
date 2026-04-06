@@ -1,9 +1,9 @@
 local keymaps = {
-  -- Autopairs
+  -- autopairs
   insert = false,
   insert_line = false,
 
-  -- Sufixed with 'line' also indents
+  -- sufixed with 'line' also indents
   normal = '\\',
   normal_cur = '\\\\',
   visual = '\\',
@@ -31,7 +31,7 @@ return {
   },
   config = function()
     require('nvim-surround').setup({
-      -- Swap open and closing pairs bindings for whitepaces
+      -- swap open and closing pairs bindings for whitepaces
       surrounds = {
         [')'] = {
           add = { '( ', ' )' },

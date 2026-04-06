@@ -1,10 +1,10 @@
 local ls = require('luasnip')
 local fmt = require('custom.luasnip.fmt')
 
-local s = ls.snippet -- New snippet
-local i = ls.insert_node -- Insert cursor
+local s = ls.snippet -- new snippet
+local i = ls.insert_node -- insert cursor
 local f = ls.function_node
-local rep = require('luasnip.extras').rep -- Repeats
+local rep = require('luasnip.extras').rep -- repeats
 
 -- local jest = {
 --   s('jd', fmt("describe('{}', () => {{\n  {}\n}})", { i(1), i(2, '//') })),

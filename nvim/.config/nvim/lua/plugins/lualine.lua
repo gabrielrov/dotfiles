@@ -12,12 +12,12 @@ return {
     local options = {
       theme = 'auto',
       disabled_filetypes = {
-        statusline = {}, -- Only ignores the ft for statusline.
-        winbar = {}, -- Only ignores the ft for winbar.
-        -- Ignores for both \/
+        statusline = {}, -- only ignores the ft for statusline.
+        winbar = {}, -- only ignores the ft for winbar.
+        -- ignores for both \/
       },
 
-      -- Some icons:                    
+      --                     
       section_separators = { left = '', right = '' },
       component_separators = { left = '', right = '' },
     }
@@ -46,7 +46,7 @@ return {
         },
         {
           'filename',
-          path = 1, -- Displayed path
+          path = 1, -- displayed path
           symbols = {
             modified = icons.buffer.modified,
             readonly = '',
@@ -54,7 +54,7 @@ return {
             newfile = '',
           },
         },
-        -- Show macros
+        -- show macros
         {
           function()
             local reg = vim.fn.reg_recording()
@@ -91,9 +91,9 @@ return {
             modified = ' ',
             removed = ' ',
           },
-          -- Where to get git info from
+          -- where to get git info from
           source = function()
-            -- Using gitsigns, it updates in real time, with no need to save
+            -- using gitsigns, it updates in real time, with no need to save
             local gitsigns = vim.b.gitsigns_status_dict
             if gitsigns then
               return {
@@ -126,14 +126,14 @@ return {
       lualine_z = {},
     }
 
-    -- Custom
+    -- custom
     local oil = {
       options = vim.deepcopy(options),
       sections = vim.deepcopy(sections),
       filetypes = { 'oil' },
     }
 
-    -- Cleaner displayed path
+    -- cleaner displayed path
     oil.sections.lualine_c[2] = {
       function()
         local oil_directory = vim.fn.fnamemodify(require('oil').get_current_dir(), ':~')

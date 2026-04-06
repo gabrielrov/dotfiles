@@ -1,13 +1,13 @@
 return {
   'L3MON4D3/LuaSnip',
-  version = 'v2.*', -- Recommended version for blink
+  version = 'v2.*', -- recommended version for blink
   lazy = true,
   config = function()
     require('luasnip').config.set_config({
-      history = true, -- Jumps through snippet even after finishing it
+      history = true, -- jumps through snippet even after finishing it
     })
 
-    -- Custom snippets
+    -- custom snippets
     require('custom.luasnip.snippet_init')
   end,
 }

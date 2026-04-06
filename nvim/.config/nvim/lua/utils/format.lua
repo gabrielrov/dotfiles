@@ -1,4 +1,4 @@
--- Format once with 'null-ls', fallbacking to the lsp client
+-- format once with 'null-ls', fallbacking to the lsp client
 return function()
   local clients = vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
   if #clients <= 0 then

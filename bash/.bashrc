@@ -109,10 +109,10 @@ if [ -f "$HOME/custom.sh" ]; then
 fi
 
 
-# Custom config
+# custom config
 [[ -f "$HOME/.bash_env.sh" ]] && source "$HOME/.bash_env.sh"
 
-# Automatically start a tmux session if not already in one
+# automatically start a tmux session if not already in one
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
   tmux attach || tmux new-session -s 0
 fi

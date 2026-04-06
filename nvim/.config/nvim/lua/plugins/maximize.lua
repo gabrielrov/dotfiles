@@ -1,4 +1,4 @@
--- Maximize Icon added to lualine.lua
+-- maximize Icon added to lualine.lua
 return {
   'declancm/maximize.nvim',
   keys = {

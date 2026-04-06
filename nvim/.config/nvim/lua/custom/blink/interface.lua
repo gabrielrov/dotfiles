@@ -19,7 +19,7 @@ end
 
 ---@param default table
 M.sorts = function(default)
-  -- Obs: Sorts that include custom functions use the slower lua implementation for sorting instead of rust
+  -- sorts that include custom functions use the slower lua implementation for sorting instead of rust
   return function()
     local ft_config = completions.config and completions.config[vim.bo.filetype]
     local sorts = ft_config and ft_config.sorts

@@ -36,11 +36,11 @@ return {
   },
   config = function()
     require('sidekick').setup({
-      nes = { -- Tab autocomplete feature
+      nes = { -- tab autocomplete feature
         enabled = false,
       },
       cli = {
-        -- Creates a tmux session if enabled
+        -- creates a tmux session if enabled
         mux = {
           enabled = false,
           backend = 'tmux',
@@ -76,7 +76,7 @@ return {
     vim.api.nvim_create_autocmd('FileType', {
       pattern = 'sidekick_terminal',
       callback = function()
-        vim.keymap.set('t', '<C-h>', '<C-h>', { buffer = true }) -- Regular behavior disabled by default for some reason
+        vim.keymap.set('t', '<C-h>', '<C-h>', { buffer = true }) -- regular behavior disabled by default for some reason
 
         vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>i <BS>', { buffer = true }) -- i <BS> helps with wrong positioning of cursor after jump glitch
         vim.keymap.set('n', 'i', '<cmd>nohlsearch<CR>i <BS>', { buffer = true })

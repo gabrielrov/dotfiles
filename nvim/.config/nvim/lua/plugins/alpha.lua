@@ -22,7 +22,7 @@ return {
       pattern = 'alpha',
       once = true,
       callback = function()
-        -- Automatically opens most recent file on dir
+        -- automatically opens most recent file on dir
         if vim.fn.argc() ~= 0 then
           return
         end

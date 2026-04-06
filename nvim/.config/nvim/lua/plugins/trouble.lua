@@ -41,7 +41,7 @@ return {
         vim.defer_fn(function()
           vim.cmd('set wrap')
 
-          -- Normal wrap vertical navigation
+          -- normal wrap vertical navigation
           vim.keymap.set({ 'n', 'x' }, 'j', 'j')
           vim.keymap.set({ 'n', 'x' }, 'k', 'k')
         end, 0)
