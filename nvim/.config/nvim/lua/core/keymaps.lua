@@ -27,9 +27,9 @@ vim.keymap.del('n', 'gri')
 vim.keymap.set('n', '<Esc>', require('utils.clear_hl_and_popup'), { desc = 'Clear highlights and popups' })
 vim.keymap.set('n', '<C-Space>', '<C-^>', { desc = 'Switch to the previous buffer' })
 
-vim.keymap.set('s', '<C-Space>', '<C-g>c', { desc = 'Delete selection' })
+vim.keymap.set('t', '<C-q>', '<C-\\><C-n>', { remap = true, desc = 'Exit terminal mode' })
 
-vim.keymap.set('t', '<C-q>', '<cmd>stopinsert<CR>', { remap = true, desc = 'Exit terminal mode' })
+vim.keymap.set('s', '<C-Space>', '<C-g>c', { desc = 'Delete selection' })
 
 -- Lsp
 vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, { desc = 'Rename symbol across project' })
@@ -133,6 +133,23 @@ vim.keymap.set({ 'n', 'x' }, '<M-p>', '"+p', { desc = 'Paste from OS' })
 vim.keymap.set({ 'n', 'x' }, 'g<M-p>', '"+gp', { desc = 'Paste from OS and go to end' })
 vim.keymap.set({ 'n', 'x' }, '<M-P>', '"+P', { desc = 'Paste from OS before cursor' })
 vim.keymap.set({ 'n', 'x' }, 'g<M-P>', '"+gP', { desc = 'Paste from OS before cursor and go to end' })
+
+vim.keymap.set({ 'i', 'c' }, '<M-p>', '<C-r>+', { desc = 'Paste from OS' })
+vim.keymap.set({ 'i', 'c' }, '<M-P>', '<C-r>+', { desc = 'Paste from OS' })
+
+-- Registers on terminal mode
+vim.keymap.set('t', '<M-p>', '<C-\\><C-n>"+pi')
+vim.keymap.set('t', '<M-P>', '<C-\\><C-n>"+pi')
+
+vim.keymap.set('t', '<C-r>', function()
+  local reg = vim.fn.getcharstr()
+  if not reg:match('^[a-zA-Z0-9"#+*%%_=/:.-]$') then
+    return
+  end
+
+  local keys = vim.api.nvim_replace_termcodes('<C-\\><C-n>"' .. reg .. 'pi', true, false, true)
+  vim.api.nvim_feedkeys(keys, 'n', false)
+end)
 
 vim.keymap.set('n', '<leader>y', function()
   vim.cmd('let @+=@0')
