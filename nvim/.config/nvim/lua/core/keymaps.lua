@@ -58,8 +58,6 @@ vim.keymap.set('n', require('utils.bindings').timeline_redo, 'g+', { desc = 'Tim
 -- Emacs-like command movements
 vim.keymap.set({ 'i', 'c' }, '<C-a>', '<Home>')
 vim.keymap.set({ 'i', 'c' }, '<C-e>', '<End>')
-vim.keymap.set({ 'i', 'c' }, '<M-a>', '<Home>')
-vim.keymap.set({ 'i', 'c' }, '<M-e>', '<End>')
 
 vim.keymap.set({ 'i', 'c' }, '<C-b>', '<Left>')
 vim.keymap.set({ 'i', 'c' }, '<C-f>', '<Right>')
