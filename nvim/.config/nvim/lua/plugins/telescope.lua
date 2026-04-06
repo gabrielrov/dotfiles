@@ -37,7 +37,11 @@ return {
     {
       '<leader>fe',
       function()
-        require('telescope.builtin').find_files({ hidden = true, no_ignore = true, prompt_title = 'Find Every File' })
+        require('telescope.builtin').find_files({
+          hidden = true,
+          no_ignore = true,
+          prompt_title = 'Find Files (Hidden,Ignored)',
+        })
       end,
       desc = 'Find every file',
     },
@@ -45,7 +49,11 @@ return {
       '<leader>fe',
       function()
         require('oil.actions').close.callback()
-        require('telescope.builtin').find_files({ hidden = true, no_ignore = true, prompt_title = 'Find Every File' })
+        require('telescope.builtin').find_files({
+          hidden = true,
+          no_ignore = true,
+          prompt_title = 'Find Files (Hidden,Ignored)',
+        })
       end,
       desc = 'Find every file',
       ft = 'oil',
