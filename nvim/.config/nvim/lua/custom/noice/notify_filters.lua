@@ -29,6 +29,13 @@ return {
     },
     opts = { skip = true },
   },
+  {
+    filter = {
+      event = 'msg_show',
+      find = '--No lines in buffer--',
+    },
+    opts = { skip = true },
+  },
   -- undos
   {
     filter = {
