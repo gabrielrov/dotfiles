@@ -1,5 +1,12 @@
 return {
-  -- Warning when editing a file opened on another instance
+  -- Swap file spam
+  {
+    filter = {
+      event = 'msg_show',
+      find = 'Found a swap file by the name "~/.local/state/nvim/swap',
+    },
+    opts = { skip = true },
+  },
   {
     filter = {
       warning = true,
@@ -7,6 +14,14 @@ return {
     },
     opts = { skip = true },
   },
+  { -- Harpoon swap file error
+    filter = {
+      event = 'msg_show',
+      find = 'E5108: Error executing lua: Vim:E325: ATTENTION',
+    },
+    opts = { skip = true },
+  },
+  -- Written file
   {
     filter = {
       event = 'msg_show',
