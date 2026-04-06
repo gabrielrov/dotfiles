@@ -122,7 +122,29 @@ return {
     opts = { skip = true },
   },
   -----
-  { -- when closing sidekick window too early
+  -- when closing diffview window too soon
+  {
+    event = 'notify',
+    filter = {
+      find = 'diffview.*The coroutine failed with this message',
+    },
+    opts = { skip = true },
+  },
+  {
+    event = 'notify',
+    filter = {
+      find = "diffview.*bad argument #1 to 'ipairs'",
+    },
+    opts = { skip = true },
+  },
+  {
+    event = 'notify',
+    filter = {
+      find = 'Failed to create diff buffer',
+    },
+    opts = { skip = true },
+  },
+  { -- when closing sidekick window too soon
     event = 'notify',
     filter = {
       find = "Invalid 'window'.*in function 'nvim_win_get_cursor'.*sidekick.nvim",
