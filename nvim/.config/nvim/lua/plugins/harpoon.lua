@@ -83,10 +83,10 @@ return {
     })
 
     vim.api.nvim_create_autocmd('FileType', {
-      -- remove mark binding (<C-m>) from those
+      -- remove mark binding for those
       pattern = 'qf',
       callback = function()
-        vim.keymap.set('n', '<CR>', '<CR>', { buffer = true })
+        vim.keymap.set('n', '<C-m>', '<C-m>', { buffer = true })
       end,
     })
   end,
