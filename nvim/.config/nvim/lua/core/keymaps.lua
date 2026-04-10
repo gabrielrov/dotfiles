@@ -139,20 +139,6 @@ vim.keymap.set({ 'n', 'x' }, 'g<M-P>', '"+gP', { desc = 'Paste from OS before cu
 vim.keymap.set({ 'i', 'c' }, '<M-p>', '<C-r>+', { desc = 'Paste from OS' })
 vim.keymap.set({ 'i', 'c' }, '<M-P>', '<C-r>+', { desc = 'Paste from OS' })
 
--- registers on terminal mode
-vim.keymap.set('t', '<M-p>', '<C-\\><C-n>"+pi')
-vim.keymap.set('t', '<M-P>', '<C-\\><C-n>"+pi')
-
-vim.keymap.set('t', '<C-r>', function()
-  local reg = vim.fn.getcharstr()
-  if not reg:match('^[a-zA-Z0-9"#+*%%_=/:.-]$') then
-    return
-  end
-
-  local keys = vim.api.nvim_replace_termcodes('<C-\\><C-n>"' .. reg .. 'pi', true, false, true)
-  vim.api.nvim_feedkeys(keys, 'n', false)
-end)
-
 vim.keymap.set('n', '<leader>y', function()
   vim.cmd('let @+=@0')
   vim.notify('Register "0" copied into register "+"')
@@ -163,7 +149,7 @@ vim.keymap.set('n', "<leader>'", function()
   vim.notify('Register "0" copied into register "+"')
 end, { desc = 'Copy register "0" to "+" register' })
 
--- don't indent when using the registers with c-r
+-- don't indent when using registers with c-r
 vim.keymap.set('i', '<C-r>', '<C-r><C-o>', { remap = true })
 
 -- use 'x' as alternative to black hole register
