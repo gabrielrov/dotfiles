@@ -127,6 +127,8 @@ vim.cmd("nnoremap <expr> j v:count ? (v:count > 0 ? \"m'\" . v:count : '') . 'j'
 vim.cmd("nnoremap <expr> k v:count ? (v:count > 0 ? \"m'\" . v:count : '') . 'k' : 'gk'")
 
 -- registers
+vim.keymap.set({ 'i', 'c' }, '<C-r>', '<C-r><C-o>', { remap = true }) -- don't indent when using registers with c-r
+
 vim.keymap.set({ 'n', 'x' }, '<C-y>', '"+y', { desc = 'Yank to OS' })
 vim.keymap.set('x', '<M-y>', '"+y', { desc = 'Yank to OS' })
 vim.keymap.set('n', '<M-y>', '"+y$', { desc = 'Yank rest of line to OS' })
@@ -136,8 +138,8 @@ vim.keymap.set({ 'n', 'x' }, 'g<M-p>', '"+gp', { desc = 'Paste from OS and go to
 vim.keymap.set({ 'n', 'x' }, '<M-P>', '"+P', { desc = 'Paste from OS before cursor' })
 vim.keymap.set({ 'n', 'x' }, 'g<M-P>', '"+gP', { desc = 'Paste from OS before cursor and go to end' })
 
-vim.keymap.set({ 'i', 'c' }, '<M-p>', '<C-r>+', { desc = 'Paste from OS' })
-vim.keymap.set({ 'i', 'c' }, '<M-P>', '<C-r>+', { desc = 'Paste from OS' })
+vim.keymap.set({ 'i', 'c' }, '<M-p>', '<C-r><C-o>+', { desc = 'Paste from OS' })
+vim.keymap.set({ 'i', 'c' }, '<M-P>', '<C-r><C-o>+', { desc = 'Paste from OS' })
 
 vim.keymap.set('n', '<leader>y', function()
   vim.cmd('let @+=@0')
@@ -148,9 +150,6 @@ vim.keymap.set('n', "<leader>'", function()
   vim.cmd('let @+=@0')
   vim.notify('Register "0" copied into register "+"')
 end, { desc = 'Copy register "0" to "+" register' })
-
--- don't indent when using registers with c-r
-vim.keymap.set('i', '<C-r>', '<C-r><C-o>', { remap = true })
 
 -- use 'x' as alternative to black hole register on visual modes
 vim.keymap.set('x', 'x', '"_x')
