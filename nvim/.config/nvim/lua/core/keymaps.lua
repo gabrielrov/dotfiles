@@ -152,10 +152,9 @@ end, { desc = 'Copy register "0" to "+" register' })
 -- don't indent when using registers with c-r
 vim.keymap.set('i', '<C-r>', '<C-r><C-o>', { remap = true })
 
--- use 'x' as alternative to black hole register
--- vim.keymap.set({ 'n', 'x' }, 'x', '"_x')
--- vim.keymap.set('n', 'X', '"_X')
--- vim.keymap.set('x', 'X', '"_d') -- also substitutes behavior of deleting line when using 'X' on 'v' mode
+-- use 'x' as alternative to black hole register on visual modes
+vim.keymap.set('x', 'x', '"_x')
+vim.keymap.set('x', 'X', '"_X')
 
 -- tab
 vim.keymap.set({ 'n', 'x' }, '<C-t>', '<cmd>tabnew<CR>', { desc = 'Create tab' })
