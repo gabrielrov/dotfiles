@@ -1,2 +1,4 @@
+blacklist = ["^opencode [a-zA-Z0-9]{8}$"] # nvim sidekick's opencode sessions
+
 [default_session]
 startup_command = "nv"

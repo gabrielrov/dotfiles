@@ -5,6 +5,8 @@
 - xclip (OS clipboard access) [sudo]
 - gcc (treesitter) [sudo]
 - ripgrep (telescope live grep) [sudo]
+- [opencode](https://opencode.ai/docs/#install) (sidekick)
+- [tmux](https://github.com/tmux/tmux/wiki/Installing) (sidekick)
 
 ## 📦 Installation
 

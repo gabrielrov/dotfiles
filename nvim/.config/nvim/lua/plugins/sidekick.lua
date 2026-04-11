@@ -42,7 +42,7 @@ return {
       cli = {
         -- creates a tmux session if enabled
         mux = {
-          enabled = false,
+          enabled = true,
           backend = 'tmux',
           create = 'terminal',
         },
