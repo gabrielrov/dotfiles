@@ -103,8 +103,12 @@ return {
           show_on_trigger_character = true, -- chars provided by lsp
 
           show_on_backspace = false,
-
           show_on_insert = false,
+
+          show_on_backspace_in_keyword = false,
+          show_on_backspace_after_insert_enter = false,
+          show_on_backspace_after_accept = false,
+
           show_on_insert_on_trigger_character = false,
           show_on_accept_on_trigger_character = false, -- triggers when cursor comes after trigger character after completion
 
