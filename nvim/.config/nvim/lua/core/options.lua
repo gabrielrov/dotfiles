@@ -13,14 +13,8 @@ vim.g.loaded_netrwPlugin = 1 -- disable aditional netrw features
 -- true colors suport
 vim.opt.termguicolors = true
 
--- add contents of '+' register to unnamed (") register
--- vim.o.clipboard = 'unnamedplus'
-
 vim.opt.relativenumber = true
 vim.opt.number = true
-
--- highlight selected line
--- vim.opt.cursorline = true
 
 -- follow identation on wrap
 vim.opt.breakindent = true

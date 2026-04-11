@@ -116,7 +116,5 @@ return {
         end, { buffer = true })
       end,
     })
-
-    -- toggle window, highlight current file, move cursor
   end,
 }
