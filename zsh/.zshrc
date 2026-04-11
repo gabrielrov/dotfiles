@@ -53,7 +53,7 @@ alias ll='ls -alF --color=auto'
 
 t() {
   if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    tmux attach &> /dev/null || sesh connect "$(sesh list | fzf)"
+    tmux attach &> /dev/null || (command -v sesh &> /dev/null && sesh connect "$(sesh list | fzf)")
   fi
 }
 
