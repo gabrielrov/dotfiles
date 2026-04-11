@@ -87,6 +87,11 @@ return {
         vim.keymap.set('x', '<CR>', '<cmd>nohlsearch<CR>yi <BS>', { buffer = true })
         vim.keymap.set('x', '<C-y>', '<cmd>nohlsearch<CR>"+yi <BS>', { buffer = true })
 
+        vim.keymap.set('t', '<M-h>', '<cmd>silent! !tmux select-pane -L<CR>', { buffer = true })
+        vim.keymap.set('t', '<M-j>', '<cmd>silent! !tmux select-pane -D<CR>', { buffer = true })
+        vim.keymap.set('t', '<M-k>', '<cmd>silent! !tmux select-pane -U<CR>', { buffer = true })
+        vim.keymap.set('t', '<M-l>', '<cmd>silent! !tmux select-pane -R<CR>', { buffer = true })
+
         -- registers
         vim.keymap.set('t', '<M-p>', '<C-\\><C-n>"+pi', { buffer = true })
         vim.keymap.set('t', '<M-P>', '<C-\\><C-n>"+pi', { buffer = true })
@@ -103,7 +108,7 @@ return {
 
         -------
 
-        vim.keymap.set('t', '<esc>', '<cmd>Sidekick cli toggle<CR>', { buffer = true, desc = 'Toggle cli' })
+        vim.keymap.set('t', '<Esc>', '<cmd>Sidekick cli toggle<CR>', { buffer = true, desc = 'Toggle cli' })
 
         vim.keymap.set('t', '<C-u>', function()
           local chan = vim.b.terminal_job_id
@@ -116,7 +121,7 @@ return {
         end, { buffer = true, desc = 'Scroll down' })
 
         vim.keymap.set('t', '<M-u>', '<C-u>', { buffer = true, desc = 'Delete line backwards' })
-        vim.keymap.set('t', '<C-k>', '<esc>', { buffer = true, desc = 'Go back' })
+        vim.keymap.set('t', '<C-k>', '<Esc>', { buffer = true, desc = 'Go back' })
 
         vim.keymap.set('t', '<M-d>', '<C-d>', { buffer = true, desc = 'Kill process / delete session' })
         vim.keymap.set('t', '<M-r>', '<C-r>', { buffer = true, desc = 'Rename session' })
