@@ -1,24 +1,18 @@
 ## ⚡️ Requirements
 
-- [homebrew](https://brew.sh/)
-
-```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
 - [fzf](https://github.com/junegunn/fzf?tab=readme-ov-file#installation)
 
 ```sh
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install --no-update-rc --completion --key-bindings
+brew install fzf
 ```
 
 - [zoxide](https://github.com/ajeetdsouza/zoxide?tab=readme-ov-file#installation)
 
 ```sh
-curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+brew install zoxide
 ```
 
-## 📦 Installation
+## 📦 [Installation](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH#how-to-install-zsh-on-many-platforms)
 
 1. Install zsh [sudo]
 2. run `chsh -s $(which zsh)`
