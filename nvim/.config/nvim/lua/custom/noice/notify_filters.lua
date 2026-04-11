@@ -90,6 +90,22 @@ return {
     },
     opts = { skip = true },
   },
+  -- pasting
+  {
+    filter = {
+      event = 'msg_show',
+      find = '^%d* more lines$',
+    },
+    opts = { skip = true },
+  },
+  -- yanking
+  {
+    filter = {
+      event = 'msg_show',
+      find = '^%d* lines yanked',
+    },
+    opts = { skip = true },
+  },
   -- warning when avancing steps outside of main buffer on dap
   {
     filter = {
