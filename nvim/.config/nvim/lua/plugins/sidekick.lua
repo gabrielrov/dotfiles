@@ -13,6 +13,14 @@ return {
     {
       '<leader>c',
       function()
+        require('sidekick.cli').send({ msg = '{position}', name = default_ai_tool })
+      end,
+      mode = 'x',
+      desc = 'Send selection as context to AI chat',
+    },
+    {
+      '<leader>C',
+      function()
         require('sidekick.cli').send({ name = default_ai_tool, msg = '{selection}' })
       end,
       mode = 'x',
@@ -24,14 +32,6 @@ return {
         require('sidekick.cli').send({ msg = '{file}', name = default_ai_tool })
       end,
       desc = 'Send current file as context to AI chat',
-    },
-    {
-      '<leader>C',
-      function()
-        require('sidekick.cli').send({ msg = '{position}', name = default_ai_tool })
-      end,
-      mode = 'x',
-      desc = 'Send selection as context to AI chat',
     },
   },
   config = function()
