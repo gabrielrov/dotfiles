@@ -106,6 +106,28 @@ return {
     },
     opts = { skip = true },
   },
+  -- indent
+  {
+    filter = {
+      event = 'msg_show',
+      find = '^%d* lines indented',
+    },
+    opts = { skip = true },
+  },
+  {
+    filter = {
+      event = 'msg_show',
+      find = '^%d* lines >ed',
+    },
+    opts = { skip = true },
+  },
+  {
+    filter = {
+      event = 'msg_show',
+      find = '^%d* lines <ed',
+    },
+    opts = { skip = true },
+  },
   -- warning when avancing steps outside of main buffer on dap
   {
     filter = {
