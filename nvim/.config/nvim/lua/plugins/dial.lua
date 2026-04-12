@@ -68,12 +68,13 @@ return {
   },
   config = function()
     local config = require('dial.config')
-    local augend = require('dial.augend') --'augend' is a term used in the context of incrementing or decrementing things
+    local augend = require('dial.augend')
 
     config.augends:register_group({
       default = {
         augend.integer.alias.decimal, -- decimal, decimal_int (includes negative numbers)
-        augend.constant.alias.bool,
+        augend.constant.alias.bool, -- true / false
+        augend.constant.alias.Bool, -- True / False
         augend.date.alias['%Y/%m/%d'],
         augend.integer.alias.hex, -- nonnegative hex number (0x01, 0x1a1f)
         augend.hexcolor.new({ -- (#60a5fa)
