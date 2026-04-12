@@ -98,8 +98,9 @@ vim.keymap.set({ 'n', 'x' }, '<M-u>', '<cmd>norm! 4<CR>')
 
 vim.keymap.set({ 'n', 'x' }, '<Down>', '<cmd>norm! 40M<CR>')
 vim.keymap.set({ 'n', 'x' }, '<Up>', '<cmd>norm! 40M<CR>')
-vim.keymap.set({ 'n', 'i', 'x', 's', 'o', 'c' }, '<ScrollWheelDown>', '<cmd>norm! 40M<CR>')
-vim.keymap.set({ 'n', 'i', 'x', 's', 'o', 'c' }, '<ScrollWheelUp>', '<cmd>norm! 40M<CR>')
+
+vim.keymap.set({ 'n', 'i', 'x' }, '<ScrollWheelDown>', '<cmd>norm! 40M<CR>')
+vim.keymap.set({ 'n', 'i', 'x' }, '<ScrollWheelUp>', '<cmd>norm! 40M<CR>')
 
 vim.keymap.set({ 'n', 'x' }, '<Left>', '<C-u>0M')
 vim.keymap.set({ 'n', 'x' }, '<Right>', '<C-d>0M')
