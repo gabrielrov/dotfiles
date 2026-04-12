@@ -107,12 +107,16 @@ return {
       pattern = 'neo-tree',
       callback = function()
         vim.keymap.set('n', '<Esc>', function()
+          if vim.v.hlsearch ~= 0 then
+            return vim.cmd('nohlsearch')
+          end
+
           local preview = require('neo-tree.sources.common.preview')
           if preview.is_active() then
-            preview.hide()
-          else
-            require('utils.close_win')('Neotree close')
+            return preview.hide()
           end
+
+          vim.cmd('Neotree close')
         end, { buffer = true })
       end,
     })
