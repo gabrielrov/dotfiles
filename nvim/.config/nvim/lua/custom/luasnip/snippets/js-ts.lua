@@ -167,6 +167,24 @@ local javascript = {
     'ef',
     fmt(
       [[
+        export function {}({}) {{
+          {}
+        }}
+      ]],
+      {
+        f(function(_, snip)
+          return vim.fn.fnamemodify(snip.env.TM_FILENAME, ':r')
+        end),
+        i(1),
+        i(2),
+      }
+    )
+  ),
+
+  s(
+    'edf',
+    fmt(
+      [[
         export default function {}({}) {{
           {}
         }}
@@ -235,6 +253,25 @@ local typescript = {
 
   s(
     'ef',
+    fmt(
+      [[
+        export function {}({}){} {{
+          {}
+        }}
+      ]],
+      {
+        f(function(_, snip)
+          return vim.fn.fnamemodify(snip.env.TM_FILENAME, ':r')
+        end),
+        i(1),
+        i(2),
+        i(3),
+      }
+    )
+  ),
+
+  s(
+    'edf',
     fmt(
       [[
         export default function {}({}){} {{
