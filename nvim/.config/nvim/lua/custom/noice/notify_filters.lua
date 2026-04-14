@@ -150,6 +150,12 @@ return {
     },
     opts = { skip = true },
   },
+  {
+    filter = { -- gr on single instances
+      find = '%[telescope%.builtin%.git_status%]: No changes found',
+    },
+    opts = { skip = true },
+  },
   -----
   {
     event = 'notify',
