@@ -1,3 +1,7 @@
+os:
+  # opens current buffer if using edit command with lazygit.nvim
+  edit: '[ -z "$NVIM" ] && (nvim -- {{filename}}) || (nvim --server "$NVIM" --remote-send "<cmd>q | silent! e {{filename}}<CR>")'
+  editAtLine: '[ -z "$NVIM" ] && (nvim +{{line}} -- {{filename}}) || (nvim --server "$NVIM" --remote-send "<cmd>q | silent! e {{filename}} | {{line}}<CR>")'
 gui:
   authorColors:
     "gabrielrov": "blue"
