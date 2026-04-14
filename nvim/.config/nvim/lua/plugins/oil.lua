@@ -56,6 +56,10 @@ return {
         enabled = true,
         autosave_changes = false, -- autosave buffers that are updated with lsp
       },
+
+      float = {
+        border = 'rounded',
+      },
       win_options = {
         wrap = true,
       },
