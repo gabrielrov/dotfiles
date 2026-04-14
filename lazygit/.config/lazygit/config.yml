@@ -3,16 +3,32 @@ os:
   edit: '[ -z "$NVIM" ] && (nvim -- {{filename}}) || (nvim --server "$NVIM" --remote-send "<cmd>q | silent! e {{filename}}<CR>")'
   editAtLine: '[ -z "$NVIM" ] && (nvim +{{line}} -- {{filename}}) || (nvim --server "$NVIM" --remote-send "<cmd>q | silent! e {{filename}} | {{line}}<CR>")'
 gui:
+  statusPanelView: allBranchesLog
+  showRootItemInFileTree: false
+  switchTabsWithPanelJumpKeys: true
+  useHunkModeInStagingView: false
+  showNumstatInFilesView: true
+
+  commitHashLength: 5
+  scrollHeight: 4
+
   authorColors:
     "gabrielrov": "blue"
 keybinding:
   universal:
     quit: <Esc>
     return: <c-k>
+
     confirm: <c-j>
     goInto: <c-j>
-    startSearch: <c-n>
     submitEditorText: <c-j>
+    confirmMenu: <c-j>
+    confirmSuggestion: <c-j>
+    confirmInEditor: <c-j>
+
+    startSearch: <c-n>
+
+    confirmInEditor-alt: <disabled>
     scrollUpMain-alt1: <disabled>
     scrollDownMain-alt1: <disabled>
   status:
@@ -22,3 +38,5 @@ keybinding:
     moveUpCommit: K
 notARepository: skip
 promptToReturnFromSubprocess: false
+git:
+  autoFetch: false
