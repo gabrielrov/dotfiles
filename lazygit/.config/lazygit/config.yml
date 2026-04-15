@@ -4,10 +4,10 @@ os:
   editAtLine: '[ -z "$NVIM" ] && (nvim +{{line}} -- {{filename}}) || (nvim --server "$NVIM" --remote-send "<cmd>q | silent! e {{filename}} | {{line}}<CR>")'
 gui:
   statusPanelView: allBranchesLog
-  showRootItemInFileTree: false
   switchTabsWithPanelJumpKeys: true
+  showRootItemInFileTree: false
   useHunkModeInStagingView: false
-  showNumstatInFilesView: true
+  showNumstatInFilesView: false
 
   commitHashLength: 5
   scrollHeight: 4
