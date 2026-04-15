@@ -143,9 +143,22 @@ vim.keymap.set({ 'i', 'c' }, '<M-p>', '<C-r><C-o>+', { desc = 'Paste from OS' })
 vim.keymap.set({ 'i', 'c' }, '<M-P>', '<C-r><C-o>+', { desc = 'Paste from OS' })
 
 vim.keymap.set('n', '<leader>y', function()
-  vim.cmd('let @+=@0')
-  vim.notify('Register "0" copied into register "+"')
-end, { desc = 'Copy register "0" to "+" register' })
+  local regex = '^[a-zA-Z0-9"+*/-]$'
+  local reg = vim.fn.getcharstr()
+
+  if reg == '' then -- esc
+    return
+  end
+
+  if not reg:match(regex) then
+    vim.notify('Invalid register')
+    return
+  end
+
+  vim.cmd('let @' .. reg .. '=@0')
+
+  vim.notify('Register "0" copied into register ' .. reg)
+end, { desc = 'Copy register "0" to selected register' })
 
 vim.keymap.set('n', "<leader>'", function()
   vim.cmd('let @+=@0')
