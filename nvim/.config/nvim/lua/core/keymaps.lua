@@ -155,15 +155,15 @@ vim.keymap.set('n', '<leader>y', function()
     return
   end
 
-  vim.cmd('let @' .. reg .. '=@0')
+  vim.cmd('let @' .. reg .. '=@"')
 
-  vim.notify('Register "0" copied into register ' .. reg)
-end, { desc = 'Copy register "0" to selected register' })
+  vim.notify('Register " copied into register ' .. reg)
+end, { desc = 'Copy register " into selected register' })
 
 vim.keymap.set('n', "<leader>'", function()
-  vim.cmd('let @+=@0')
-  vim.notify('Register "0" copied into register "+"')
-end, { desc = 'Copy register "0" to "+" register' })
+  vim.cmd('let @+=@"')
+  vim.notify('Register " copied into register +')
+end, { desc = 'Copy register " into + register' })
 
 -- use 'x' as alternative to black hole register on visual modes
 vim.keymap.set('x', 'x', '"_x')
