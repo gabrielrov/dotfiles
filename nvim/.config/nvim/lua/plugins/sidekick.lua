@@ -98,7 +98,7 @@ return {
 
         vim.keymap.set('t', '<C-r>', function()
           local reg = vim.fn.getcharstr()
-          if not reg:match('^[a-zA-Z0-9"#+*%%_/:.-]$') then
+          if not reg:match('^[a-zA-Z0-9"#+*%%/:.-]$') then
             return
           end
 
