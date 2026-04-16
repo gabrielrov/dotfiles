@@ -2,6 +2,7 @@ os:
   # opens current buffer if using edit command with lazygit.nvim
   edit: '[ -z "$NVIM" ] && (nvim -- {{filename}}) || (nvim --server "$NVIM" --remote-send "<cmd>q | silent! e {{filename}}<CR>")'
   editAtLine: '[ -z "$NVIM" ] && (nvim +{{line}} -- {{filename}}) || (nvim --server "$NVIM" --remote-send "<cmd>q | silent! e {{filename}} | {{line}}<CR>")'
+  editPreset: "nvim-remote" # handles neovim better (ie. edits without printing command output)
 gui:
   statusPanelView: allBranchesLog
   switchTabsWithPanelJumpKeys: true
