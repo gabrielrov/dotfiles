@@ -9,5 +9,7 @@ return {
   },
   config = function()
     vim.g.lazygit_floating_window_border_chars = { '', '', '', '', '', '', '', '' }
+
+    require('utils.ft').bind_tmux_nav('lazygit')
   end,
 }
