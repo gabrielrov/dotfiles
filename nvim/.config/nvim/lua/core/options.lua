@@ -1,6 +1,6 @@
--- by default, nvim writes to a temp file and then rename it when saving.
--- because of that, some programs trying to watch the file can lost track of it.
--- this option writes directly to the file, preventing possible issues.
+-- By default, nvim writes to a temp file and then renames it when saving.
+-- Because of that, some programs trying to watch the file can lost track of it.
+-- This option writes directly to the file, preventing potential issues.
 vim.opt.backupcopy = 'yes'
 
 -- enable swapfile
