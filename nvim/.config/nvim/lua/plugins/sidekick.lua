@@ -73,6 +73,8 @@ return {
       },
     })
 
+    require('utils.ft').bind_tmux_nav('sidekick_terminal')
+
     vim.api.nvim_create_autocmd('FileType', {
       pattern = 'sidekick_terminal',
       callback = function()
@@ -86,11 +88,6 @@ return {
         vim.keymap.set('x', '<C-j>', '<cmd>nohlsearch<CR>yi <BS>', { buffer = true })
         vim.keymap.set('x', '<CR>', '<cmd>nohlsearch<CR>yi <BS>', { buffer = true })
         vim.keymap.set('x', '<C-y>', '<cmd>nohlsearch<CR>"+yi <BS>', { buffer = true })
-
-        vim.keymap.set('t', '<M-h>', '<cmd>silent! !tmux select-pane -L<CR>', { buffer = true })
-        vim.keymap.set('t', '<M-j>', '<cmd>silent! !tmux select-pane -D<CR>', { buffer = true })
-        vim.keymap.set('t', '<M-k>', '<cmd>silent! !tmux select-pane -U<CR>', { buffer = true })
-        vim.keymap.set('t', '<M-l>', '<cmd>silent! !tmux select-pane -R<CR>', { buffer = true })
 
         -- registers
         vim.keymap.set('t', '<M-p>', '<C-\\><C-n>"+pi', { buffer = true })

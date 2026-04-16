@@ -37,4 +37,20 @@ M.clear_c_hjkl = function(ft, opts)
   })
 end
 
+--- @param ft string | table
+--- @param mode? string | table
+M.bind_tmux_nav = function(ft, mode)
+  mode = mode or 't'
+
+  vim.api.nvim_create_autocmd('FileType', {
+    pattern = ft,
+    callback = function()
+      vim.keymap.set(mode, '<M-h>', '<cmd>silent! !tmux select-pane -L<CR>', { buffer = true })
+      vim.keymap.set(mode, '<M-j>', '<cmd>silent! !tmux select-pane -D<CR>', { buffer = true })
+      vim.keymap.set(mode, '<M-k>', '<cmd>silent! !tmux select-pane -U<CR>', { buffer = true })
+      vim.keymap.set(mode, '<M-l>', '<cmd>silent! !tmux select-pane -R<CR>', { buffer = true })
+    end,
+  })
+end
+
 return M
