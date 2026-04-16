@@ -3,6 +3,8 @@
 -- This option writes directly to the file, preventing potential issues.
 vim.opt.backupcopy = 'yes'
 
+vim.opt.shada = "'500" -- number for wich previous files will be remembered (marks, oldfiles)
+
 -- enable swapfile
 vim.opt.swapfile = true
 
