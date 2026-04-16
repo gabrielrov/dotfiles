@@ -59,11 +59,6 @@ return {
 
       float = {
         border = 'rounded',
-
-        override = function(config)
-          config.row = 1
-          return config
-        end,
       },
       win_options = {
         wrap = true,
