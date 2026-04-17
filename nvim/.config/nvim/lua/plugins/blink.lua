@@ -79,7 +79,7 @@ return {
             },
           },
           cmdline_position = function()
-            if vim.g.ui_cmdline_pos ~= nil then -- custom (i.e noice)
+            if vim.g.ui_cmdline_pos ~= nil then -- custom (e.g noice)
               local pos = vim.g.ui_cmdline_pos
               return { pos[1] - 1, pos[2] + 1 } -- matches position with removed cmdline icons
             end
@@ -112,7 +112,7 @@ return {
           show_on_insert_on_trigger_character = false,
           show_on_accept_on_trigger_character = false, -- triggers when cursor comes after trigger character after completion
 
-          show_on_blocked_trigger_characters = { ' ', '\n', '\t', '}' }, -- autopairs triggers closing chars (i.e '}')
+          show_on_blocked_trigger_characters = { ' ', '\n', '\t', '}' }, -- autopairs triggers closing chars (e.g. '}')
         },
       },
       signature = {
