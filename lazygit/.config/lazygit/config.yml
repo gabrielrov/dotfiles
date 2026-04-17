@@ -13,6 +13,7 @@ gui:
   commitHashLength: 5
   scrollHeight: 4
 
+  skipSwitchWorktreeOnCheckoutWarning: true
   authorColors:
     "gabrielrov": "blue"
 keybinding:
