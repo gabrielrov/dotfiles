@@ -143,6 +143,7 @@ return {
         keymap = {
           preset = 'none',
           ['<C-space>'] = { 'show', 'hide' },
+          ['<C-j>'] = { 'accept_and_enter', 'fallback' },
           ['<Tab>'] = { 'show_and_insert_or_accept_single', 'select_next' },
           ['<S-Tab>'] = { 'show_and_insert_or_accept_single', 'select_prev' },
           ['<C-n>'] = { 'select_next', 'fallback' },
