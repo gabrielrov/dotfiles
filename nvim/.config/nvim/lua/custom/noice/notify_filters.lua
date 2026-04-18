@@ -202,4 +202,19 @@ return {
     },
     opts = { skip = true },
   },
+  -- deleting current index on snipe
+  {
+    event = 'notify',
+    filter = {
+      find = 'Error executing lua:.*/snipe.*attempt to index a nil value',
+    },
+    opts = { skip = true },
+  },
+  {
+    event = 'notify',
+    filter = {
+      find = '%(snipe%) empty list of items passed to open method',
+    },
+    opts = { skip = true },
+  },
 }
