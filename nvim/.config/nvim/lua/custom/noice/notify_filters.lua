@@ -74,6 +74,13 @@ return {
     },
     opts = { skip = true },
   },
+  {
+    filter = {
+      event = 'msg_show',
+      find = "E21: Cannot make changes, 'modifiable' is off",
+    },
+    opts = { skip = true },
+  },
   -- using "*" or "#" on visual mode
   {
     filter = {
