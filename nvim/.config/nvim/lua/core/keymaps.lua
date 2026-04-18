@@ -66,6 +66,7 @@ vim.keymap.set({ 'i', 'c' }, '<C-f>', '<Right>')
 vim.keymap.set({ 'i', 'c' }, '<M-b>', '<S-Left>')
 vim.keymap.set({ 'i', 'c' }, '<M-f>', '<S-Right>')
 
+vim.keymap.set('i', '<M-=>', '<C-f>')
 vim.keymap.set('i', '<M-.>', '<C-a>')
 vim.keymap.set('i', '<M-y>', '<C-e>')
 
