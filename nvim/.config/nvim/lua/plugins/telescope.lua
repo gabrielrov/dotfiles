@@ -133,6 +133,7 @@ return {
 
     { '<leader>fy', '<cmd>Telescope registers<CR>', desc = 'Find registers' },
     { '<leader>fm', '<cmd>Telescope marks<CR>', desc = 'Find marks' },
+    { '<leader>fj', '<cmd>Telescope jumplist<CR>', desc = 'Find jumplist' },
 
     { 'gd', '<cmd>Telescope lsp_definitions<CR>', desc = 'Go to definition' },
     { 'gr', '<cmd>Telescope lsp_references<CR>', desc = 'Go to references' },
