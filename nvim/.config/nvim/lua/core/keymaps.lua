@@ -57,8 +57,9 @@ end, { desc = 'Go to declaration' })
 vim.keymap.set('n', require('utils.bindings').timeline_undo, 'g-', { desc = 'Timeline undo' })
 vim.keymap.set('n', require('utils.bindings').timeline_redo, 'g+', { desc = 'Timeline redo' })
 
--- emacs-like command movements
-vim.keymap.set({ 'i', 'c' }, '<C-a>', '<Home>')
+-- emacs-like movements
+vim.keymap.set('i', '<C-a>', '<cmd>norm! _<CR>')
+vim.keymap.set('c', '<C-a>', '<Home>')
 vim.keymap.set({ 'i', 'c' }, '<C-e>', '<End>')
 
 vim.keymap.set({ 'i', 'c' }, '<C-b>', '<Left>')
