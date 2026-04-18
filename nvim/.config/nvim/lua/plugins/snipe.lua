@@ -13,15 +13,18 @@ return {
     },
   },
   config = function()
+    local dictionary = '-qwertyuiop'
+
     require('utils.ft').clear_c_hjkl('snipe-menu', { bind_c_j = true })
     require('utils.ft').bind_close_win('snipe-menu', 'close')
 
     require('snipe').setup({
+      hints = {
+        dictionary = dictionary,
+      },
       ui = {
         position = 'center',
-      },
-      hints = {
-        dictionary = '-qwertyuiopasdfhlzxcvbnm,.;/QWERTYUIOPASFGHLZXCVBNM',
+        max_height = #dictionary,
       },
       navigate = {
         close_buffer = 'D',
