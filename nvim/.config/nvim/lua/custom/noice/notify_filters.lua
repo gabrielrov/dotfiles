@@ -113,6 +113,14 @@ return {
     },
     opts = { skip = true },
   },
+  -- deleting lines
+  {
+    filter = {
+      event = 'msg_show',
+      find = '^%d* fewer lines',
+    },
+    opts = { skip = true },
+  },
   -- indent
   {
     filter = {
