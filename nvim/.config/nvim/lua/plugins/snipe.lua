@@ -30,6 +30,9 @@ return {
         close_buffer = 'D',
         next_page = 'J',
         prev_page = 'K',
+        open_split = 'S',
+        open_vsplit = 'V',
+
         cancel_snipe = { toggle_binding },
       },
       sort = 'last', -- last / default
