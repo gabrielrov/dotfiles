@@ -50,7 +50,9 @@ return {
           ['l'] = 'open',
           ['h'] = 'close_node',
           ['<C-k>'] = 'close_node',
-          ['<C-l>'] = { 'toggle_preview', config = { use_float = true } },
+
+          ['P'] = { 'toggle_preview', config = { use_float = false } },
+          ['<C-l>'] = { 'toggle_preview', config = { use_float = false } },
 
           ['<C-s>'] = 'open_split',
           ['<C-v>'] = 'open_vsplit',
