@@ -10,7 +10,6 @@ return {
           'harpoon',
           'dap-repl',
           'dapui_watches',
-          'DressingInput',
         },
 
         -- avoid buggy / iconsistent behavior on those modes

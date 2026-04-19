@@ -15,7 +15,7 @@ return {
 
     blink.setup({
       enabled = function()
-        return not vim.tbl_contains({ 'DressingInput', 'oil', 'TelescopePrompt', 'harpoon' }, vim.bo.filetype)
+        return not vim.tbl_contains({ 'oil', 'TelescopePrompt', 'harpoon' }, vim.bo.filetype)
       end,
       sources = {
         default = { 'lsp', 'path', 'snippets', 'buffer', 'dap' },
