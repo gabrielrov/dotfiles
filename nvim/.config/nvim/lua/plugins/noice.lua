@@ -18,16 +18,19 @@ return {
         hover = { silent = true }, -- disable hover notification when not avaliable
         signature = { enabled = false },
       },
+      views = {
+        hover = {
+          zindex = 100,
+          border = {
+            padding = { 0, 2 },
+          },
+        },
+      },
       cmdline = {
-        view = 'cmdline', -- cmdline, cmdline_popup
-
-        -- basically ligatures for commands
+        view = 'cmdline',
         format = {
-          -- cmdline = false,
-          -- search_down = false,
-
-          -- change search icon
           search_down = { kind = 'search', pattern = '^/', icon = ' ', lang = 'regex' }, --  
+          input = { view = 'hover', icon = '' }, -- used by vim.ui.input
 
           lua = false,
           help = false,
