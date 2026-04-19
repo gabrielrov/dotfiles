@@ -32,7 +32,7 @@ vim.opt.smartcase = true
 vim.opt.signcolumn = 'yes'
 
 -- wait time for conflcting keys - Default is 1000
-vim.opt.timeoutlen = 3000
+vim.opt.timeout = false
 
 -- change position of new splits
 vim.opt.splitright = true
