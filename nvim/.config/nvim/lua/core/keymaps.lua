@@ -19,6 +19,7 @@ vim.keymap.set({ 'x', 's' }, '<C-f>', '<Nop>')
 vim.keymap.set({ 'x', 's' }, '<C-b>', '<Nop>')
 vim.keymap.set({ 'i', 'c' }, '<C-l>', '<Nop>')
 vim.keymap.set({ 'i', 'c' }, '<C-k>', '<Nop>')
+vim.keymap.set('c', '<C-o>', '<Nop>')
 
 vim.keymap.del('n', 'grr')
 vim.keymap.del('n', 'gra')
