@@ -11,5 +11,53 @@ return {
     vim.g.lazygit_floating_window_border_chars = { '', '', '', '', '', '', '', '' }
 
     require('utils.ft').bind_tmux_nav('lazygit')
+
+    local function gen_commit_type(type)
+      return function()
+        vim.ui.input({ prompt = type .. ' ' }, function(scope)
+          if not scope then
+            return
+          end
+
+          scope = vim.trim(scope)
+
+          local output
+          if scope == '' then
+            output = type .. ': '
+          else
+            local formatted_scope = scope:gsub('%s+', '/')
+            output = type .. '(' .. formatted_scope .. '): '
+          end
+
+          local keys = vim.api.nvim_replace_termcodes(output, true, false, true)
+          vim.api.nvim_feedkeys(keys, 't', false)
+        end)
+      end
+    end
+
+    local prefix = '<C-l>'
+    local function map_commit_type(key, type)
+      vim.keymap.set('t', prefix .. key, gen_commit_type(type), { buffer = true })
+      vim.keymap.set('t', prefix .. '<C-' .. key .. '>', gen_commit_type(type), { buffer = true })
+    end
+
+    vim.api.nvim_create_autocmd('FileType', {
+      pattern = 'lazygit',
+      callback = function()
+        vim.keymap.set('c', '<C-k>', '<C-c>', { buffer = true })
+        vim.keymap.set('t', prefix .. '<Esc>', '<Nop>', { buffer = true })
+        vim.keymap.set('t', prefix .. '<C-k>', '<Nop>', { buffer = true })
+
+        map_commit_type('n', 'feat')
+        map_commit_type('f', 'fix')
+        map_commit_type('c', 'chore')
+        map_commit_type('b', 'build')
+        map_commit_type('p', 'perf')
+        map_commit_type('r', 'refactor')
+        map_commit_type('d', 'docs')
+        map_commit_type('t', 'test')
+        map_commit_type('s', 'style')
+      end,
+    })
   end,
 }
