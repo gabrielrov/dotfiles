@@ -89,16 +89,6 @@ return {
         vim.keymap.set('x', '<CR>', '<cmd>nohlsearch<CR>yi <BS>', { buffer = true })
         vim.keymap.set('x', '<C-y>', '<cmd>nohlsearch<CR>"+yi <BS>', { buffer = true })
 
-        vim.keymap.set('t', '<C-r>', function()
-          local reg = vim.fn.getcharstr()
-          if not reg:match('^[a-zA-Z0-9"#+*%%/:.-]$') then
-            return
-          end
-
-          local keys = vim.api.nvim_replace_termcodes('<C-\\><C-n>"' .. reg .. 'pi', true, false, true)
-          vim.api.nvim_feedkeys(keys, 'n', false)
-        end, { buffer = true })
-
         -------
 
         vim.keymap.set('t', '<Esc>', '<cmd>Sidekick cli toggle<CR>', { buffer = true, desc = 'Toggle cli' })
