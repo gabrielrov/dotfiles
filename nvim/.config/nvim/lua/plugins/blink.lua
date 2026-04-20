@@ -68,6 +68,12 @@ return {
               },
             },
           },
+          commit_scope = {
+            module = 'custom.blink.sources.commit_scope',
+            opts = {
+              git_log_count = 200,
+            },
+          },
         },
       },
 
@@ -94,9 +100,11 @@ return {
             },
           },
           cmdline_position = function()
-            if vim.g.ui_cmdline_pos ~= nil then -- custom (e.g noice)
+            if vim.g.ui_cmdline_pos ~= nil then -- detects noice
               local pos = vim.g.ui_cmdline_pos
-              return { pos[1] - 1, pos[2] + 1 } -- matches position with removed cmdline icons
+
+              -- matches position with removed cmdline icons
+              return vim.fn.getcmdtype() == '@' and { pos[1] - 1, pos[2] + 2 } or { pos[1] - 1, pos[2] + 1 }
             end
             local height = (vim.o.cmdheight == 0) and 1 or vim.o.cmdheight
             return { vim.o.lines - height, 0 }
@@ -141,6 +149,7 @@ return {
       snippets = { preset = 'luasnip' },
       keymap = { preset = 'none' },
       cmdline = {
+        sources = { 'buffer', 'cmdline', 'commit_scope' },
         completion = {
           ghost_text = { enabled = false },
           list = {
@@ -151,7 +160,7 @@ return {
           menu = {
             auto_show = function()
               local type = vim.fn.getcmdtype()
-              return type == '/' or type == '?'
+              return type == '/' or type == '?' or type == '@'
             end,
           },
         },
