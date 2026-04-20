@@ -23,15 +23,17 @@ vim.api.nvim_create_autocmd({ 'VimResized' }, {
 })
 
 -- preserve last position when opening buffers
-vim.api.nvim_create_autocmd('BufReadPost', {
+vim.api.nvim_create_autocmd('FileType', {
   callback = function(event)
     local exclude = {
-      'gitcommit',
+      gitcommit = true,
     }
+
     local buf = event.buf
+    local ft = vim.bo[buf].filetype
 
     -- ignore excluded filetypes or last buffer
-    if vim.tbl_contains(exclude, vim.bo[buf].filetype) or vim.b[buf].last_buf_edited then
+    if exclude[ft] or vim.b[buf].last_buf_edited then
       return
     end
 
