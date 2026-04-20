@@ -25,14 +25,7 @@ return {
           end
 
           scope = vim.trim(scope)
-
-          local output
-          if scope == '' then
-            output = type .. ': '
-          else
-            local formatted_scope = scope:gsub('%s+', '/')
-            output = type .. '(' .. formatted_scope .. '): '
-          end
+          local output = scope == '' and type .. ': ' or type .. '(' .. scope:gsub('%s+', '/') .. '): '
 
           local keys = vim.api.nvim_replace_termcodes(output, true, false, true)
           vim.api.nvim_feedkeys(keys, 't', false)
