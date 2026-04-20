@@ -12,8 +12,13 @@ return {
 
     require('utils.ft').bind_tmux_nav('lazygit')
 
-    local function gen_commit_type(type)
+    local function gen_commit_type(type, should_prompt)
       return function()
+        if not should_prompt then
+          local keys = vim.api.nvim_replace_termcodes(type .. ': ', true, false, true)
+          return vim.api.nvim_feedkeys(keys, 't', false)
+        end
+
         vim.ui.input({ prompt = type .. ' ' }, function(scope)
           if not scope then
             return
@@ -37,8 +42,9 @@ return {
 
     local prefix = '<C-l>'
     local function map_commit_type(key, type)
-      vim.keymap.set('t', prefix .. key, gen_commit_type(type), { buffer = true })
-      vim.keymap.set('t', prefix .. '<C-' .. key .. '>', gen_commit_type(type), { buffer = true })
+      vim.keymap.set('t', prefix .. key, gen_commit_type(type, true), { buffer = true })
+      vim.keymap.set('t', prefix .. '<C-' .. key .. '>', gen_commit_type(type, true), { buffer = true })
+      vim.keymap.set('t', prefix .. key:upper(), gen_commit_type(type, false), { buffer = true })
     end
 
     vim.api.nvim_create_autocmd('FileType', {
