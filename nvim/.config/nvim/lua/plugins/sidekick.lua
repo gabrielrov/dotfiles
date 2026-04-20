@@ -89,10 +89,6 @@ return {
         vim.keymap.set('x', '<CR>', '<cmd>nohlsearch<CR>yi <BS>', { buffer = true })
         vim.keymap.set('x', '<C-y>', '<cmd>nohlsearch<CR>"+yi <BS>', { buffer = true })
 
-        -- registers
-        vim.keymap.set('t', '<M-p>', '<C-\\><C-n>"+pi', { buffer = true })
-        vim.keymap.set('t', '<M-P>', '<C-\\><C-n>"+pi', { buffer = true })
-
         vim.keymap.set('t', '<C-r>', function()
           local reg = vim.fn.getcharstr()
           if not reg:match('^[a-zA-Z0-9"#+*%%/:.-]$') then

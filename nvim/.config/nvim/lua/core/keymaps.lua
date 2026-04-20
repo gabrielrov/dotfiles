@@ -144,6 +144,9 @@ vim.keymap.set({ 'n', 'x' }, 'g<M-p>', '"+gp', { desc = 'Paste from OS and go to
 vim.keymap.set({ 'n', 'x' }, '<M-P>', '"+P', { desc = 'Paste from OS before cursor' })
 vim.keymap.set({ 'n', 'x' }, 'g<M-P>', '"+gP', { desc = 'Paste from OS before cursor and go to end' })
 
+vim.keymap.set('t', '<M-p>', '<C-\\><C-n>"+pi')
+vim.keymap.set('t', '<M-P>', '<C-\\><C-n>"+pi')
+
 vim.keymap.set({ 'i', 'c' }, '<M-p>', '<C-r><C-o>+', { desc = 'Paste from OS' })
 vim.keymap.set({ 'i', 'c' }, '<M-P>', '<C-r><C-o>+', { desc = 'Paste from OS' })
 
