@@ -2,7 +2,7 @@ return {
   sources = {
     text = {},
     markdown = {},
-    gitcommit = {},
+    gitcommit = { 'conventional_commits' },
   },
   config = {
     javascriptreact = require('custom.blink.completions.jsx-tsx'),

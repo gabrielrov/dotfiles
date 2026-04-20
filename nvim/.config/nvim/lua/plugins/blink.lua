@@ -6,6 +6,7 @@ return {
   dependencies = {
     'L3MON4D3/LuaSnip', -- engine responsable for snippets
     'mayromr/blink-cmp-dap',
+    'disrupted/blink-cmp-conventional-commits',
   },
   event = { 'InsertEnter', 'CmdlineEnter' },
   config = function()
@@ -18,7 +19,7 @@ return {
         return not vim.tbl_contains({ 'oil', 'TelescopePrompt', 'harpoon' }, vim.bo.filetype)
       end,
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer', 'dap' },
+        default = { 'lsp', 'path', 'snippets', 'buffer', 'dap', 'conventional_commits' },
         per_filetype = vim.tbl_extend('force', {
           ['dap-repl'] = { 'dap' },
           dapui_watches = { 'dap' },
@@ -52,6 +53,20 @@ return {
           dap = {
             name = 'dap',
             module = 'blink-cmp-dap',
+          },
+          conventional_commits = {
+            name = 'Conventional Commits',
+            module = 'blink-cmp-conventional-commits',
+            enabled = function()
+              return vim.bo.filetype == 'gitcommit'
+            end,
+            opts = {
+              completion = {
+                items = {
+                  { type = 'build', doc = 'Changes to build system' },
+                },
+              },
+            },
           },
         },
       },
