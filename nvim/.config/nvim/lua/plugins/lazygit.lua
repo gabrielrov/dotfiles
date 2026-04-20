@@ -56,6 +56,7 @@ return {
         map_commit_type('d', 'docs')
         map_commit_type('t', 'test')
         map_commit_type('s', 'style')
+        map_commit_type('i', 'ci')
       end,
     })
   end,
