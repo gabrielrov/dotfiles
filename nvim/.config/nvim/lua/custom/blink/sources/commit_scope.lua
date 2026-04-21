@@ -37,7 +37,7 @@ local function discover_scopes(count, callback)
       local seen = {}
 
       for line in result.stdout:gmatch('[^\n]+') do
-        local full_scope = line:match('^%x+ %w+%((.-)%)')
+        local full_scope = line:match('^%x+ %w+%((.-)%)!?:')
         full_scope = full_scope and vim.trim(full_scope)
 
         if full_scope and full_scope ~= '' and not seen[full_scope] then
