@@ -183,6 +183,7 @@ vim.keymap.set({ 'n', 'x' }, '<C-w>O', '<cmd>tabo<CR>', { desc = 'Tab only' })
 vim.keymap.set({ 'n', 'x' }, '<C-w>C', '<cmd>tabclose<CR>', { desc = 'Tab close' })
 vim.keymap.set('n', "g'", '<cmd>tabn<CR>')
 vim.keymap.set('n', 'g"', '<cmd>tabp<CR>')
+vim.keymap.set('n', 'g<Space>', 'g<Tab>')
 
 vim.keymap.set({ 'n', 'x' }, 'g1', '<cmd>tabn 1<CR>', { desc = 'Go to tab n1' })
 vim.keymap.set({ 'n', 'x' }, 'g2', '<cmd>tabn 2<CR>', { desc = 'Go to tab n2' })
