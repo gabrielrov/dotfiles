@@ -47,7 +47,11 @@ local function discover_scopes(count, callback)
           for sub_scope in full_scope:gmatch('[^/]+') do
             if typed[sub_scope] then
               include_full_scope = false
-              break
+            end
+
+            if not seen[sub_scope] and not typed[sub_scope] then
+              seen[sub_scope] = true
+              table.insert(items, sub_scope)
             end
           end
 
