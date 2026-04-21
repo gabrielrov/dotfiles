@@ -32,7 +32,7 @@ vim.keymap.del('n', 'gri')
 vim.keymap.set('n', '<Esc>', require('utils.clear_hl_and_popup'), { desc = 'Clear highlights and popups' })
 vim.keymap.set('n', '<C-Space>', '<C-^>', { desc = 'Switch to the previous buffer' })
 
-vim.keymap.set('t', '<C-q>', '<C-\\><C-n>', { remap = true, desc = 'Exit terminal mode' })
+vim.keymap.set('t', '<M-q>', '<C-\\><C-n>', { remap = true, desc = 'Exit terminal mode' })
 
 vim.keymap.set('s', '<C-Space>', '<C-g>c', { desc = 'Delete selection' })
 
