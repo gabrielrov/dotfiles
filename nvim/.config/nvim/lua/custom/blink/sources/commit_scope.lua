@@ -39,30 +39,27 @@ end
 
 function commit_scope.new(opts)
   opts = opts or {}
-  opts.scope_items = {}
-
-  discover_scopes(opts.git_log_count or 200, function(scopes)
-    local items = {}
-
-    for _, scope in ipairs(scopes) do
-      table.insert(items, make_scope_item(scope))
-    end
-    opts.scope_items = items
-  end)
-
   return setmetatable(opts, { __index = commit_scope })
 end
 
 function commit_scope:get_completions(_, callback)
-  if #self.scope_items < 1 then
-    callback({ items = {} })
-  else
-    callback({
-      is_incomplete_forward = false,
-      is_incomplete_backward = false,
-      items = vim.deepcopy(self.scope_items),
-    })
-  end
+  discover_scopes(self.git_log_count or 200, function(scopes)
+    local scope_items = {}
+
+    for _, scope in ipairs(scopes) do
+      table.insert(scope_items, make_scope_item(scope))
+    end
+
+    if #scope_items < 1 then
+      callback({ items = {} })
+    else
+      callback({
+        is_incomplete_forward = false,
+        is_incomplete_backward = false,
+        items = vim.deepcopy(scope_items),
+      })
+    end
+  end)
 end
 
 function commit_scope.enabled()
