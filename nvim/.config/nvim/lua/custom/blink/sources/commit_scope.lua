@@ -20,19 +20,43 @@ local function discover_scopes(count, callback)
         return
       end
 
-      local seen = {}
-      local scopes = {}
-      for line in result.stdout:gmatch('[^\n]+') do
-        local scope = line:match('^%x+ %w+%((.-)%)')
-        if scope then
-          scope = scope:match('^%s*(.-)%s*$')
-          if scope ~= '' and not seen[scope] then
-            seen[scope] = true
-            table.insert(scopes, scope)
+      local typed = {}
+
+      local cmd_words = vim.fn.getcmdline():gmatch('%S+')
+      for full_word in cmd_words do
+        typed[full_word] = true
+
+        if full_word:find('/') then
+          for sub_word in full_word:gmatch('[^/]+') do
+            typed[sub_word] = true
           end
         end
       end
-      callback(scopes)
+
+      local items = {}
+      local seen = {}
+
+      for line in result.stdout:gmatch('[^\n]+') do
+        local full_scope = line:match('^%x+ %w+%((.-)%)')
+        full_scope = full_scope and vim.trim(full_scope)
+
+        if full_scope and full_scope ~= '' and not seen[full_scope] then
+          seen[full_scope] = true
+
+          local include_full_scope = true
+          for sub_scope in full_scope:gmatch('[^/]+') do
+            if typed[sub_scope] then
+              include_full_scope = false
+              break
+            end
+          end
+
+          if include_full_scope then
+            table.insert(items, full_scope)
+          end
+        end
+      end
+      callback(items)
     end)
   )
 end
