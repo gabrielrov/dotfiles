@@ -4,7 +4,7 @@ return function()
 
   local co = coroutine.running()
   return coroutine.create(function()
-    vim.ui.input({ prompt = 'Launch on port', default = default_url }, function(port)
+    vim.ui.input({ prompt = 'Launch on port: ', default = default_url }, function(port)
       if port == nil or port == '' then
         return
       end
