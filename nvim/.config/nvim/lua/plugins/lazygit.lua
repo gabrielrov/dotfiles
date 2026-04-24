@@ -43,7 +43,6 @@ return {
     vim.api.nvim_create_autocmd('FileType', {
       pattern = 'lazygit',
       callback = function()
-        vim.keymap.set('c', '<C-k>', '<C-c>', { buffer = true })
         vim.keymap.set('t', prefix .. '<Esc>', '<Nop>', { buffer = true })
         vim.keymap.set('t', prefix .. '<C-k>', '<Nop>', { buffer = true })
 

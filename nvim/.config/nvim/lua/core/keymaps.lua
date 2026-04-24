@@ -18,7 +18,7 @@ vim.keymap.set({ 'x', 's' }, '<C-p>', '<Nop>')
 vim.keymap.set({ 'x', 's' }, '<C-f>', '<Nop>')
 vim.keymap.set({ 'x', 's' }, '<C-b>', '<Nop>')
 vim.keymap.set({ 'i', 'c' }, '<C-l>', '<Nop>')
-vim.keymap.set({ 'i', 'c' }, '<C-k>', '<Nop>')
+vim.keymap.set('i', '<C-k>', '<Nop>')
 vim.keymap.set({ 'i', 'c' }, '<M-a>', '<Nop>')
 vim.keymap.set({ 'i', 'c' }, '<M-e>', '<Nop>')
 vim.keymap.set('c', '<C-o>', '<Nop>')
@@ -75,6 +75,8 @@ vim.keymap.set('i', '<M-.>', '<C-a>')
 vim.keymap.set('i', '<M-y>', '<C-e>')
 
 vim.keymap.set({ 'i', 'c' }, '<M-u>', '<C-u>') -- as an alternative when <C-u> is binded to something else
+
+vim.keymap.set('c', '<C-k>', '<C-c>')
 
 -- facilitate indent
 vim.keymap.set('x', '>', '>gv')
