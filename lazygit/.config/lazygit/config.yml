@@ -18,7 +18,7 @@ gui:
     "gabrielrov": "blue"
 keybinding:
   universal:
-    quit: <Esc>
+    quit: <esc>
     return: <c-k>
 
     confirm: <c-j>
