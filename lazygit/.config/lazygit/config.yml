@@ -18,23 +18,22 @@ gui:
     "gabrielrov": "blue"
 keybinding:
   universal:
-    quit: <esc>
+    quit: [<esc>, <c-c>]
     return: <c-k>
 
-    confirm: <c-j>
-    goInto: <c-j>
-    submitEditorText: <c-j>
-    confirmMenu: <c-j>
-    confirmSuggestion: <c-j>
+    confirm: [<c-j>, <enter>]
+    goInto: [<c-j>, <enter>]
+    submitEditorText: [<c-j>, <enter>]
+    confirmMenu: [<c-j>, <enter>]
+    confirmSuggestion: [<c-j>, <enter>]
     confirmInEditor: <c-j>
 
-    startSearch: <c-n>
+    startSearch: [<c-n>, /]
 
-    confirmInEditor-alt: <disabled>
-    scrollUpMain-alt1: <disabled>
-    scrollDownMain-alt1: <disabled>
+    scrollUpMain: [<ctrl+u>, <pgup>]
+    scrollDownMain: [<ctrl+d>, <pgdown>]
   status:
-    recentRepos: <c-j>
+    recentRepos: [<c-j>, <enter>]
   commits:
     moveDownCommit: J
     moveUpCommit: K
