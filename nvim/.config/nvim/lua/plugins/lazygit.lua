@@ -46,8 +46,8 @@ return {
         vim.keymap.set('t', prefix .. '<Esc>', '<Nop>', { buffer = true })
         vim.keymap.set('t', prefix .. '<C-k>', '<Nop>', { buffer = true })
 
-        map_commit_type('n', 'feat')
-        map_commit_type('f', 'fix')
+        map_commit_type('f', 'feat')
+        map_commit_type('x', 'fix')
         map_commit_type('c', 'chore')
         map_commit_type('b', 'build')
         map_commit_type('p', 'perf')
