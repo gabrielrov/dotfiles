@@ -83,6 +83,7 @@ dap.configurations['typescript'] = {
       return get_executable({ vim.fn.getcwd() .. '/node_modules/.bin/tsx', 'tsx' })
     end,
     runtimeArgs = { '--inspect', '--watch' },
+    cwd = '${workspaceFolder}',
     skipFiles = {
       '<node_internals>/**',
       '${workspaceFolder}/node_modules/**',
