@@ -46,6 +46,16 @@ boilerplate() {
   cp -r ~/boilerplate/"$folder"/{*,.*} . 2>/dev/null
 }
 
+_boilerplate_completion() {
+  local base="$HOME/boilerplate"
+
+  COMPREPLY=(
+    $(compgen -W "$(find "$base" -mindepth 1 -maxdepth 1 -type d ! -name '.*' -printf '%f\n')" -- "${COMP_WORDS[COMP_CWORD]}")
+  )
+}
+
+complete -F _boilerplate_completion boilerplate
+
 alias ls='ls --color=auto'
 alias l='ls --color=auto'
 alias la='ls -A --color=auto'
