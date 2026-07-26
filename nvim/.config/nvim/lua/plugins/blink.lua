@@ -255,7 +255,7 @@ return {
     vim.api.nvim_create_autocmd('FileType', {
       pattern = dap_fts,
       callback = function()
-        vim.keymap.set('i', '<C-j>', '<CR>')
+        vim.keymap.set('i', '<C-j>', '<CR>', { buffer = true })
 
         vim.keymap.set('i', '<C-Space>', function()
           return blink.show() or blink.hide()
