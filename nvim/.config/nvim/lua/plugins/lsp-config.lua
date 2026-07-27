@@ -67,6 +67,11 @@ return {
       ['ts_ls'] = function()
         lspconfig['ts_ls'].setup({
           capabilities = capabilities,
+          init_options = {
+            preferences = {
+              importModuleSpecifierPreference = 'non-relative', -- preferers import aliases
+            },
+          },
           settings = {
             diagnostics = {
               ignoredCodes = {
