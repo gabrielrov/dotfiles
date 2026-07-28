@@ -9,6 +9,7 @@ return {
     {
       toggle_binding,
       function()
+        vim.cmd('nohlsearch')
         require('oil').open_float()
       end,
       desc = 'Open oil (workspace)',
@@ -81,11 +82,29 @@ return {
 
       use_default_keymaps = false,
       keymaps = {
-        ['<C-space>'] = 'actions.open_cwd',
-        ['<C-h>'] = 'actions.open_cwd',
+        ['<C-Space>'] = function()
+          vim.cmd('nohlsearch')
+          oil.open(vim.fn.getcwd())
+        end,
+        ['<C-h>'] = function()
+          vim.cmd('nohlsearch')
+          oil.open(vim.fn.getcwd())
+        end,
 
-        ['<C-j>'] = 'actions.select',
-        ['<C-k>'] = 'actions.parent',
+        ['<C-j>'] = function()
+          vim.cmd('nohlsearch')
+          oil.select()
+        end,
+
+        ['<CR>'] = function()
+          vim.cmd('nohlsearch')
+          oil.select()
+        end,
+
+        ['<C-k>'] = function()
+          vim.cmd('nohlsearch')
+          oil.open() -- parent
+        end,
 
         ['<C-l>'] = 'actions.preview',
 
@@ -100,8 +119,6 @@ return {
 
         [toggle_binding] = 'actions.close',
         ['<C-c>'] = 'actions.close',
-
-        ['<CR>'] = 'actions.select',
       },
     })
 
