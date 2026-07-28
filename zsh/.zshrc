@@ -74,6 +74,16 @@ alias nodei='node --inspect'
 alias nodew='node --watch'
 alias nodeiw='node --inspect --watch'
 
+# ~~~~~~~~~~ hooks ~~~~~~~~~~
+accept-line() {
+  if [[ -z $BUFFER ]]; then
+    BUFFER="nv"
+  fi
+  zle .accept-line
+}
+
+zle -N accept-line
+
 # ~~~~~~~~~~ plugin manager ~~~~~~~~~~
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
