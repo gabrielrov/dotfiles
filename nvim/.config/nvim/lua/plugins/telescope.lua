@@ -160,6 +160,8 @@ return {
             ['<C-s>'] = actions.select_horizontal,
 
             ['<Esc>'] = actions.close,
+            ['<C-k>'] = actions.close,
+
             ['<C-j>'] = actions.select_default,
 
             ['<C-u>'] = actions.preview_scrolling_up,

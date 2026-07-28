@@ -122,5 +122,12 @@ return {
         end, { buffer = true })
       end,
     })
+
+    vim.api.nvim_create_autocmd('FileType', {
+      pattern = 'neo-tree-popup',
+      callback = function()
+        vim.keymap.set('i', '<C-k>', '<Esc>', { buffer = true, remap = true })
+      end,
+    })
   end,
 }
