@@ -31,6 +31,14 @@ autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey '\ee' edit-command-line # alt+e or esc+e
 
+paste-clipboard() {
+  LBUFFER+="$(xclip -selection clipboard -o)"
+}
+zle -N paste-clipboard
+
+bindkey -r '\en'
+bindkey '\ep' paste-clipboard # alt+p
+
 # -- completion --
 bindkey -M menuselect '^[[Z' reverse-menu-complete # S-Tab binding for consistency
 bindkey -M menuselect '\r' .accept-line # send command without confirming selection

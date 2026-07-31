@@ -8,6 +8,8 @@ brew install fzf
 
 - [zoxide](https://github.com/ajeetdsouza/zoxide?tab=readme-ov-file#installation)
 
+- xclip (OS clipboard access) [sudo]
+
 ```sh
 brew install zoxide
 ```
