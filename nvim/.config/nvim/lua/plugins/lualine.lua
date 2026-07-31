@@ -27,8 +27,6 @@ return {
             indicators = { '1', '2', '3', '4' },
             active_indicators = { '1', '2', '3', '4' },
             color_active = { fg = '#10b981' },
-
-            padding = { left = 1, right = 1 },
           },
         },
         lualine_c = {
@@ -104,6 +102,7 @@ return {
         lualine_y = {
           {
             padding = { left = 1, right = 0 },
+            color = 'lualine_b_normal',
             function()
               return vim.t.maximized and ' ' or ''
             end,
@@ -113,10 +112,12 @@ return {
               local line_count = vim.api.nvim_buf_line_count(0)
               return line_count .. 'L'
             end,
+            color = 'lualine_b_normal',
           },
           {
-            padding = { left = 0, right = 1 },
             'progress',
+            padding = { left = 0, right = 1 },
+            color = 'lualine_b_normal',
           },
         },
         lualine_z = {},
