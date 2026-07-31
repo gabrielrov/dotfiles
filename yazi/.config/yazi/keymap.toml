@@ -16,7 +16,7 @@ prepend_keymap = [
     "escape --visual",
   ] },
 
-  { on = "<C-Space>", run = 'shell -- ya emit cd "${NVIM_CWD:-$(git rev-parse --show-toplevel 2>/dev/null)}"' },
+  { on = "<C-Space>", run = 'shell -- ya emit cd "${NVIM_CWD:-${YAZI_START_CWD:-$(git rev-parse --show-toplevel 2>/dev/null)}}"' },
 
   { on = "<C-n>", run = "find --smart" },
   { on = "<A-n>", run = "find --previous --smart" },

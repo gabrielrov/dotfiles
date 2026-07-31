@@ -79,7 +79,7 @@ nvim() {
 
 yazi() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-  command yazi "$@" --cwd-file="$tmp"
+  YAZI_START_CWD="$PWD" command yazi "$@" --cwd-file="$tmp"
   IFS= read -r -d '' cwd < "$tmp"
   [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
   command rm -f -- "$tmp"
