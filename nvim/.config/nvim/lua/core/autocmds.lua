@@ -110,3 +110,12 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     end
   end,
 })
+
+vim.api.nvim_create_autocmd('VimLeavePre', {
+  callback = function()
+    local file = vim.env.NVIM_CWD_FILE
+    if file then
+      vim.fn.writefile({ vim.fn.getcwd() }, file)
+    end
+  end,
+})

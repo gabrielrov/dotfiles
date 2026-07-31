@@ -48,7 +48,6 @@ boilerplate() {
 
 _boilerplate_completion() {
   local base="$HOME/boilerplate"
-
   COMPREPLY=(
     $(compgen -W "$(find "$base" -mindepth 1 -maxdepth 1 -type d ! -name '.*' -printf '%f\n')" -- "${COMP_WORDS[COMP_CWORD]}")
   )
@@ -65,6 +64,17 @@ t() {
   if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach &> /dev/null || (command -v sesh &> /dev/null && sesh connect "$(sesh list | fzf)")
   fi
+}
+
+nvim() {
+  local tmp="$(mktemp)"
+  NVIM_CWD_FILE="$tmp" command nvim "$@"
+  if [[ -f "$tmp" ]]; then
+    local dir
+    dir=$(<"$tmp")
+    [[ -d "$dir" ]] && builtin cd -- "$dir"
+  fi
+  command rm -f -- "$tmp"
 }
 
 yazi() {
