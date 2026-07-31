@@ -12,9 +12,7 @@ return {
     require('lualine').setup({
       options = {
         theme = 'auto',
-        disabled_filetypes = {
-          statusline = {},
-        },
+        ignore_focus = { 'lazygit', 'yazi', 'sidekick_terminal', 'TelescopePrompt', 'snipe-menu', 'themery', 'harpoon' },
 
         --                     
         section_separators = { left = '', right = '' },
