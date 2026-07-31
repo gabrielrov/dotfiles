@@ -64,21 +64,6 @@ vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
 })
 
 local diagnostics_enabled = true
-
--- diagnostic toggle command
-vim.api.nvim_create_user_command('ToggleDiagnostics', function()
-  diagnostics_enabled = not diagnostics_enabled
-
-  vim.diagnostic.enable(diagnostics_enabled)
-
-  if diagnostics_enabled then
-    vim.notify('DiagnosticHighlights enabled')
-  else
-    vim.notify('DiagnosticHighlights disabled')
-  end
-end, {})
-
--- disable diagnostics on insert mode
 vim.api.nvim_create_autocmd('InsertEnter', {
   callback = function()
     if diagnostics_enabled then
@@ -95,13 +80,6 @@ vim.api.nvim_create_autocmd('InsertLeave', {
 })
 
 local format_on_save = true
-
--- format on save toggle command
-vim.api.nvim_create_user_command('ToggleFormat', function()
-  format_on_save = not format_on_save
-  vim.notify('FormatOnSave ' .. (format_on_save and 'enabled' or 'disabled'))
-end, {})
-
 vim.api.nvim_create_autocmd('BufWritePre', {
   callback = function()
     if format_on_save then
@@ -119,3 +97,35 @@ vim.api.nvim_create_autocmd('VimLeavePre', {
     end
   end,
 })
+
+vim.api.nvim_create_user_command('ToggleFormat', function()
+  format_on_save = not format_on_save
+  vim.notify('FormatOnSave ' .. (format_on_save and 'enabled' or 'disabled'))
+end, {})
+
+vim.api.nvim_create_user_command('ToggleDiagnostics', function()
+  diagnostics_enabled = not diagnostics_enabled
+
+  vim.diagnostic.enable(diagnostics_enabled)
+
+  if diagnostics_enabled then
+    vim.notify('DiagnosticHighlights enabled')
+  else
+    vim.notify('DiagnosticHighlights disabled')
+  end
+end, {})
+
+vim.api.nvim_create_user_command('ClearSwaps', function()
+  local swapdir = vim.fn.expand(vim.opt.directory:get()[1])
+
+  local deleted = 0
+  for name, type in vim.fs.dir(swapdir) do
+    if type == 'file' then
+      if vim.fn.delete(vim.fs.joinpath(swapdir, name)) == 0 then
+        deleted = deleted + 1
+      end
+    end
+  end
+
+  vim.notify(('Deleted %d swap file(s)'):format(deleted))
+end, {})
