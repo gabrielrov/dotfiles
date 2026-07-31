@@ -35,6 +35,8 @@ return {
     },
   },
   config = function()
+    require('utils.ft').bind_tmux_nav('sidekick_terminal')
+
     require('sidekick').setup({
       nes = { -- tab autocomplete feature
         enabled = false,
@@ -49,11 +51,8 @@ return {
         win = {
           layout = 'float',
           float = {
-            width = 1,
-            height = 0.99,
-          },
-          split = {
-            width = 0.45,
+            width = 0.9,
+            height = 0.9,
           },
           keys = {
             stopinsert = false,
@@ -72,8 +71,6 @@ return {
         },
       },
     })
-
-    require('utils.ft').bind_tmux_nav('sidekick_terminal')
 
     vim.api.nvim_create_autocmd('FileType', {
       pattern = 'sidekick_terminal',
