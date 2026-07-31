@@ -24,6 +24,7 @@ return {
         'prismals',
 
         'jsonls',
+        'taplo', -- toml
 
         -- formatters
         'prettier',
