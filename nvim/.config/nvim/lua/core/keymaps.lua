@@ -233,6 +233,18 @@ vim.keymap.set('n', 'gf', 'gF') -- goes to line if any
 vim.keymap.set('n', 'gF', 'gf')
 
 -- quickfix popup keymaps
+vim.keymap.set('n', '<leader>q', function()
+  for _, win in ipairs(vim.api.nvim_list_wins()) do
+    local info = vim.fn.getwininfo(win)[1]
+    if info and info.quickfix == 1 then
+      vim.cmd('cclose')
+      return
+    end
+  end
+
+  vim.cmd('cwindow')
+end)
+
 require('utils.ft').clear_c_hjkl('qf', { bind_c_j = true })
 require('utils.ft').bind_close_win('qf', 'cclose')
 

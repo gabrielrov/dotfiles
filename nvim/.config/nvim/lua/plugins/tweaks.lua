@@ -1,4 +1,3 @@
--- plugins that add small tweaks
 return {
   {
     -- whenever y is used, the cursor doesn't move to start
@@ -10,15 +9,6 @@ return {
         auto_normal = true,
         auto_visual = true,
       })
-    end,
-  },
-  {
-    'drmingdrmer/vim-toggle-quickfix',
-    keys = {
-      { '<leader>q', desc = 'Toggle quickfix' },
-    },
-    config = function()
-      vim.keymap.set('n', '<leader>q', '<Plug>window:quickfix:toggle', { desc = 'Toggle quickfix' })
     end,
   },
   {
