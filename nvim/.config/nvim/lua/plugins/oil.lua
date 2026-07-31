@@ -1,4 +1,4 @@
-local toggle_binding = '<leader>w'
+local toggle_binding = '<leader>|'
 
 return {
   'stevearc/oil.nvim',
@@ -16,17 +16,6 @@ return {
     },
   },
   cmd = 'Oil',
-  init = function()
-    -- loads oil if nvim was opened on a directory
-    vim.api.nvim_create_autocmd('VimEnter', {
-      callback = function(data)
-        local stat = vim.uv.fs_stat(data.file)
-        if stat and stat.type == 'directory' then
-          require('lazy').load({ plugins = { 'oil.nvim' } })
-        end
-      end,
-    })
-  end,
   config = function()
     local oil = require('oil')
 
@@ -50,7 +39,7 @@ return {
     }
 
     oil.setup({
-      default_file_explorer = true,
+      default_file_explorer = false,
       watch_for_changes = true, -- watch the filesystem for changes and reload oil
 
       lsp_file_methods = {

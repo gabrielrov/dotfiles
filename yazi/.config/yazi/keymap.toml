@@ -1,0 +1,80 @@
+[mgr]
+prepend_keymap = [
+  { on = "<Esc>", run = "quit" },
+
+  { on = "<C-k>", run = "leave" },
+  { on = "l", run = "plugin smart-enter" },
+  { on = "<C-j>", run = "plugin smart-enter" },
+
+  { on = "<C-l>", run = [
+    "escape",
+    "unyank",
+  ] },
+
+  { on = "<Space>", run = [
+    "toggle",
+    "escape --visual",
+  ] },
+
+  { on = "<C-Space>", run = 'shell -- ya emit cd "${NVIM_CWD:-$(git rev-parse --show-toplevel 2>/dev/null)}"' },
+
+  { on = "<C-n>", run = "find --smart" },
+  { on = "<A-n>", run = "find --previous --smart" },
+
+  { on = "<C-w>", run = "spot" },
+
+  { on = "<C-o>", run = "back" },
+  { on = "<C-i>", run = "forward" },
+  { on = "<Tab>", run = "forward" },
+
+  { on = "m", run = "plugin bookmarks save", desc = "Save current position as a bookmark" },
+  { on = "'", run = "plugin bookmarks jump", desc = "Jump to a bookmark" },
+
+  { on = [
+    "b",
+    "d",
+  ], run = "plugin bookmarks delete", desc = "Delete a bookmark" },
+
+  { on = [
+    "b",
+    "D",
+  ], run = "plugin bookmarks delete_all", desc = "Delete all bookmarks" },
+]
+
+[tasks]
+prepend_keymap = [
+  { on = "<C-k>", run = "close" },
+  { on = "<C-j>", run = "inspect" },
+]
+
+[spot]
+prepend_keymap = [
+  { on = "<C-k>", run = "close" },
+  { on = "<C-w>", run = "close" },
+  { on = "<Tab>", run = "noop" },
+]
+
+[pick]
+prepend_keymap = [
+  { on = "<C-k>", run = "close" },
+  { on = "<C-j>", run = "close --submit" },
+]
+
+[input]
+prepend_keymap = [
+  { on = "<Esc>", run = "close" },
+  { on = "<C-k>", run = "close" },
+  { on = "<C-j>", run = "close --submit" },
+]
+
+[confirm]
+prepend_keymap = [
+  { on = "<C-k>", run = "close" },
+  { on = "<C-j>", run = "close --submit" },
+]
+
+[cmp]
+prepend_keymap = [{ on = "<C-l>", run = "close --submit" }]
+
+[help]
+prepend_keymap = [{ on = "<C-k>", run = "escape" }]

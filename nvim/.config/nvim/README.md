@@ -7,6 +7,7 @@
 - ripgrep (telescope live grep) [sudo]
 - [opencode](https://opencode.ai/docs/#install) (sidekick)
 - [tmux](https://github.com/tmux/tmux/wiki/Installing) (sidekick)
+- [yazi](https://yazi-rs.github.io/docs/installation)
 
 ## 📦 Installation
 

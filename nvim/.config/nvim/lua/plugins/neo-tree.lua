@@ -8,7 +8,7 @@ return {
     'MunifTanjim/nui.nvim',
   },
   keys = {
-    { '<leader>e', '<cmd>Neotree toggle focus left<CR>', desc = 'Explore tree (neo-tree)' },
+    { '<leader>\\', '<cmd>Neotree toggle focus left<CR>', desc = 'Explore tree (neo-tree)' },
   },
   config = function()
     local icons = require('utils.icons')
