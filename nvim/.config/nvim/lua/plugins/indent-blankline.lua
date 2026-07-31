@@ -19,7 +19,6 @@ return {
           'trouble',
           'text',
           'markdown',
-          'oil',
         },
       },
     })

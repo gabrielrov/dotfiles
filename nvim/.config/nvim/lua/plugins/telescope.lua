@@ -8,32 +8,12 @@ return {
   keys = {
     { '<C-f>', '<cmd>Telescope find_files<CR>', desc = 'Find files' },
     {
-      '<C-f>',
-      function()
-        require('oil.actions').close.callback()
-        vim.cmd('Telescope find_files')
-      end,
-      desc = 'Find files',
-      ft = 'oil',
-    },
-
-    {
       '<leader>ff',
       function()
         require('telescope.builtin').find_files({ hidden = true, prompt_title = 'Find Files (Hidden)' })
       end,
       desc = 'Find files including hidden',
     },
-    {
-      '<leader>ff',
-      function()
-        require('oil.actions').close.callback()
-        require('telescope.builtin').find_files({ hidden = true, prompt_title = 'Find Files (Hidden)' })
-      end,
-      desc = 'Find files including hidden',
-      ft = 'oil',
-    },
-
     {
       '<leader>fe',
       function()
@@ -45,20 +25,6 @@ return {
       end,
       desc = 'Find every file',
     },
-    {
-      '<leader>fe',
-      function()
-        require('oil.actions').close.callback()
-        require('telescope.builtin').find_files({
-          hidden = true,
-          no_ignore = true,
-          prompt_title = 'Find Files (Hidden,Ignored)',
-        })
-      end,
-      desc = 'Find every file',
-      ft = 'oil',
-    },
-
     {
       '<leader>fl',
       function()
