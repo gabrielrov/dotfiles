@@ -179,14 +179,6 @@ return {
     },
     opts = { skip = true },
   },
-  -- neotree deprection warnings
-  {
-    event = 'notify',
-    filter = {
-      find = 'vim%.lsp%.get_active_clients%(%) is deprecated%. Run ":checkhealth vim%.deprecated" for more',
-    },
-    opts = { skip = true },
-  },
   -----
   -- when closing diffview window too soon
   {

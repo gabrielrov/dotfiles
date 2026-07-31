@@ -15,7 +15,6 @@ return {
         filetypes = {
           'undotree',
           'harpoon',
-          'neo-tree',
           'trouble',
           'text',
           'markdown',
