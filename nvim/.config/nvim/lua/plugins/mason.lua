@@ -25,6 +25,7 @@ return {
 
         'jsonls',
         'taplo', -- toml
+        'yamlls',
 
         -- formatters
         'prettier',
