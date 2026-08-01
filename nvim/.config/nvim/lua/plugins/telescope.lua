@@ -115,6 +115,8 @@ return {
   config = function()
     local actions = require('telescope.actions')
 
+    require('utils.ft').bind_tmux_nav('TelescopePrompt')
+
     require('telescope').setup({
       defaults = {
         mappings = {

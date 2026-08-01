@@ -11,6 +11,8 @@ return {
     vim.cmd('colorscheme duskfox') -- default colorscheme
 
     require('utils.ft').clear_c_hjkl('themery', { bind_c_j = true })
+    require('utils.ft').bind_tmux_nav('themery')
+
     require('themery').setup({
       themes = {
         'duskfox',

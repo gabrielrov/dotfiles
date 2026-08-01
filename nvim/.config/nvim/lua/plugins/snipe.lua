@@ -17,6 +17,7 @@ return {
 
     require('utils.ft').clear_c_hjkl('snipe-menu', { bind_c_j = true })
     require('utils.ft').bind_close_win('snipe-menu', 'close')
+    require('utils.ft').bind_tmux_nav('snipe-menu')
 
     require('snipe').setup({
       hints = {

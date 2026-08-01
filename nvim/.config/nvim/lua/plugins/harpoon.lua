@@ -59,6 +59,7 @@ return {
     local harpoon = require('harpoon')
 
     require('utils.ft').clear_c_hjkl('harpoon', { bind_c_j = true })
+    require('utils.ft').bind_tmux_nav('harpoon')
 
     harpoon:setup({
       settings = {

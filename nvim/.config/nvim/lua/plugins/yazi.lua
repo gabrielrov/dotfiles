@@ -28,6 +28,8 @@ return {
     })
   end,
   config = function()
+    require('utils.ft').bind_tmux_nav('yazi')
+
     require('yazi').setup({
       open_for_directories = true,
       clipboard_register = '+',
