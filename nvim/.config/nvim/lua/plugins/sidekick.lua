@@ -76,6 +76,7 @@ return {
       pattern = 'sidekick_terminal',
       callback = function()
         vim.keymap.set('t', '<Esc>', '<cmd>Sidekick cli toggle<CR>', { buffer = true, desc = 'Toggle cli' })
+        vim.keymap.set('t', '<C-Space>', '<cmd>Sidekick cli prompt<CR>', { buffer = true, desc = 'Select prompt' })
 
         vim.keymap.set('t', '<C-u>', function()
           local chan = vim.b.terminal_job_id
