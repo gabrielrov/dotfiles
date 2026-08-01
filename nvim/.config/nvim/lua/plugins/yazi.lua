@@ -41,15 +41,15 @@ return {
       keymaps = {
         show_help = '<F2>',
 
-        open_file_in_vertical_split = '<C-v>',
-        open_file_in_horizontal_split = '<C-s>',
-        open_file_in_tab = '<C-t>',
+        change_working_directory = '<C-s>',
 
         copy_relative_path_to_selected_files = '<C-y>',
         send_to_quickfix_list = '<C-q>',
-        grep_in_directory = '<c-g>',
-        change_working_directory = '<C-\\>',
+        grep_in_directory = '<C-g>',
 
+        open_file_in_vertical_split = false,
+        open_file_in_horizontal_split = false,
+        open_file_in_tab = false,
         cycle_open_buffers = false,
 
         -- uses other dependencies
