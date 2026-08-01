@@ -75,19 +75,6 @@ return {
     vim.api.nvim_create_autocmd('FileType', {
       pattern = 'sidekick_terminal',
       callback = function()
-        vim.keymap.set('t', '<C-h>', '<C-h>', { buffer = true }) -- regular behavior disabled by default for some reason
-
-        vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>i <BS>', { buffer = true }) -- i <BS> helps with wrong positioning of cursor after jump glitch
-        vim.keymap.set('n', 'i', '<cmd>nohlsearch<CR>i <BS>', { buffer = true })
-        vim.keymap.set('n', 'I', '<cmd>nohlsearch<CR>I <BS>', { buffer = true })
-        vim.keymap.set('n', 'a', '<cmd>nohlsearch<CR>a <BS>', { buffer = true })
-        vim.keymap.set('n', 'A', '<cmd>nohlsearch<CR>A <BS>', { buffer = true })
-        vim.keymap.set('x', '<C-j>', '<cmd>nohlsearch<CR>yi <BS>', { buffer = true })
-        vim.keymap.set('x', '<CR>', '<cmd>nohlsearch<CR>yi <BS>', { buffer = true })
-        vim.keymap.set('x', '<C-y>', '<cmd>nohlsearch<CR>"+yi <BS>', { buffer = true })
-
-        -------
-
         vim.keymap.set('t', '<Esc>', '<cmd>Sidekick cli toggle<CR>', { buffer = true, desc = 'Toggle cli' })
 
         vim.keymap.set('t', '<C-u>', function()
@@ -103,7 +90,7 @@ return {
         vim.keymap.set('t', '<M-u>', '<C-u>', { buffer = true, desc = 'Delete line backwards' })
         vim.keymap.set('t', '<C-k>', '<Esc>', { buffer = true, desc = 'Go back' })
 
-        vim.keymap.set('t', '<M-d>', '<C-d>', { buffer = true, desc = 'Kill process / delete session' })
+        vim.keymap.set('t', '<M-d>', '<C-d>', { buffer = true, desc = 'Delete session / kill process' })
         vim.keymap.set('t', '<M-r>', '<C-r>', { buffer = true, desc = 'Rename session' })
 
         vim.keymap.set('t', '<C-j>', '<CR>', { buffer = true, desc = 'Submit prompt / Confirm' })
