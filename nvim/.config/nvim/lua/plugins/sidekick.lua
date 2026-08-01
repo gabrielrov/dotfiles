@@ -74,7 +74,15 @@ return {
 
     vim.api.nvim_create_autocmd('FileType', {
       pattern = 'sidekick_terminal',
-      callback = function()
+      callback = function(args)
+        -- goes to terminal mode after cancelling a prompt
+        vim.api.nvim_create_autocmd('WinEnter', {
+          buffer = args.buf,
+          callback = function()
+            vim.cmd('norm! i')
+          end,
+        })
+
         vim.keymap.set('t', '<Esc>', '<cmd>Sidekick cli toggle<CR>', { buffer = true, desc = 'Toggle cli' })
         vim.keymap.set('t', '<C-Space>', '<cmd>Sidekick cli prompt<CR>', { buffer = true, desc = 'Select prompt' })
 
