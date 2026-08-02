@@ -147,7 +147,7 @@ return {
         },
       },
       snippets = { preset = 'luasnip' },
-      keymap = { preset = 'none' },
+      keymap = { preset = 'none' }, -- setting it manually so the bindings have the same behavior on disabled filetypes
       cmdline = {
         sources = { 'buffer', 'cmdline', 'commit_scope' },
         completion = {
