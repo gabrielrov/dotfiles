@@ -113,39 +113,12 @@ return {
     { '<leader>fh', '<cmd>Telescope help_tags<CR>', desc = 'Find help' },
   },
   config = function()
+    local actions = require('telescope.actions')
+
     require('utils.ft').bind_tmux_nav('TelescopePrompt')
 
-    require('telescope.pickers.layout_strategies').horizontal_merged = function(picker, max_col, max_lin, layout_conf)
-      local layout = require('telescope.pickers.layout_strategies').horizontal(picker, max_col, max_lin, layout_conf)
-      layout.results.line = layout.results.line - 1
-      layout.results.height = layout.results.height + 1
-
-      return layout
-    end
-
-    local actions = require('telescope.actions')
     require('telescope').setup({
       defaults = {
-        layout_strategy = 'horizontal_merged',
-
-        results_title = false,
-        sorting_strategy = 'ascending',
-
-        layout_config = {
-          horizontal = {
-            prompt_position = 'top',
-
-            width = 0.8, -- 0.8
-            height = 0.85, -- 0.9
-          },
-        },
-
-        borderchars = {
-          prompt = { '─', '│', '─', '│', '╭', '╮', '│', '│' },
-          results = { '─', '│', '─', '│', '├', '┤', '╯', '╰' },
-          preview = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
-        },
-
         mappings = {
           i = {
             ['<C-x>'] = false,
