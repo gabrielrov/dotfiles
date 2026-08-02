@@ -7,6 +7,7 @@ Current.empty = function(self, ...)
 	end
 end
 
+require("nvim-buffer"):setup()
 require("bookmarks"):setup({
 	persist = "all",
 	file_pick_mode = "parent",

@@ -1,2 +1,4 @@
 flavors/
-plugins/
+plugins/*
+!plugins/nvim-buffer.yazi/
+!plugins/nvim-buffer.yazi/**

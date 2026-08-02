@@ -16,7 +16,11 @@ prepend_keymap = [
     "escape --visual",
   ] },
 
+  # nvim directory or yazi's initial path
   { on = "<C-Space>", run = 'shell -- ya emit cd "${NVIM_CWD:-${YAZI_START_CWD:-$(git rev-parse --show-toplevel 2>/dev/null)}}"' },
+
+  # nvim buffer
+  { on = "<C-h>", run = "plugin nvim-buffer" },
 
   { on = "<C-n>", run = "find --smart" },
   { on = "<A-n>", run = "find --previous --smart" },
