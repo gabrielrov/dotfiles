@@ -1,7 +1,7 @@
 local conceal_enabled = false
 
 return {
-  'luckasRanarison/tailwind-tools.nvim', -- primarily provides sort, concealing and icons for tailwind
+  'luckasRanarison/tailwind-tools.nvim', -- primarily provides sort and concealing for tailwind
   name = 'tailwind-tools',
   build = ':UpdateRemotePlugins',
   dependencies = {
