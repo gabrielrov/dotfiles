@@ -1,7 +1,6 @@
 ## ⚡️ Requirements
 
 - [lazygit](https://github.com/jesseduffield/lazygit?tab=readme-ov-file#installation)
-- [nodejs](https://www.theodinproject.com/lessons/foundations-installing-node-js#installing-nvm)
 - xclip (OS clipboard access) [sudo]
 - gcc (treesitter) [sudo]
 - ripgrep (telescope live grep) [sudo]
