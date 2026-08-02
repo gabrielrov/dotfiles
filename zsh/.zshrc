@@ -70,7 +70,9 @@ alias ll='ls -alF --color=auto'
 
 t() {
   if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    tmux attach &> /dev/null || (command -v sesh &> /dev/null && sesh connect "$(sesh list | fzf)")
+    tmux attach &> /dev/null || (command -v sesh &> /dev/null && sesh connect "$(
+      sesh list | fzf --layout=default --bind 'tab:toggle+up' --bind 'shift-tab:toggle+down'
+    )")
   fi
 }
 
@@ -142,6 +144,9 @@ zstyle ':completion:*' menu no # Disable default completion
 zstyle ':fzf-tab:*' use-fzf-default-opts yes # Mirror config for fzf
 zstyle ':fzf-tab:*' continuous-trigger 'ctrl-l' # Follow paths
 zstyle ':fzf-tab:*' switch-group 'f1' 'f2'
+zstyle ':fzf-tab:*' fzf-flags \
+  --bind=tab:toggle+down \
+  --bind=shift-tab:toggle+up
 
 smart-tab() { [[ -z ${BUFFER//[[:space:]]/} ]] || zle fzf-tab-complete }
 zle -N smart-tab
@@ -156,11 +161,14 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # ctrl-t, ctrl-r and alt-c binded automatically
 
 export FZF_DEFAULT_OPTS="
+  --layout=reverse
+  --cycle
+  --bind 'change:top'
   --bind 'ctrl-j:accept'
   --bind 'ctrl-space:toggle'
   --bind 'ctrl-k:abort'
-  --bind 'tab:down'
-  --bind 'shift-tab:up'
+  --bind 'tab:toggle+down'
+  --bind 'shift-tab:toggle+up'
   --bind 'ctrl-d:ignore'
   --bind 'ctrl-l:ignore'
 "
