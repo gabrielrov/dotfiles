@@ -16,6 +16,6 @@ return function(module, setup)
   setup()
 
   -- restore module
-  package.loaded['telescope'] = orig_loaded
-  package.preload['telescope'] = orig_preload
+  package.loaded[module] = orig_loaded
+  package.preload[module] = orig_preload
 end
