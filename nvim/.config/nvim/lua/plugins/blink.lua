@@ -143,7 +143,7 @@ return {
         trigger = { enabled = false },
         window = {
           scrollbar = true,
-          show_documentation = false,
+          show_documentation = true,
         },
       },
       snippets = { preset = 'luasnip' },
@@ -226,13 +226,17 @@ return {
     vim.keymap.set('i', '<C-n>', blink.select_next)
     vim.keymap.set('i', '<C-p>', blink.select_prev)
 
+    local documentation_scroll = 4 -- 4
+    local signature_scroll = 2 -- 4
+
     vim.keymap.set('i', '<C-u>', function()
-      return blink.scroll_documentation_up()
+      return blink.scroll_documentation_up(documentation_scroll)
+        or blink.scroll_signature_up(signature_scroll)
         or vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-u>', true, false, true), 'n', false)
     end)
-
     vim.keymap.set('i', '<C-d>', function()
-      return blink.scroll_documentation_down()
+      return blink.scroll_documentation_down(documentation_scroll)
+        or blink.scroll_signature_down(signature_scroll)
         or vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-d>', true, false, true), 'n', false)
     end)
 
