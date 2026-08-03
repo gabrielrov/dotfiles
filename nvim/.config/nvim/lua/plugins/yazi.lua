@@ -12,6 +12,11 @@ return {
       desc = 'Open yazi at current file',
     },
     {
+      '<leader>W',
+      '<cmd>Yazi cwd<CR>',
+      desc = 'Open yazi at current directory',
+    },
+    {
       '<leader>e',
       '<cmd>Yazi toggle<CR>',
       desc = 'Open last yazi session',
