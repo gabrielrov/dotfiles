@@ -14,8 +14,6 @@ return {
     vim.g.undotree_HighlightChangedText = 0
     vim.g.undotree_HelpLine = 0
 
-    vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Undotree' })
-
     vim.api.nvim_create_autocmd('FileType', {
       pattern = 'undotree',
       callback = function()
