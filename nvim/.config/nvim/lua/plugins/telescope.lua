@@ -124,6 +124,7 @@ return {
             ['<C-x>'] = false,
             ['<C-f>'] = false,
             ['<M-f>'] = false,
+            ['<M-q>'] = false,
 
             ['<C-s>'] = actions.select_horizontal,
 
@@ -134,6 +135,8 @@ return {
 
             ['<C-u>'] = actions.preview_scrolling_up,
             ['<C-d>'] = actions.preview_scrolling_down,
+
+            ['<C-q>'] = actions.smart_send_to_qflist + actions.open_qflist,
           },
         },
       },
