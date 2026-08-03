@@ -37,7 +37,7 @@ return {
 
     require('yazi').setup({
       open_for_directories = true,
-      clipboard_register = '+',
+      clipboard_register = '"',
       highlight_hovered_buffers_in_same_directory = false,
 
       yazi_floating_window_border = 'none',
