@@ -165,10 +165,12 @@ export FZF_DEFAULT_OPTS="
   --cycle
   --bind 'change:top'
   --bind 'ctrl-j:accept'
-  --bind 'ctrl-space:toggle'
   --bind 'ctrl-k:abort'
   --bind 'tab:toggle+down'
   --bind 'shift-tab:toggle+up'
+  --bind 'ctrl-space:toggle'
+  --bind 'alt-a:select-all'
+  --bind 'alt-r:toggle-all'
   --bind 'ctrl-d:ignore'
   --bind 'ctrl-l:ignore'
 "

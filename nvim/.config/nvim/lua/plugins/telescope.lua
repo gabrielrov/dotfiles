@@ -137,6 +137,10 @@ return {
             ['<C-d>'] = actions.preview_scrolling_down,
 
             ['<C-q>'] = actions.smart_send_to_qflist + actions.open_qflist,
+
+            ['<M-a>'] = actions.select_all,
+            ['<M-r>'] = actions.toggle_all,
+            ['<C-Space>'] = actions.toggle_selection,
           },
         },
       },
