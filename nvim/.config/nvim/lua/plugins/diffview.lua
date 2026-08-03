@@ -1,7 +1,7 @@
 return {
   'sindrets/diffview.nvim',
   keys = {
-    { '<leader>L', '<cmd>DiffviewOpen<CR>', desc = 'Open git diffview for file changes' },
+    { '<leader>G', '<cmd>DiffviewOpen<CR>', desc = 'Open git diffview for file changes' },
     { '<leader>v', '<cmd>DiffviewFileHistory<CR>', desc = 'Open git diffview history' },
     { '<leader>V', '<cmd>DiffviewFileHistory %<CR>', desc = 'Open git diffview history (file)' },
     { '<leader>v', ':DiffviewFileHistory<CR>', desc = 'Open git diffview history (range)', mode = 'x' },

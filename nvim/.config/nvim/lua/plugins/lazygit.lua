@@ -6,6 +6,7 @@ return {
   cmd = { 'LazyGit', 'LazyGitCurrentFile', 'LazyGitFilter', 'LazyGitFilterCurrentFile' },
   keys = {
     { '<leader>l', '<cmd>LazyGit<CR>', desc = 'LazyGit' },
+    { '<leader>L', '<cmd>LazyGitFilterCurrentFile<CR>', desc = 'LazyGit filter file' },
   },
   config = function()
     vim.g.lazygit_floating_window_border_chars = { '', '', '', '', '', '', '', '' }
