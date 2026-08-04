@@ -1,7 +1,7 @@
 local textobj_keymaps = {
   select = {
-    ['iv'] = { query = '@assignment.rhs', desc = 'Select inside (right) variable' },
-    ['av'] = { query = '@assignment.lhs', desc = 'Select around (left) variable' },
+    ['iv'] = { query = '@assignment.rhs', desc = 'Select right assignment (variable)' },
+    ['av'] = { query = '@assignment.lhs', desc = 'Select left assignment (variable)' },
 
     ['if'] = { query = '@function.inner', desc = 'Select inside function' },
     ['af'] = { query = '@function.outer', desc = 'Select around function' },
@@ -32,7 +32,7 @@ local textobj_keymaps = {
     -- ['an'] = { query = '@number.inner', desc = 'Select number' },
   },
   swap_previous = {
-    ['Hv'] = { query = '@assignment.outer', desc = 'Swap variable with previous' },
+    ['Hv'] = { query = '@assignment.outer', desc = 'Swap assignment (variable) with previous' },
     ['Hf'] = { query = '@function.outer', desc = 'Swap function with previous' },
     ['Hr'] = { query = '@call.outer', desc = 'Swap function call (run) with previous' },
     ['Hl'] = { query = '@loop.outer', desc = 'Swap loop with previous' },
@@ -44,7 +44,7 @@ local textobj_keymaps = {
     ['Hn'] = { query = '@number.inner', desc = 'Swap number with previous' },
   },
   swap_next = {
-    ['Lv'] = { query = '@assignment.outer', desc = 'Swap variable with next' },
+    ['Lv'] = { query = '@assignment.outer', desc = 'Swap assignment (variable) with next' },
     ['Lf'] = { query = '@function.outer', desc = 'Swap function with next' },
     ['Lr'] = { query = '@call.outer', desc = 'Swap function call (run) with next' },
     ['Ll'] = { query = '@loop.outer', desc = 'Swap loop with next' },
@@ -56,7 +56,7 @@ local textobj_keymaps = {
     ['Ln'] = { query = '@number.inner', desc = 'Swap number with next' },
   },
   goto_next_start = {
-    [']v'] = { query = '@assignment.outer', desc = 'Next variable' },
+    [']v'] = { query = '@assignment.outer', desc = 'Next assignment (variable)' },
     [']f'] = { query = '@function.outer', desc = 'Next function' },
     [']r'] = { query = '@call.outer', desc = 'Next function call (run)' },
     [']l'] = { query = '@loop.outer', desc = 'Next loop' },
@@ -68,7 +68,7 @@ local textobj_keymaps = {
     [']n'] = { query = '@number.inner', desc = 'Next number' },
   },
   goto_next_end = {
-    [']V'] = { query = '@assignment.outer', desc = 'Next variable on end' },
+    [']V'] = { query = '@assignment.outer', desc = 'Next assignment (variable) on end' },
     [']F'] = { query = '@function.outer', desc = 'Next function on end' },
     [']R'] = { query = '@call.outer', desc = 'Next function call (run) on end' },
     [']L'] = { query = '@loop.outer', desc = 'Next loop on end' },
@@ -80,7 +80,7 @@ local textobj_keymaps = {
     [']N'] = { query = '@number.inner', desc = 'Next number on end' },
   },
   goto_previous_start = {
-    ['[v'] = { query = '@assignment.outer', desc = 'Previous variable' },
+    ['[v'] = { query = '@assignment.outer', desc = 'Previous assignment (variable)' },
     ['[f'] = { query = '@function.outer', desc = 'Previous function' },
     ['[r'] = { query = '@call.outer', desc = 'Previous function call (run)' },
     ['[l'] = { query = '@loop.outer', desc = 'Previous loop' },
@@ -92,7 +92,7 @@ local textobj_keymaps = {
     ['[n'] = { query = '@number.inner', desc = 'Previous number' },
   },
   goto_previous_end = {
-    ['[V'] = { query = '@assignment.outer', desc = 'Previous variable on end' },
+    ['[V'] = { query = '@assignment.outer', desc = 'Previous assignment (variable) on end' },
     ['[F'] = { query = '@function.outer', desc = 'Previous function on end' },
     ['[R'] = { query = '@call.outer', desc = 'Previous function call (run) on end' },
     ['[L'] = { query = '@loop.outer', desc = 'Previous loop on end' },
