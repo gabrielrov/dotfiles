@@ -27,8 +27,9 @@ local textobj_keymaps = {
     ['ie'] = { query = '@statement.outer', desc = 'Select inside statement (every) ' }, -- @statement.inner tipically doesn't work
     ['ae'] = { query = '@statement.outer', desc = 'Select around statement (every)' },
 
-    ['an'] = { query = '@number.inner', desc = 'Select number' },
-    ['in'] = { query = '@number.inner', desc = 'Select number' },
+    -- using various's implementation instead of these
+    -- ['in'] = { query = '@number.inner', desc = 'Select number' },
+    -- ['an'] = { query = '@number.inner', desc = 'Select number' },
   },
   swap_previous = {
     ['Hv'] = { query = '@assignment.outer', desc = 'Swap variable with previous' },
@@ -285,6 +286,125 @@ return {
     end,
   },
   {
+    'chrisgrieser/nvim-various-textobjs', -- extra text-objects
+    keys = {
+      {
+        'id',
+        function()
+          require('various-textobjs').entireBuffer()
+        end,
+        desc = 'Select entire document',
+        mode = { 'x', 'o' },
+      },
+      {
+        'ad',
+        function()
+          require('various-textobjs').entireBuffer()
+        end,
+        desc = 'Select entire document',
+        mode = { 'x', 'o' },
+      },
+
+      {
+        'is',
+        function()
+          require('various-textobjs').subword('inner')
+        end,
+        desc = 'Select inside subword', -- camelCase, snake_case, kebab-case
+        mode = { 'x', 'o' },
+      },
+      {
+        'as',
+        function()
+          require('various-textobjs').subword('outer')
+        end,
+        desc = 'Select around subword',
+        mode = { 'x', 'o' },
+      },
+
+      {
+        'iq',
+        function()
+          require('various-textobjs').anyQuote('inner')
+        end,
+        desc = 'Select inside quote',
+        mode = { 'x', 'o' },
+      },
+      {
+        'aq',
+        function()
+          require('various-textobjs').anyQuote('outer')
+        end,
+        desc = 'Select around quote',
+        mode = { 'x', 'o' },
+      },
+
+      {
+        'ib',
+        function()
+          require('various-textobjs').anyBracket('inner')
+        end,
+        desc = 'Select inside bracket',
+        mode = { 'x', 'o' },
+      },
+      {
+        'ab',
+        function()
+          require('various-textobjs').anyBracket('outer')
+        end,
+        desc = 'Select around bracket',
+        mode = { 'x', 'o' },
+      },
+
+      {
+        'in',
+        function()
+          require('various-textobjs').number('inner')
+        end,
+        desc = 'Select inside number',
+        mode = { 'x', 'o' },
+      },
+      {
+        'an',
+        function()
+          require('various-textobjs').number('outer')
+        end,
+        desc = 'Select around number',
+        mode = { 'x', 'o' },
+      },
+
+      {
+        'i.',
+        function()
+          require('various-textobjs').chainMember('inner')
+        end,
+        desc = 'Select inside chain member (. or :)',
+        mode = { 'x', 'o' },
+      },
+      {
+        'a.',
+        function()
+          require('various-textobjs').chainMember('outer')
+        end,
+        desc = 'Select inside chain member (. or :)',
+        mode = { 'x', 'o' },
+      },
+    },
+    config = function()
+      require('various-textobjs').setup({
+        textobjs = {
+          subword = {
+            -- when deleting start of camelCase, changes remaining uppercase to lowercase
+            noCamelToPascalCase = false,
+          },
+        },
+        notify = {
+          whenObjectNotFound = false,
+        },
+      })
+    end,
+  },
+  {
     'echasnovski/mini.indentscope', -- indent textobjs
     version = '*',
     keys = {
@@ -334,56 +454,6 @@ return {
           object_scope_with_border = '',
           goto_top = '',
           goto_bottom = '',
-        },
-      })
-    end,
-  },
-  {
-    'chrisgrieser/nvim-various-textobjs', -- extra text-objects
-    keys = {
-      {
-        'is',
-        function()
-          require('various-textobjs').subword('inner')
-        end,
-        desc = 'Select inside subword', -- camelCase, snake_case, kebab-case
-        mode = { 'x', 'o' },
-      },
-      {
-        'as',
-        function()
-          require('various-textobjs').subword('outer')
-        end,
-        desc = 'Select around subword',
-        mode = { 'x', 'o' },
-      },
-      {
-        'id',
-        function()
-          require('various-textobjs').entireBuffer()
-        end,
-        desc = 'Select entire document',
-        mode = { 'x', 'o' },
-      },
-      {
-        'ad',
-        function()
-          require('various-textobjs').entireBuffer()
-        end,
-        desc = 'Select entire document',
-        mode = { 'x', 'o' },
-      },
-    },
-    config = function()
-      require('various-textobjs').setup({
-        textobjs = {
-          subword = {
-            -- when deleting start of camelCase, changes remaining uppercase to lowercase
-            noCamelToPascalCase = false,
-          },
-        },
-        notify = {
-          whenObjectNotFound = false,
         },
       })
     end,
