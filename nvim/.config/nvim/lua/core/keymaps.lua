@@ -117,9 +117,13 @@ vim.keymap.set({ 'o', 'x' }, "a'", "2i'")
 vim.keymap.set({ 'o', 'x' }, 'a"', '2i"')
 vim.keymap.set({ 'o', 'x' }, 'a`', '2i`')
 
--- make underscore behavior consistent
+-- make underscore atually delete before cursor during operation pending
 vim.keymap.set({ 'n', 'o', 'x' }, '_', '^')
 vim.keymap.set({ 'n', 'o', 'x' }, 'g_', 'g^')
+
+-- go to end of line
+vim.keymap.set({ 'n', 'x', 'o' }, '-', '$')
+vim.keymap.set({ 'n', 'x', 'o' }, 'g-', 'g$')
 
 -- move through wrap and use normal j/k when providing a counter
 vim.keymap.set({ 'n', 'x' }, 'k', function()
