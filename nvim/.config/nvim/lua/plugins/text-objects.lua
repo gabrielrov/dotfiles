@@ -6,8 +6,8 @@ local textobj_keymaps = {
     ['if'] = { query = '@function.inner', desc = 'Select inside function' },
     ['af'] = { query = '@function.outer', desc = 'Select around function' },
 
-    ['im'] = { query = '@call.inner', desc = 'Select inside function call (method)' },
-    ['am'] = { query = '@call.outer', desc = 'Select around function call (method)' },
+    ['ir'] = { query = '@call.inner', desc = 'Select inside function call (run)' },
+    ['ar'] = { query = '@call.outer', desc = 'Select around function call (run)' },
 
     ['il'] = { query = '@loop.inner', desc = 'Select inside loop' },
     ['al'] = { query = '@loop.outer', desc = 'Select around loop' },
@@ -34,7 +34,7 @@ local textobj_keymaps = {
   swap_previous = {
     ['Hv'] = { query = '@assignment.outer', desc = 'Swap variable with previous' },
     ['Hf'] = { query = '@function.outer', desc = 'Swap function with previous' },
-    ['Hm'] = { query = '@call.outer', desc = 'Swap function call (method) with previous' },
+    ['Hr'] = { query = '@call.outer', desc = 'Swap function call (run) with previous' },
     ['Hl'] = { query = '@loop.outer', desc = 'Swap loop with previous' },
     ['Hx'] = { query = '@conditional.outer', desc = 'Swap conditional with previous' },
     ['Ho'] = { query = '@class.outer', desc = 'Swap class (object) with previous' },
@@ -46,7 +46,7 @@ local textobj_keymaps = {
   swap_next = {
     ['Lv'] = { query = '@assignment.outer', desc = 'Swap variable with next' },
     ['Lf'] = { query = '@function.outer', desc = 'Swap function with next' },
-    ['Lm'] = { query = '@call.outer', desc = 'Swap function call (method) with next' },
+    ['Lr'] = { query = '@call.outer', desc = 'Swap function call (run) with next' },
     ['Ll'] = { query = '@loop.outer', desc = 'Swap loop with next' },
     ['Lx'] = { query = '@conditional.outer', desc = 'Swap conditional with next' },
     ['Lo'] = { query = '@class.outer', desc = 'Swap class (object) with next' },
@@ -58,7 +58,7 @@ local textobj_keymaps = {
   goto_next_start = {
     [']v'] = { query = '@assignment.outer', desc = 'Next variable' },
     [']f'] = { query = '@function.outer', desc = 'Next function' },
-    [']m'] = { query = '@call.outer', desc = 'Next function call (method)' },
+    [']r'] = { query = '@call.outer', desc = 'Next function call (run)' },
     [']l'] = { query = '@loop.outer', desc = 'Next loop' },
     [']x'] = { query = '@conditional.outer', desc = 'Next conditional' },
     [']o'] = { query = '@class.outer', desc = 'Next class (object)' },
@@ -70,7 +70,7 @@ local textobj_keymaps = {
   goto_next_end = {
     [']V'] = { query = '@assignment.outer', desc = 'Next variable on end' },
     [']F'] = { query = '@function.outer', desc = 'Next function on end' },
-    [']M'] = { query = '@call.outer', desc = 'Next function call (method) on end' },
+    [']R'] = { query = '@call.outer', desc = 'Next function call (run) on end' },
     [']L'] = { query = '@loop.outer', desc = 'Next loop on end' },
     [']X'] = { query = '@conditional.outer', desc = 'Next conditional on end' },
     [']O'] = { query = '@class.outer', desc = 'Next class (object) on end' },
@@ -82,7 +82,7 @@ local textobj_keymaps = {
   goto_previous_start = {
     ['[v'] = { query = '@assignment.outer', desc = 'Previous variable' },
     ['[f'] = { query = '@function.outer', desc = 'Previous function' },
-    ['[m'] = { query = '@call.outer', desc = 'Previous function call (method)' },
+    ['[r'] = { query = '@call.outer', desc = 'Previous function call (run)' },
     ['[l'] = { query = '@loop.outer', desc = 'Previous loop' },
     ['[x'] = { query = '@conditional.outer', desc = 'Previous conditional' },
     ['[o'] = { query = '@class.outer', desc = 'Previous class (object)' },
@@ -94,7 +94,7 @@ local textobj_keymaps = {
   goto_previous_end = {
     ['[V'] = { query = '@assignment.outer', desc = 'Previous variable on end' },
     ['[F'] = { query = '@function.outer', desc = 'Previous function on end' },
-    ['[M'] = { query = '@call.outer', desc = 'Previous function call (method) on end' },
+    ['[R'] = { query = '@call.outer', desc = 'Previous function call (run) on end' },
     ['[L'] = { query = '@loop.outer', desc = 'Previous loop on end' },
     ['[X'] = { query = '@conditional.outer', desc = 'Previous conditional on end' },
     ['[O'] = { query = '@class.outer', desc = 'Previous class (object) on end' },
