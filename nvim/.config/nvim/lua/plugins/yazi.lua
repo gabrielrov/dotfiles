@@ -62,5 +62,18 @@ return {
         replace_in_directory = false,
       },
     })
+
+    vim.api.nvim_create_autocmd('FileType', {
+      pattern = 'yazi',
+      callback = function(args)
+        -- goes to terminal mode when getting back from popups (e.g when asking if files should be modified)
+        vim.api.nvim_create_autocmd('WinEnter', {
+          buffer = args.buf,
+          callback = function()
+            vim.cmd('norm! i')
+          end,
+        })
+      end,
+    })
   end,
 }
