@@ -6,10 +6,7 @@ prepend_keymap = [
   { on = "l", run = "plugin smart-enter" },
   { on = "<C-j>", run = "plugin smart-enter" },
 
-  { on = "<C-l>", run = [
-    "escape",
-    "unyank",
-  ] },
+  { on = "<C-l>", run = "escape" },
 
   { on = "<Space>", run = [
     "toggle",
