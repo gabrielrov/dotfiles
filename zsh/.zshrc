@@ -38,6 +38,7 @@ zle -N paste-clipboard
 
 bindkey -r '\en'
 bindkey '\ep' paste-clipboard # alt+p
+bindkey '^U' backward-kill-line # normally deletes whole line
 
 # -- completion --
 bindkey -M menuselect '^[[Z' reverse-menu-complete # S-Tab binding for consistency
