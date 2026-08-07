@@ -217,7 +217,12 @@ vim.keymap.set({ 'n', 'x' }, '<C-w>,', '<cmd>vertical resize -5<cr><C-w>', { rem
 vim.keymap.set({ 'n', 'x' }, '<C-w>>', '<cmd>horizontal resize +5<cr><C-w>', { remap = true })
 vim.keymap.set({ 'n', 'x' }, '<C-w><', '<cmd>horizontal resize -5<cr><C-w>', { remap = true })
 
-vim.keymap.set({ 'n', 'i', 'x', 's' }, '<C-s>', '<cmd>w<CR>', { desc = 'Write file (save)' })
+vim.keymap.set({ 'n', 'x', 's' }, '<C-s>', '<cmd>w<CR>', { desc = 'Write file (save)' })
+vim.keymap.set({ 'n', 'x', 's' }, '<M-s>', '<cmd>w<CR>', { desc = 'Write file (save)' })
+
+vim.keymap.set('i', '<C-s>', '<cmd>stopinsert | w<CR>', { desc = 'Write file (save)' })
+vim.keymap.set('i', '<M-s>', '<cmd>w<CR>', { desc = 'Write file (save)' })
+
 vim.keymap.set({ 'n', 'x' }, '<C-e>', '<cmd>e!<CR>', { desc = 'Discard changes' })
 
 -- shortcuts to ':' and '/'
