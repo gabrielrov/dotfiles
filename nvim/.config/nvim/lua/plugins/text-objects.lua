@@ -386,7 +386,41 @@ return {
         function()
           require('various-textobjs').chainMember('outer')
         end,
-        desc = 'Select inside chain member (. or :)',
+        desc = 'Select around chain member (. or :)',
+        mode = { 'x', 'o' },
+      },
+
+      {
+        'ik',
+        function()
+          require('various-textobjs').key('inner')
+        end,
+        desc = 'Select inside key',
+        mode = { 'x', 'o' },
+      },
+      {
+        'ak',
+        function()
+          require('various-textobjs').key('outer')
+        end,
+        desc = 'Select around key',
+        mode = { 'x', 'o' },
+      },
+
+      {
+        'ip',
+        function()
+          require('various-textobjs').value('inner')
+        end,
+        desc = 'Select inside property value',
+        mode = { 'x', 'o' },
+      },
+      {
+        'ap',
+        function()
+          require('various-textobjs').value('outer')
+        end,
+        desc = 'Select around property value',
         mode = { 'x', 'o' },
       },
     },
