@@ -34,7 +34,6 @@ return {
             transform_items = interface.filter('lsp'),
           },
           snippets = {
-            score_offset = 4,
             should_show_items = function(ctx)
               -- hides snippets after trigger characters
               if ctx.trigger.initial_kind == 'trigger_character' then
