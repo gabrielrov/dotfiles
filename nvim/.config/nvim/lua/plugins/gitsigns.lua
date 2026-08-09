@@ -24,6 +24,7 @@ return {
     { '<leader>b', '<cmd>Gitsigns blame_line<CR>', desc = 'Git preview blame' },
     { '<leader>B', '<cmd>Gitsigns blame<CR>', desc = 'Git all blames' },
     { '<leader>g', '<cmd>Gitsigns stage_hunk<CR>', desc = 'Git stage hunk' },
+    { '<C-g>', '<cmd>1,$Gitsigns stage_hunk<CR>', desc = 'Git stage buffer' },
     { '<leader>g', ':Gitsigns stage_hunk<CR>', desc = 'Git stage selected hunk', mode = 'x' },
     { 'ih', '<cmd>Gitsigns select_hunk<CR>', desc = 'Select hunk', mode = { 'o', 'x' } },
     { 'ah', '<cmd>Gitsigns select_hunk<CR>', desc = 'Select hunk', mode = { 'o', 'x' } },
