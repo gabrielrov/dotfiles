@@ -84,7 +84,7 @@ return {
       completion = {
         menu = {
           max_height = 10,
-          scrolloff = 0,
+          scrolloff = 2,
 
           draw = {
             components = {
