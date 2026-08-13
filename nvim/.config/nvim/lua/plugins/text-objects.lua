@@ -340,23 +340,6 @@ return {
       },
 
       {
-        'ib',
-        function()
-          require('various-textobjs').anyBracket('inner')
-        end,
-        desc = 'Select inside bracket',
-        mode = { 'x', 'o' },
-      },
-      {
-        'ab',
-        function()
-          require('various-textobjs').anyBracket('outer')
-        end,
-        desc = 'Select around bracket',
-        mode = { 'x', 'o' },
-      },
-
-      {
         'in',
         function()
           require('various-textobjs').number('inner')
