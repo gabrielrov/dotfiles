@@ -30,6 +30,9 @@ return {
     },
   },
   config = function()
+    require('utils.ft').clear_c_hjkl('neotest-summary', { bind_c_j = true })
+    require('utils.ft').clear_c_hjkl('neotest-output')
+
     local neotest = require('neotest')
     neotest.setup({
       adapters = {
