@@ -85,7 +85,7 @@ return {
     vim.api.nvim_create_autocmd('FileType', {
       pattern = 'neotest-summary',
       callback = function()
-        vim.keymap.set('n', '<CR>', '<C-j>', { remap = true })
+        vim.keymap.set('n', '<CR>', '<C-j>', { remap = true, buffer = true })
         vim.keymap.set('n', '<Esc>', function()
           require('utils.close_win')('Neotest summary close')
         end, { buffer = true })
