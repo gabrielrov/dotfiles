@@ -72,7 +72,7 @@ alias ll='ls -alF --color=auto'
 t() {
   if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach &> /dev/null || (command -v sesh &> /dev/null && sesh connect "$(
-      sesh list | fzf --layout=default --bind 'tab:toggle+up' --bind 'shift-tab:toggle+down'
+      sesh list | fzf --layout=default --bind 'tab:up' --bind 'shift-tab:down'
     )")
   fi
 }
@@ -146,8 +146,8 @@ zstyle ':fzf-tab:*' use-fzf-default-opts yes # Mirror config for fzf
 zstyle ':fzf-tab:*' continuous-trigger 'ctrl-l' # Follow paths
 zstyle ':fzf-tab:*' switch-group 'f1' 'f2'
 zstyle ':fzf-tab:*' fzf-flags \
-  --bind=tab:toggle+down \
-  --bind=shift-tab:toggle+up
+  --bind=tab:down \
+  --bind=shift-tab:up
 
 smart-tab() { [[ -z ${BUFFER//[[:space:]]/} ]] || zle fzf-tab-complete }
 zle -N smart-tab
@@ -167,8 +167,8 @@ export FZF_DEFAULT_OPTS="
   --bind 'change:top'
   --bind 'ctrl-j:accept'
   --bind 'ctrl-k:abort'
-  --bind 'tab:toggle+down'
-  --bind 'shift-tab:toggle+up'
+  --bind 'tab:down'
+  --bind 'shift-tab:up'
   --bind 'ctrl-space:toggle'
   --bind 'alt-a:select-all'
   --bind 'alt-r:toggle-all'
