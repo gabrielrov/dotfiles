@@ -46,11 +46,11 @@ return {
       keymaps = {
         show_help = '<F2>',
 
-        change_working_directory = '<C-s>',
+        change_working_directory = '<M-/>',
 
         copy_relative_path_to_selected_files = '<C-y>',
-        send_to_quickfix_list = '<C-q>',
-        grep_in_directory = '<C-g>',
+        send_to_quickfix_list = '<M-q>',
+        grep_in_directory = '<M-g>',
 
         open_file_in_vertical_split = false,
         open_file_in_horizontal_split = false,
