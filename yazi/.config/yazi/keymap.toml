@@ -31,9 +31,6 @@ prepend_keymap = [
   { on = "s", run = "plugin fzf", desc = "Jump to a file/directory via fzf" },
   { on = "e", run = "plugin zoxide", desc = "Jump to a directory via zoxide" },
 
-  { on = "m", run = "plugin bookmarks save", desc = "Save current position as a bookmark" },
-  { on = "'", run = "plugin bookmarks jump", desc = "Jump to a bookmark" },
-
   { on = [
     "b",
     "d",
@@ -43,6 +40,34 @@ prepend_keymap = [
     "b",
     "D",
   ], run = "plugin bookmarks delete_all", desc = "Delete all bookmarks" },
+
+  { on = "'", run = "plugin bookmarks jump", desc = "Jump to a bookmark" },
+  { on = "m", run = "plugin bookmarks save", desc = "Save current position as a bookmark" },
+
+  { on = [
+    "M",
+    "s",
+  ], run = "linemode size" },
+  { on = [
+    "M",
+    "p",
+  ], run = "linemode permissions" },
+  { on = [
+    "M",
+    "b",
+  ], run = "linemode btime" },
+  { on = [
+    "M",
+    "m",
+  ], run = "linemode mtime" },
+  { on = [
+    "M",
+    "o",
+  ], run = "linemode owner" },
+  { on = [
+    "M",
+    "n",
+  ], run = "linemode none" },
 ]
 
 [tasks]
