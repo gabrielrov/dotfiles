@@ -7,6 +7,8 @@ Current.empty = function(self, ...)
 	end
 end
 
+require("zoxide"):setup({ update_db = true })
+
 require("nvim-buffer"):setup()
 require("bookmarks"):setup({
 	persist = "all",
