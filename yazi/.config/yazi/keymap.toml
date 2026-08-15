@@ -81,4 +81,7 @@ prepend_keymap = [
 prepend_keymap = [{ on = "<C-l>", run = "close --submit" }]
 
 [help]
-prepend_keymap = [{ on = "<C-k>", run = "escape" }]
+prepend_keymap = [
+  { on = "<Esc>", run = "close" },
+  { on = "<C-k>", run = "close" },
+]
