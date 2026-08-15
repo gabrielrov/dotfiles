@@ -1,6 +1,6 @@
 [mgr]
 prepend_keymap = [
-  { on = "<Esc>", run = "quit" },
+  { on = "<Esc>", run = "plugin smart-esc" },
 
   { on = "<C-k>", run = "leave" },
   { on = "l", run = "plugin smart-enter" },
