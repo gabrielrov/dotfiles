@@ -5,7 +5,6 @@ vim.g.maplocalleader = ' '
 -- clear keys (keep close to top to avoid side effects)
 vim.keymap.set({ 'n', 'x' }, '<Space>', '<Nop>')
 vim.keymap.set('c', '<C-d>', '<Nop>') -- causes conflicts with completion
-vim.keymap.set({ 'n', 'x' }, '<C-w><C-w>', '<Nop>')
 vim.keymap.set('n', 'H', '<Nop>')
 vim.keymap.set('n', 'L', '<Nop>')
 vim.keymap.set({ 'n', 'x' }, '<leader><Esc>', '<Nop>')
