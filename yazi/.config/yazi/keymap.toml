@@ -28,8 +28,6 @@ prepend_keymap = [
   { on = "<C-i>", run = "forward" },
   { on = "<Tab>", run = "forward" },
 
-  { on = 'A', run = "create --dir", desc = "Create a directory" },
-
   { on = "s", run = "plugin fzf", desc = "Jump to a file/directory via fzf" },
   { on = "e", run = "plugin zoxide", desc = "Jump to a directory via zoxide" },
 
