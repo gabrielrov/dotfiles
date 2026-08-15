@@ -25,7 +25,3 @@ brew install fzf
 ```sh
 brew install yazi
 ```
-
-```sh
-ya pkg install
-```

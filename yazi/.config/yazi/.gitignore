@@ -1,4 +1,0 @@
-flavors/
-plugins/*
-!plugins/nvim-buffer.yazi/
-!plugins/nvim-buffer.yazi/**
