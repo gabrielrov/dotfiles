@@ -40,8 +40,15 @@ return {
       clipboard_register = '"',
       highlight_hovered_buffers_in_same_directory = false,
 
-      yazi_floating_window_border = 'none',
-      floating_window_scaling_factor = 1,
+      floating_window_scaling_factor = 0.92,
+
+      yazi_floating_window_border = 'rounded',
+      hooks = {
+        before_opening_window = function(options)
+          options.width = options.width - 1
+          options.height = options.height - 1
+        end,
+      },
 
       keymaps = {
         show_help = '<F2>',
