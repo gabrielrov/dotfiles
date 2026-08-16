@@ -36,6 +36,13 @@ return {
   config = function()
     require('utils.ft').bind_tmux_nav('yazi')
 
+    local function set_highlights()
+      vim.api.nvim_set_hl(0, 'YaziBorder', { fg = '#4C566A' })
+    end
+
+    set_highlights()
+    vim.api.nvim_create_autocmd('ColorScheme', { pattern = '*', callback = set_highlights })
+
     require('yazi').setup({
       open_for_directories = true,
       clipboard_register = '"',
@@ -43,7 +50,17 @@ return {
 
       floating_window_scaling_factor = 0.92,
 
-      yazi_floating_window_border = 'rounded',
+      yazi_floating_window_border = {
+        { '╭', 'YaziBorder' },
+        { '─', 'YaziBorder' },
+        { '╮', 'YaziBorder' },
+        { '│', 'YaziBorder' },
+        { '╯', 'YaziBorder' },
+        { '─', 'YaziBorder' },
+        { '╰', 'YaziBorder' },
+        { '│', 'YaziBorder' },
+      },
+
       hooks = {
         before_opening_window = function(options)
           options.width = options.width - 1
