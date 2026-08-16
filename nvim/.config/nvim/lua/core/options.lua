@@ -60,6 +60,13 @@ vim.opt.laststatus = 3
 -- don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 
+-- configure automatic comment insertion
+vim.api.nvim_create_autocmd('BufEnter', {
+  callback = function()
+    vim.opt.formatoptions:remove({ 'c', 'o' }) -- 'c', 'r', 'o'
+  end,
+})
+
 -- change some icons
 vim.opt.fillchars = {
   vert = '▎',

@@ -20,13 +20,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 --   end,
 -- })
 
--- configure automatic comment insertion
-vim.api.nvim_create_autocmd('BufEnter', {
-  callback = function()
-    vim.opt.formatoptions:remove({ 'c', 'o' }) -- 'c', 'r', 'o'
-  end,
-})
-
 -- resize splits if window got resized
 vim.api.nvim_create_autocmd({ 'VimResized' }, {
   callback = function()
@@ -104,6 +97,7 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   end,
 })
 
+-- writes cwd to a file when leaving (can be used to cd to it upon quitting)
 vim.api.nvim_create_autocmd('VimLeavePre', {
   callback = function()
     local file = vim.env.NVIM_CWD_FILE
