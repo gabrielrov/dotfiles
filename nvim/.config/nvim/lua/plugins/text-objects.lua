@@ -391,7 +391,7 @@ return {
       },
 
       {
-        'ip',
+        'ij',
         function()
           require('various-textobjs').value('inner')
         end,
@@ -399,7 +399,7 @@ return {
         mode = { 'x', 'o' },
       },
       {
-        'ap',
+        'aj',
         function()
           require('various-textobjs').value('outer')
         end,
