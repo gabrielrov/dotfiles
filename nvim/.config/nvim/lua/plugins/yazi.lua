@@ -27,6 +27,7 @@ return {
       callback = function(data)
         local stat = vim.uv.fs_stat(data.file)
         if stat and stat.type == 'directory' then
+          require('lazy').load({ plugins = { 'noice.nvim' } }) -- load for account for new status bar height when positioning win
           require('lazy').load({ plugins = { 'yazi.nvim' } })
         end
       end,
