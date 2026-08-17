@@ -10,6 +10,14 @@ return {
       desc = 'Toggle window maximize',
       mode = { 'n', 'x' },
     },
+    {
+      '<C-w><C-m>',
+      function()
+        require('maximize').toggle()
+      end,
+      desc = 'Toggle window maximize',
+      mode = { 'n', 'x' },
+    },
   },
   config = function()
     require('maximize').setup({
