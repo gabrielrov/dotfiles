@@ -1,5 +1,4 @@
 return {
-  -- NOTE: currently only being supported on v0.12, if willing to update, should probably wait for 1.0 or something
   'nvim-treesitter/nvim-treesitter',
   branch = 'master',
   build = ':TSUpdate',
