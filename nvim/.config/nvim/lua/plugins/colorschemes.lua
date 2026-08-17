@@ -1,8 +1,22 @@
 return {
   { 'EdenEast/nightfox.nvim', lazy = true },
   { 'catppuccin/nvim', name = 'catppuccin', lazy = true },
-  { 'folke/tokyonight.nvim', lazy = true },
   { 'projekt0n/github-nvim-theme', lazy = true },
+
+  {
+    'zenbones-theme/zenbones.nvim',
+    config = function()
+      vim.g.zenbones_compat = 1
+    end,
+    lazy = true,
+  },
+
+  { 'olivercederborg/poimandres.nvim', lazy = true },
+  { 'oahlen/iceberg.nvim', lazy = true },
+  { 'kvrohit/substrata.nvim', lazy = true },
+  { 'dgox16/oldworld.nvim', lazy = true },
+  { 'gbprod/nord.nvim', lazy = true },
+
   {
     'zaldih/themery.nvim',
     lazy = false,
@@ -18,22 +32,21 @@ return {
       require('themery').setup({
         themes = {
           'duskfox',
-          'nordfox',
           'nightfox',
 
-          'catppuccin-mocha',
+          'nord',
+          'poimandres',
+          'iceberg',
+
+          'catppuccin',
           'catppuccin-macchiato',
-          'catppuccin-frappe',
 
-          'tokyonight-moon',
-          'tokyonight-night',
-          'tokyonight-storm',
-
-          'github_dark_dimmed',
+          'zenbones',
+          'substrata',
+          'oldworld',
           'carbonfox',
           'github_dark_default',
         },
-        livePreview = true,
       })
     end,
   },
