@@ -39,6 +39,7 @@ dap.configurations['javascript'] = {
     name = 'Attach to process',
     request = 'attach',
     type = 'pwa-node',
+    address = '127.0.0.1',
     port = function()
       return pick_dap_port('9229')
     end,
@@ -68,6 +69,7 @@ dap.configurations['typescript'] = {
     name = 'Attach to process',
     request = 'attach',
     type = 'pwa-node',
+    address = '127.0.0.1',
     port = function()
       return pick_dap_port('9229')
     end,
