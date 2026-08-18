@@ -172,6 +172,8 @@ return {
           ['<S-Tab>'] = { 'show_and_insert_or_accept_single', 'select_prev' },
           ['<C-n>'] = { 'select_next', 'fallback' },
           ['<C-p>'] = { 'select_prev', 'fallback' },
+          ['<Down>'] = { 'select_next', 'fallback' },
+          ['<Up>'] = { 'select_prev', 'fallback' },
           ['<C-l>'] = { 'accept' },
           ['<C-c>'] = { 'cancel', 'fallback' },
         },
@@ -225,6 +227,16 @@ return {
 
     vim.keymap.set('i', '<C-n>', blink.select_next)
     vim.keymap.set('i', '<C-p>', blink.select_prev)
+
+    vim.keymap.set('i', '<Down>', function()
+      return blink.select_next()
+        or vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Down>', true, false, true), 'n', false)
+    end)
+
+    vim.keymap.set('i', '<Up>', function()
+      return blink.select_prev()
+        or vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Up>', true, false, true), 'n', false)
+    end)
 
     local documentation_scroll = 4 -- 4
     local signature_scroll = 2 -- 4
