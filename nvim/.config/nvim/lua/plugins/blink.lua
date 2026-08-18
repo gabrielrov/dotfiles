@@ -78,7 +78,9 @@ return {
       },
 
       fuzzy = {
-        max_typos = 0,
+        max_typos = function(keyword)
+          return math.floor(#keyword / 4)
+        end,
         sorts = interface.sorts({ 'score', 'sort_text' }),
       },
 
