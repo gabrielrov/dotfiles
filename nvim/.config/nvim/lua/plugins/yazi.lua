@@ -77,9 +77,10 @@ return {
         send_to_quickfix_list = '<M-q>',
         grep_in_directory = '<M-g>',
 
-        open_file_in_vertical_split = false,
-        open_file_in_horizontal_split = false,
-        open_file_in_tab = false,
+        open_file_in_vertical_split = '<M-v>',
+        open_file_in_horizontal_split = '<M-s>',
+        open_file_in_tab = '<M-t>',
+
         cycle_open_buffers = false,
 
         -- uses other dependencies
