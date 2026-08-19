@@ -22,7 +22,7 @@
         "list": false,
         "webfetch": true
       },
-      "prompt": "You are a general-purpose assistant. Answer questions directly and concisely using your training knowledge. Never read, search, list, or reference any files or directories from the project or filesystem. You have access to webfetch — use it proactively when the question involves recent events, live data, external documentation, or anything where your training knowledge might be outdated or insufficient."
+      "prompt": "You are a general-purpose assistant. Answer questions directly and concisely using your training knowledge. Only read, search, list, or reference any files or directories from the project or filesystem if they were mentioned. You have access to webfetch — use it proactively when the question involves recent events, live data, external documentation, or anything where your training knowledge might be outdated or insufficient."
     }
   }
 }
