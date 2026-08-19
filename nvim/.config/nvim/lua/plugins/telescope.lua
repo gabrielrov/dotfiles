@@ -5,6 +5,15 @@ return {
     'nvim-lua/plenary.nvim',
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   },
+  init = function()
+    vim.api.nvim_create_autocmd('LspAttach', {
+      callback = function(event)
+        vim.keymap.set('n', 'gd', function()
+          require('telescope.builtin').lsp_definitions()
+        end, { buffer = event.buf, desc = 'Go to definition' })
+      end,
+    })
+  end,
   keys = {
     { '<C-f>', '<cmd>Telescope find_files<CR>', desc = 'Find files' },
     {
@@ -101,7 +110,6 @@ return {
     { '<leader>fm', '<cmd>Telescope marks<CR>', desc = 'Find marks' },
     { '<leader>fj', '<cmd>Telescope jumplist<CR>', desc = 'Find jumplist' },
 
-    { 'gd', '<cmd>Telescope lsp_definitions<CR>', desc = 'Go to definition' },
     { 'gr', '<cmd>Telescope lsp_references<CR>', desc = 'Go to references' },
     { 'gD', '<cmd>Telescope lsp_type_definitions<CR>', desc = 'Go to type definition' },
     { 'gI', '<cmd>Telescope lsp_implementations<CR>', desc = 'Go to implementations' },
