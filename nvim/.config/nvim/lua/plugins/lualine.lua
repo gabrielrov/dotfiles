@@ -98,6 +98,16 @@ return {
               end
             end,
           },
+          {
+            function()
+              local tab_count = vim.fn.tabpagenr('$')
+              if tab_count <= 1 then
+                return ''
+              end
+              return string.format('󰓪 %d|%d', vim.fn.tabpagenr(), tab_count)
+            end,
+            padding = { left = 2, right = 1 },
+          },
         },
         lualine_y = {
           {

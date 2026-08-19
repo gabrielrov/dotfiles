@@ -28,6 +28,9 @@ vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+-- disable tab line
+vim.opt.showtabline = 0
+
 -- open space to line symbols
 vim.opt.signcolumn = 'yes'
 
