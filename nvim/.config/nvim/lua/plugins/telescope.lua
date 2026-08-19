@@ -103,7 +103,7 @@ return {
 
     { 'gd', '<cmd>Telescope lsp_definitions<CR>', desc = 'Go to definition' },
     { 'gr', '<cmd>Telescope lsp_references<CR>', desc = 'Go to references' },
-    { 'gt', '<cmd>Telescope lsp_type_definitions<CR>', desc = 'Go to type definition' },
+    { 'gD', '<cmd>Telescope lsp_type_definitions<CR>', desc = 'Go to type definition' },
     { 'gI', '<cmd>Telescope lsp_implementations<CR>', desc = 'Go to implementations' },
 
     { 'g[', '<cmd>Telescope lsp_incoming_calls<CR>', desc = 'Go to incoming calls' },

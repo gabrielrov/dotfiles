@@ -8,8 +8,6 @@ vim.keymap.set('c', '<C-d>', '<Nop>') -- causes conflicts with completion
 vim.keymap.set('n', 'H', '<Nop>')
 vim.keymap.set('n', 'L', '<Nop>')
 vim.keymap.set({ 'n', 'x' }, '<leader><Esc>', '<Nop>')
-vim.keymap.set('n', 'gt', '<Nop>')
-vim.keymap.set('n', 'gT', '<Nop>')
 vim.keymap.set('n', 'gO', '<Nop>')
 vim.keymap.set('n', 'ga', '<Nop>')
 vim.keymap.set({ 'x', 's' }, '<C-n>', '<Nop>')
@@ -39,7 +37,6 @@ vim.keymap.set('s', '<C-Space>', '<C-g>c', { desc = 'Delete selection' })
 vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, { desc = 'Rename symbol across project' })
 vim.keymap.set('n', '<leader>z', vim.lsp.buf.code_action, { desc = 'Code actions' })
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Diagnostics popup' })
-vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = 'Go to declaration' })
 
 vim.keymap.set({ 'n', 'x' }, '<leader>p', function()
   local format = require('utils.format')
@@ -53,7 +50,7 @@ end, { desc = 'Format' })
 vim.keymap.set('n', '<leader>R', function()
   vim.notify('Restarting lsp...')
   vim.cmd('LspRestart')
-end, { desc = 'Go to declaration' })
+end, { desc = 'Restart lsp' })
 
 -- undo
 vim.keymap.set('n', require('utils.bindings').timeline_undo, 'g-', { desc = 'Timeline undo' })
@@ -200,12 +197,14 @@ end, { desc = 'Copy register " into + register' })
 vim.keymap.set('x', 'x', '"_x')
 vim.keymap.set('x', 'X', '"_X')
 
--- tab
-vim.keymap.set({ 'n', 'x' }, '<C-t>', '<cmd>tabnew<CR>', { desc = 'Create tab' })
+-- tabs
+vim.keymap.set({ 'n', 'x' }, '<C-t>', '<cmd>tab split<CR>', { desc = 'Create tab' })
 vim.keymap.set({ 'n', 'x' }, '<C-w>O', '<cmd>tabo<CR>', { desc = 'Tab only' })
+
+vim.keymap.set({ 'n', 'x' }, '<C-w>x', '<cmd>tabclose<CR>', { desc = 'Tab close' })
+vim.keymap.set({ 'n', 'x' }, '<C-w><C-x>', '<cmd>tabclose<CR>', { desc = 'Tab close' })
 vim.keymap.set({ 'n', 'x' }, '<C-w>C', '<cmd>tabclose<CR>', { desc = 'Tab close' })
-vim.keymap.set('n', "g'", '<cmd>tabn<CR>')
-vim.keymap.set('n', 'g"', '<cmd>tabp<CR>')
+
 vim.keymap.set('n', 'g<Space>', 'g<Tab>')
 
 vim.keymap.set({ 'n', 'x' }, 'g1', '<cmd>tabn 1<CR>', { desc = 'Go to tab n1' })
@@ -218,7 +217,26 @@ vim.keymap.set({ 'n', 'x' }, 'g7', '<cmd>tabn 7<CR>', { desc = 'Go to tab n7' })
 vim.keymap.set({ 'n', 'x' }, 'g8', '<cmd>tabn 8<CR>', { desc = 'Go to tab n8' })
 vim.keymap.set({ 'n', 'x' }, 'g9', '<cmd>tabn 9<CR>', { desc = 'Go to tab n9' })
 
--- improve repetitive window movements
+vim.keymap.set('n', "g'", function()
+  if vim.fn.tabpagenr() == vim.fn.tabpagenr('$') then
+    vim.cmd('tabmove 0')
+  else
+    vim.cmd('tabmove +1')
+  end
+end, { desc = 'Swap tab with next' })
+
+vim.keymap.set('n', 'g"', function()
+  if vim.fn.tabpagenr() == 1 then
+    vim.cmd('tabmove $')
+  else
+    vim.cmd('tabmove -1')
+  end
+end, { desc = 'Swap tab with previous' })
+
+-- windows
+vim.keymap.set('n', '<C-w><C-q>', '<cmd>quitall<CR>')
+vim.keymap.set('n', '<C-w>q', '<cmd>quitall<CR>')
+
 vim.keymap.set({ 'n', 'x' }, '<C-w>H', '<C-w>H<C-w>', { remap = true })
 vim.keymap.set({ 'n', 'x' }, '<C-w>J', '<C-w>J<C-w>', { remap = true })
 vim.keymap.set({ 'n', 'x' }, '<C-w>K', '<C-w>K<C-w>', { remap = true })
