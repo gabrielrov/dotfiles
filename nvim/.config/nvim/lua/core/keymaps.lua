@@ -102,14 +102,14 @@ vim.keymap.set({ 'n', 'x', 'o' }, '<M-b>', 'gE', { remap = true })
 vim.keymap.set({ 'n', 'x' }, '<M-d>', '<cmd>norm! 4<CR>')
 vim.keymap.set({ 'n', 'x' }, '<M-u>', '<cmd>norm! 4<CR>')
 
-vim.keymap.set({ 'n', 'x' }, '<Down>', '<cmd>norm! 40M<CR>')
-vim.keymap.set({ 'n', 'x' }, '<Up>', '<cmd>norm! 40M<CR>')
+vim.keymap.set({ 'n', 'x' }, '<Down>', '<cmd>keepjumps normal! 4<C-e>0M<CR>')
+vim.keymap.set({ 'n', 'x' }, '<Up>', '<cmd>keepjumps normal! 4<C-y>0M<CR>')
 
-vim.keymap.set({ 'n', 'i', 'x' }, '<ScrollWheelDown>', '<cmd>norm! 40M<CR>')
-vim.keymap.set({ 'n', 'i', 'x' }, '<ScrollWheelUp>', '<cmd>norm! 40M<CR>')
+vim.keymap.set({ 'n', 'x' }, '<Left>', '<cmd>keepjumps normal! <C-u>0M<CR>')
+vim.keymap.set({ 'n', 'x' }, '<Right>', '<cmd>keepjumps normal! <C-d>0M<CR>')
 
-vim.keymap.set({ 'n', 'x' }, '<Left>', '<C-u>0M')
-vim.keymap.set({ 'n', 'x' }, '<Right>', '<C-d>0M')
+vim.keymap.set({ 'n', 'i', 'x' }, '<ScrollWheelDown>', '<cmd>keepjumps normal! 4<C-e>0M<CR>')
+vim.keymap.set({ 'n', 'i', 'x' }, '<ScrollWheelUp>', '<cmd>keepjumps normal! 4<C-y>0M<CR>')
 
 -- with strings, when using "a" on operator-pending mode or visual modes, not include extra whitespace
 vim.keymap.set({ 'o', 'x' }, "a'", "2i'")
