@@ -45,6 +45,9 @@ vim.opt.listchars = { tab = '  ', trail = '·', nbsp = ' ' }
 -- window at bottom when using :s
 vim.opt.inccommand = 'split'
 
+-- lines to scroll
+vim.opt.mousescroll = 'ver:4'
+
 -- how many lines keep around cursor when moving vertically
 vim.opt.scrolloff = 15
 

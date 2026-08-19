@@ -108,8 +108,26 @@ vim.keymap.set({ 'n', 'x' }, '<Up>', '<cmd>keepjumps normal! 4<C-y>0M<CR>')
 vim.keymap.set({ 'n', 'x' }, '<Left>', '<cmd>keepjumps normal! <C-u>0M<CR>')
 vim.keymap.set({ 'n', 'x' }, '<Right>', '<cmd>keepjumps normal! <C-d>0M<CR>')
 
-vim.keymap.set({ 'n', 'i', 'x' }, '<ScrollWheelDown>', '<cmd>keepjumps normal! 4<C-e>0M<CR>')
-vim.keymap.set({ 'n', 'i', 'x' }, '<ScrollWheelUp>', '<cmd>keepjumps normal! 4<C-y>0M<CR>')
+local function wheel_scroll(key)
+  local current_win = vim.api.nvim_get_current_win()
+  local mouse_win = vim.fn.getmousepos().winid
+
+  if mouse_win ~= current_win then
+    vim.cmd('norm! ')
+    vim.fn.win_gotoid(mouse_win)
+  end
+
+  local wheel = vim.api.nvim_replace_termcodes(key, true, false, true)
+  vim.cmd('keepjumps normal! ' .. wheel .. '0M')
+end
+
+vim.keymap.set({ 'n', 'x' }, '<ScrollWheelDown>', function()
+  wheel_scroll('<ScrollWheelDown>')
+end)
+
+vim.keymap.set({ 'n', 'x' }, '<ScrollWheelUp>', function()
+  wheel_scroll('<ScrollWheelUp>')
+end)
 
 -- with strings, when using "a" on operator-pending mode or visual modes, not include extra whitespace
 vim.keymap.set({ 'o', 'x' }, "a'", "2i'")
