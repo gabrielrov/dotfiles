@@ -34,6 +34,9 @@ vim.opt.showtabline = 0
 -- open space to line symbols
 vim.opt.signcolumn = 'yes'
 
+-- on visual mode, cursor is not allowd to go one char past the line
+vim.opt.selection = 'old'
+
 -- wait time for conflcting keys - Default is 1000
 vim.opt.timeout = false
 
