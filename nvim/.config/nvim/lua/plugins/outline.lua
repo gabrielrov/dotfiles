@@ -27,7 +27,7 @@ return {
         close = '<Nop>',
         down_and_jump = 'J',
         up_and_jump = 'K',
-        restore_location = '-',
+        restore_location = '<C-Space>',
       },
       symbols = {
         icons = {
