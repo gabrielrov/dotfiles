@@ -4,10 +4,8 @@ return {
   { 'projekt0n/github-nvim-theme', lazy = true },
 
   {
-    'zenbones-theme/zenbones.nvim',
-    config = function()
-      vim.g.zenbones_compat = 1
-    end,
+    'vague2k/vague.nvim',
+    opts = { colors = { func = '#bc96b0', keyword = '#787bab', string = '#8a739a', number = '#8f729e' } },
     lazy = true,
   },
 
@@ -41,8 +39,8 @@ return {
           'catppuccin',
           'catppuccin-macchiato',
 
-          'zenbones',
           'substrata',
+          'vague',
           'oldworld',
           'carbonfox',
           'github_dark_default',
