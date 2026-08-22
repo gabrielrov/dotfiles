@@ -6,19 +6,19 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- scroll past end of file with scrolloff ('scrolloffpad' was introduced on v0.13.0, but not feeling like updating)
--- vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI', 'BufEnter' }, {
---   callback = function()
---     local win_h = vim.api.nvim_win_get_height(0)
---     local off = math.min(vim.o.scrolloff, math.floor(win_h / 2))
---     local dist = vim.fn.line('$') - vim.fn.line('.')
---     local rem = vim.fn.line('w$') - vim.fn.line('w0') + 1
---     if dist < off and win_h - rem + dist < off then
---       local view = vim.fn.winsaveview()
---       view.topline = view.topline + off - (win_h - rem + dist)
---       vim.fn.winrestview(view)
---     end
---   end,
--- })
+vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI', 'BufEnter' }, {
+  callback = function()
+    local win_h = vim.api.nvim_win_get_height(0)
+    local off = math.min(vim.o.scrolloff, math.floor(win_h / 2))
+    local dist = vim.fn.line('$') - vim.fn.line('.')
+    local rem = vim.fn.line('w$') - vim.fn.line('w0') + 1
+    if dist < off and win_h - rem + dist < off then
+      local view = vim.fn.winsaveview()
+      view.topline = view.topline + off - (win_h - rem + dist)
+      vim.fn.winrestview(view)
+    end
+  end,
+})
 
 -- resize splits if window got resized
 vim.api.nvim_create_autocmd({ 'VimResized' }, {
