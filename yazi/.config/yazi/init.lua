@@ -10,6 +10,6 @@ end
 require("nvim-buffer"):setup()
 require("bookmarks"):setup({
 	persist = "all",
-	file_pick_mode = "parent",
+	file_pick_mode = "hover",
 	last_directory = { enable = true, mode = "jump", persist = false },
 })
