@@ -42,7 +42,7 @@ return {
             'filename',
             path = 1, -- displayed path
             symbols = {
-              modified = icons.buffer.modified,
+              modified = '',
               readonly = '',
               unnamed = 'Unnamed',
               newfile = '',

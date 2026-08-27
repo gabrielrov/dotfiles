@@ -12,7 +12,4 @@ return {
     renamed = 'R', -- 󰁕
     untracked = '??', -- 
   },
-  buffer = {
-    modified = '',
-  },
 }
