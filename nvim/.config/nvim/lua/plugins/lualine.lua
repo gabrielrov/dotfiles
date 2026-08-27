@@ -31,6 +31,16 @@ return {
         },
         lualine_c = {
           {
+            function()
+              local tab_count = vim.fn.tabpagenr('$')
+              if tab_count <= 1 then
+                return ''
+              end
+              return string.format('󰓪 %d|%d', vim.fn.tabpagenr(), tab_count)
+            end,
+            padding = { left = 1, right = 1 },
+          },
+          {
             'filetype',
             padding = { left = 1, right = 0 },
             icon_only = true,
@@ -97,16 +107,6 @@ return {
                 }
               end
             end,
-          },
-          {
-            function()
-              local tab_count = vim.fn.tabpagenr('$')
-              if tab_count <= 1 then
-                return ''
-              end
-              return string.format('󰓪 %d|%d', vim.fn.tabpagenr(), tab_count)
-            end,
-            padding = { left = 2, right = 1 },
           },
         },
         lualine_y = {
