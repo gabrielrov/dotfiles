@@ -6,6 +6,17 @@ local i = ls.insert_node -- insert cursor
 local f = ls.function_node
 local rep = require('luasnip.extras').rep -- repeats
 
+local function function_name(_, snip)
+  local filename = snip.env.TM_FILENAME
+  local name = vim.fn.fnamemodify(filename, ':t:r')
+
+  if name == 'index' then
+    name = vim.fn.fnamemodify(vim.fn.expand('%:p:h'), ':t')
+  end
+
+  return (name:gsub('%-(%a)', string.upper))
+end
+
 -- local jest = {
 --   s('jd', fmt("describe('{}', () => {{\n  {}\n}})", { i(1), i(2, '//') })),
 --   s('jt', fmt("test('{}', () => {{\n  {}\n}})", { i(1), i(2, '//') })),
@@ -79,9 +90,7 @@ local common = {
         }}
       ]],
       {
-        f(function(_, snip)
-          return vim.fn.fnamemodify(snip.env.TM_FILENAME, ':r')
-        end),
+        f(function_name),
         i(1),
         i(2),
       }
@@ -97,9 +106,7 @@ local common = {
         }}
       ]],
       {
-        f(function(_, snip)
-          return vim.fn.fnamemodify(snip.env.TM_FILENAME, ':r')
-        end),
+        f(function_name),
         i(1),
         i(2),
       }
