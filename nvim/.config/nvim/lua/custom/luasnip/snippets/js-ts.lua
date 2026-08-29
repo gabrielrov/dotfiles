@@ -59,6 +59,54 @@ local common = {
   ),
 
   s(
+    'fun',
+    fmt(
+      [[
+        function {}({}) {{
+          {}
+        }}
+      ]],
+      { i(1, 'name'), i(2), i(3) }
+    )
+  ),
+
+  s(
+    'ef',
+    fmt(
+      [[
+        export function {}({}) {{
+          {}
+        }}
+      ]],
+      {
+        f(function(_, snip)
+          return vim.fn.fnamemodify(snip.env.TM_FILENAME, ':r')
+        end),
+        i(1),
+        i(2),
+      }
+    )
+  ),
+
+  s(
+    'edf',
+    fmt(
+      [[
+        export default function {}({}) {{
+          {}
+        }}
+      ]],
+      {
+        f(function(_, snip)
+          return vim.fn.fnamemodify(snip.env.TM_FILENAME, ':r')
+        end),
+        i(1),
+        i(2),
+      }
+    )
+  ),
+
+  s(
     'for',
     fmt(
       [[
@@ -149,107 +197,7 @@ local common = {
   ),
 }
 
-local javascript = {
-  s(
-    'fun',
-    fmt(
-      [[
-        function {}({}) {{
-          {}
-        }}
-      ]],
-      { i(1, 'name'), i(2), i(3) }
-    )
-  ),
-
-  s(
-    'ef',
-    fmt(
-      [[
-        export function {}({}) {{
-          {}
-        }}
-      ]],
-      {
-        f(function(_, snip)
-          return vim.fn.fnamemodify(snip.env.TM_FILENAME, ':r')
-        end),
-        i(1),
-        i(2),
-      }
-    )
-  ),
-
-  s(
-    'edf',
-    fmt(
-      [[
-        export default function {}({}) {{
-          {}
-        }}
-      ]],
-      {
-        f(function(_, snip)
-          return vim.fn.fnamemodify(snip.env.TM_FILENAME, ':r')
-        end),
-        i(1),
-        i(2),
-      }
-    )
-  ),
-}
-
 local typescript = {
-  s(
-    'fun',
-    fmt(
-      [[
-        function {}({}){} {{
-          {}
-        }}
-      ]],
-      { i(1, 'name'), i(2), i(3), i(4) }
-    )
-  ),
-
-  s(
-    'ef',
-    fmt(
-      [[
-        export function {}({}){} {{
-          {}
-        }}
-      ]],
-      {
-        f(function(_, snip)
-          return vim.fn.fnamemodify(snip.env.TM_FILENAME, ':r')
-        end),
-        i(1),
-        i(2),
-        i(3),
-      }
-    )
-  ),
-
-  s(
-    'edf',
-    fmt(
-      [[
-        export default function {}({}){} {{
-          {}
-        }}
-      ]],
-      {
-        f(function(_, snip)
-          return vim.fn.fnamemodify(snip.env.TM_FILENAME, ':r')
-        end),
-        i(1),
-        i(2),
-        i(3),
-      }
-    )
-  ),
-
   s('t', fmt('type {}', { i(1) })),
   s(
     'i',
@@ -278,9 +226,7 @@ local react = {
 }
 
 ls.add_snippets('javascript', common)
-ls.add_snippets('javascript', javascript)
 ls.add_snippets('javascriptreact', common)
-ls.add_snippets('javascriptreact', javascript)
 ls.add_snippets('javascriptreact', react)
 
 ls.add_snippets('typescript', common)
