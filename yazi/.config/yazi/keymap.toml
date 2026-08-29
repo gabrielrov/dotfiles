@@ -43,6 +43,7 @@ prepend_keymap = [
   ], run = "plugin bookmarks delete_all", desc = "Delete all bookmarks" },
 
   { on = "'", run = "plugin bookmarks jump", desc = "Jump to a bookmark" },
+  { on = "o", run = "plugin bookmarks jump", desc = "Jump to a bookmark" },
   { on = "m", run = "plugin bookmarks save", desc = "Save current position as a bookmark" },
 
   { on = [
