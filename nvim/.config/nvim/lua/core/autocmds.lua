@@ -58,6 +58,13 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
+-- creates tabs on last index instead of next
+vim.api.nvim_create_autocmd('TabNew', {
+  callback = function()
+    vim.cmd('tabmove $')
+  end,
+})
+
 -- when saving a file, if it's inside not yet existent folders, creates them
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
   callback = function(event)
