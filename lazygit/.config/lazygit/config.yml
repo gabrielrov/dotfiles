@@ -7,15 +7,16 @@ gui:
   statusPanelView: allBranchesLog
   switchTabsWithPanelJumpKeys: true
   showRootItemInFileTree: false
-  useHunkModeInStagingView: false
+  useHunkModeInDiffView: false
   showNumstatInFilesView: false
 
   commitHashLength: 5
   scrollHeight: 4
 
   skipSwitchWorktreeOnCheckoutWarning: true
-  authorColors:
-    "gabrielrov": "blue"
+  theme:
+    authorColors:
+      "gabrielrov": "blue"
 keybinding:
   universal:
     quit: [<esc>, <c-c>, q]
