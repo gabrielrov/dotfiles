@@ -2,6 +2,7 @@ return {
   { 'EdenEast/nightfox.nvim', lazy = true },
   { 'catppuccin/nvim', name = 'catppuccin', lazy = true },
   { 'projekt0n/github-nvim-theme', lazy = true },
+  { 'folke/tokyonight.nvim', lazy = true },
 
   {
     'vague2k/vague.nvim',
@@ -10,10 +11,8 @@ return {
   },
 
   { 'olivercederborg/poimandres.nvim', lazy = true },
-  { 'oahlen/iceberg.nvim', lazy = true },
   { 'kvrohit/substrata.nvim', lazy = true },
   { 'dgox16/oldworld.nvim', lazy = true },
-  { 'gbprod/nord.nvim', lazy = true },
 
   {
     'zaldih/themery.nvim',
@@ -31,13 +30,15 @@ return {
         themes = {
           'duskfox',
           'nightfox',
+          'nordfox',
 
-          'nord',
           'poimandres',
-          'iceberg',
 
           'catppuccin',
           'catppuccin-macchiato',
+
+          'tokyonight',
+          'tokyonight-storm',
 
           'substrata',
           'vague',
