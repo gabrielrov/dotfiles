@@ -4,4 +4,4 @@ dark = "nord"
 [indicator]
 padding = { open = "█", close = "█" }
 parent = { bg = "#45526e" }
-current = { bg = "#45557d" }
+current = { bg = "#2364a6" }
