@@ -70,10 +70,11 @@ alias la='ls -A --color=auto'
 alias ll='ls -alF --color=auto'
 
 t() {
-  if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    tmux attach &> /dev/null || (command -v sesh &> /dev/null && sesh connect "$(
-      sesh list | fzf --layout=default --bind 'tab:up' --bind 'shift-tab:down'
-    )")
+  if command -v tmux &>/dev/null && [ -z "$TMUX" ]; then
+    local restore="$HOME/.tmux/plugins/tmux-resurrect/scripts/restore.sh"
+
+    tmux attach &>/dev/null && return
+    tmux new \; if-shell "[ -x \"$restore\" ]" "run \"$restore\""
   fi
 }
 
