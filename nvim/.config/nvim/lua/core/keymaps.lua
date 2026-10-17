@@ -22,9 +22,10 @@ vim.keymap.set('c', '<C-o>', '<Nop>')
 
 vim.keymap.del('n', 'grr')
 vim.keymap.del('n', 'gra')
-vim.keymap.del('x', 'gra')
 vim.keymap.del('n', 'grn')
 vim.keymap.del('n', 'gri')
+vim.keymap.del('n', 'grt')
+vim.keymap.del('x', 'gra')
 
 vim.keymap.set('n', '<Esc>', require('utils.clear_hl_and_popup'), { desc = 'Clear highlights and popups' })
 vim.keymap.set('n', '<C-Space>', '<C-^>', { desc = 'Switch to the previous buffer' })
