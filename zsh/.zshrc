@@ -177,6 +177,6 @@ export FZF_DEFAULT_OPTS="
   --bind 'ctrl-l:ignore'
 "
 
-export PATH=/home/gabs/.opencode/bin:$PATH
+export PATH="$HOME/.opencode/bin:$PATH"
 
 [ -z "$TMUX" ] && t
