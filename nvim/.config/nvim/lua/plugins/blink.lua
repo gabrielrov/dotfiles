@@ -213,14 +213,13 @@ return {
     })
 
     vim.keymap.set('i', '<C-Space>', function()
-      -- NOTE: currently blink.show doesn't return boolean properly when a provider is passed, using 'show' for now
-      -- local providers = vim.tbl_keys(require('blink.cmp.sources.lib').get_enabled_providers())
-      -- local filtered_providers = vim.tbl_filter(function(provider)
-      --   return provider ~= 'snippets'
-      -- end, providers)
-      --
-      -- blink.show({ providers = filtered_providers })
-      return blink.show() or blink.show_documentation() or blink.hide_documentation()
+      local providers = vim.tbl_keys(require('blink.cmp.sources.lib').get_enabled_providers())
+      local filtered_providers = vim.tbl_filter(function(provider)
+        return provider ~= 'snippets'
+      end, providers)
+
+      local blink_show = require('custom.blink.blink_show')
+      return blink_show({ providers = filtered_providers }) or blink.show_documentation() or blink.hide_documentation()
     end)
 
     vim.keymap.set('i', '<C-j>', function()
