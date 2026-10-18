@@ -179,4 +179,4 @@ export FZF_DEFAULT_OPTS="
 
 export PATH="$HOME/.opencode/bin:$PATH"
 
-[ -z "$TMUX" ] && t
+[[ -o interactive && -t 0 && -z "$TMUX" ]] && t
