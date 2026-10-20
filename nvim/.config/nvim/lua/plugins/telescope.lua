@@ -131,6 +131,7 @@ return {
           i = {
             ['<C-x>'] = false,
             ['<C-f>'] = false,
+            ['<C-l>'] = false,
             ['<M-f>'] = false,
 
             ['<C-s>'] = actions.select_horizontal,
@@ -161,6 +162,22 @@ return {
                 actions.toggle_selection(bufnr)
                 actions.move_selection_previous(bufnr)
               end,
+            },
+          },
+        },
+        live_grep = {
+          mappings = {
+            i = {
+              ['<C-Space>'] = actions.toggle_selection,
+              ['<C-l>'] = actions.to_fuzzy_refine,
+            },
+          },
+        },
+        lsp_dynamic_workspace_symbols = {
+          mappings = {
+            i = {
+              ['<C-Space>'] = actions.toggle_selection,
+              ['<C-l>'] = actions.to_fuzzy_refine,
             },
           },
         },
