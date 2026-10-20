@@ -38,7 +38,6 @@ M.clear_c_hjkl = function(ft, opts)
 end
 
 --- @param ft string | table
---- @param mode? string | table
 M.bind_tmux_nav = function(ft)
   vim.api.nvim_create_autocmd('FileType', {
     pattern = ft,
