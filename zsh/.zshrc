@@ -84,7 +84,7 @@ nvim() {
   if [[ -f "$tmp" ]]; then
     local dir
     dir=$(<"$tmp")
-    [[ -d "$dir" ]] && builtin cd -- "$dir"
+    [[ -d "$dir" && "$dir" != "$PWD" ]] && builtin cd -- "$dir"
   fi
   command rm -f -- "$tmp"
 }
