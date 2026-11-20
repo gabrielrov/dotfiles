@@ -99,8 +99,8 @@ return {
     { '<leader>f<C-n>', '<cmd>Telescope current_buffer_fuzzy_find<CR>', desc = 'Find in buffer' },
     { '<leader>f<M-n>', '<cmd>Telescope current_buffer_fuzzy_find<CR>', desc = 'Find in buffer' },
 
-    { '<leader>fo', '<cmd>Telescope oldfiles<CR>', desc = 'Find oldfiles' },
-    { '<leader>fb', '<cmd>Telescope buffers<CR>', desc = 'Find buffers' },
+    { '<leader>fr', '<cmd>Telescope oldfiles<CR>', desc = 'Find recent files' },
+    { '<leader>fo', '<cmd>Telescope buffers<CR>', desc = 'Find buffers' },
     { '<leader>fc', '<cmd>Telescope colorscheme<CR>', desc = 'Find colorschemes' },
 
     { '<leader>fs', '<cmd>Telescope lsp_document_symbols<CR>', desc = 'Find symbols' },
