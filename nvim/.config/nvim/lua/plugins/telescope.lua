@@ -83,6 +83,7 @@ return {
     },
 
     { '<leader>fd', '<cmd>Telescope diagnostics<CR>', desc = 'Find diagnostics' },
+    { '<leader>fD', '<cmd>Telescope diagnostics<CR>', desc = 'Find diagnostics' },
 
     { '<leader>fq', '<cmd>Telescope quickfix<CR>', desc = 'Find quickfix' },
     { '<leader>Q', '<cmd>Telescope quickfixhistory<CR>', desc = 'Find quickfix history' },
